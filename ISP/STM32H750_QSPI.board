@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <range>CODE 0x08000000 0x0801FFFF</range>
+    <loader>$TOOLKIT_DIR$\config\flashloader\ST\FlashSTM32H7xxxB.flash</loader>
+  </pass>
+  <pass>
+    <range>CODE 0x90000000 0x91FFFFFF</range>	<!-- QSPI FLASH 32M -->
+    <loader>$PROJ_DIR$\STM32H750_QSPI.flash</loader>
+  </pass>
+</flash_board>
+
+

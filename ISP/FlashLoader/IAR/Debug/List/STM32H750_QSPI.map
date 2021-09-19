@@ -1,0 +1,177 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  19/Sep/2021  22:58:33
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  F:\WQA\ISP\FlashLoader\Out\STM32H750_QSPI.out
+#    Map file     =  F:\WQA\ISP\FlashLoader\IAR\Debug\List\STM32H750_QSPI.map
+#    Command line =
+#        -f C:\Users\walker\AppData\Local\Temp\EWC205.tmp
+#        (F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\flash_loader.o
+#        F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\flash_loader_asm.o
+#        F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\flash_loader_user.o
+#        F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\qspi.o
+#        F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\sys.o
+#        F:\WQA\ISP\FlashLoader\IAR\Debug\Obj\w25qxx.o --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfSmallNoMb
+#        --no_out_extension -o F:\WQA\ISP\FlashLoader\Out\STM32H750_QSPI.out
+#        --map F:\WQA\ISP\FlashLoader\IAR\Debug\List\STM32H750_QSPI.map
+#        --config F:\WQA\ISP\FlashLoader\IAR\FlashSTM32H7xx.icf --entry
+#        FlashInitEntry --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { section .intvec };
+"A1":  place at start of [from 0x20 to 0xffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 0, alignment = 8 { };
+"A2":  place at end of [from 0x20 to 0xffff] { rw, block CSTACK, block HEAP };
+"A3":  place at start of [from 0x2400'0000 to 0x2405'ffff] { section LOWEND };
+"A4":  place at end of [from 0x2400'0000 to 0x2405'ffff] { section HIGHSTART };
+do not initialize { rw };
+
+  Section    Kind         Address   Size  Object
+  -------    ----         -------   ----  ------
+"A0":                               0x20
+  .intvec    ro code          0x0   0x20  flash_loader_asm.o [1]
+                           - 0x20   0x20
+
+"A1":                              0x87c
+  .text      ro code         0x20   0x86  flash_loader.o [1]
+  .rodata    const           0xa6    0x2  flash_loader.o [1]
+  .text      ro code         0xa8   0x58  flash_loader_user.o [1]
+  .text      ro code        0x100  0x29c  sys.o [1]
+  .text      ro code        0x39c  0x1e8  w25qxx.o [1]
+  .text      ro code        0x584  0x2f8  qspi.o [1]
+  .text      ro code        0x87c   0x20  flash_loader_asm.o [1]
+                          - 0x89c  0x87c
+
+"A2":                              0x474
+  .noinit    uninit        0xfb8c   0x2c  flash_loader.o [1]
+  .noinit    uninit        0xfbb8   0x40  flash_loader.o [1]
+  .noinit    uninit        0xfbf8    0x4  flash_loader_user.o [1]
+  .bss       uninit        0xfbfc    0x1  w25qxx.o [1]
+  CSTACK                   0xfc00  0x400  <Block>
+    CSTACK   uninit        0xfc00  0x400  <Block tail>
+                       - 0x1'0000  0x474
+
+"A3":                                0x0
+  LOWEND     rw data  0x2400'0000    0x0  flash_loader_asm.o [1]
+
+"A4":                                0x0
+  HIGHSTART  rw data  0x2406'0000    0x0  flash_loader_asm.o [1]
+
+Unused ranges:
+
+  From  To  Size
+  ----  --  ----
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+command line/config:
+    ----------------------------------------------
+    Total:
+
+F:\WQA\ISP\FlashLoader\IAR\Debug\Obj: [1]
+    flash_loader.o           134        2      108
+    flash_loader_asm.o        64
+    flash_loader_user.o       88                 4
+    qspi.o                   760
+    sys.o                    668
+    w25qxx.o                 488                 1
+    ----------------------------------------------
+    Total:                 2'202        2      113
+
+    Linker created                           1'024
+--------------------------------------------------
+    Grand Total:           2'202        2    1'137
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+CSTACK$$Base                 0xfc00          --   Gb  - Linker created -
+CSTACK$$Limit              0x1'0000          --   Gb  - Linker created -
+Cache_Enable                  0x1b9   0x78  Code  Gb  sys.o [1]
+Fl2FlashEraseWriteEntry
+                               0x53   0x40  Code  Gb  flash_loader.o [1]
+Fl2FlashInitEntry              0x21   0x1e  Code  Gb  flash_loader.o [1]
+Fl2FlashSignoffEntry           0x93    0xc  Code  Gb  flash_loader.o [1]
+Fl2FlashWriteEntry             0x3f   0x14  Code  Gb  flash_loader.o [1]
+FlashBreak                     0xa5    0x2  Code  Gb  flash_loader.o [1]
+FlashBufferEnd          0x2406'0000         Data  Gb  flash_loader_asm.o [1]
+FlashBufferStart        0x2400'0000         Data  Gb  flash_loader_asm.o [1]
+FlashErase                     0xd9   0x10  Code  Gb  flash_loader_user.o [1]
+FlashEraseWriteEntry          0x88d         Code  Gb  flash_loader_asm.o [1]
+FlashInit                      0xa9   0x1c  Code  Gb  flash_loader_user.o [1]
+FlashInitEntry                0x87d         Code  Gb  flash_loader_asm.o [1]
+FlashSignoff                   0xe9   0x10  Code  Gb  flash_loader_user.o [1]
+FlashSignoffEntry             0x895         Code  Gb  flash_loader_asm.o [1]
+FlashWrite                     0xc5   0x14  Code  Gb  flash_loader_user.o [1]
+FlashWriteEntry               0x885         Code  Gb  flash_loader_asm.o [1]
+GPIO_AF_Set                   0x101   0x26  Code  Gb  sys.o [1]
+GPIO_Set                      0x127   0x92  Code  Gb  sys.o [1]
+QSPI_Init                     0x5af  0x124  Code  Gb  qspi.o [1]
+QSPI_Receive                  0x74b   0x90  Code  Gb  qspi.o [1]
+QSPI_Send_CMD                 0x6d3   0x78  Code  Gb  qspi.o [1]
+QSPI_Transmit                 0x7db   0x7c  Code  Gb  qspi.o [1]
+QSPI_Wait_Flag                0x585   0x2a  Code  Gb  qspi.o [1]
+Stm32_Clock_Init              0x33f   0x3a  Code  Gb  sys.o [1]
+Sys_Clock_Set                 0x231  0x10e  Code  Gb  sys.o [1]
+W25QXX_Erase_Sector           0x517   0x68  Code  Gb  w25qxx.o [1]
+W25QXX_Init                   0x457   0x40  Code  Gb  w25qxx.o [1]
+W25QXX_QPI_MODE              0xfbfc    0x1  Data  Gb  w25qxx.o [1]
+W25QXX_Qspi_Disable           0x441   0x16  Code  Gb  w25qxx.o [1]
+W25QXX_Qspi_Enable            0x3f5   0x4c  Code  Gb  w25qxx.o [1]
+W25QXX_ReadSR                 0x39d   0x40  Code  Gb  w25qxx.o [1]
+W25QXX_Write                  0x49f   0x78  Code  Gb  w25qxx.o [1]
+W25QXX_Write_Enable           0x3dd   0x18  Code  Gb  w25qxx.o [1]
+__argc                       0xfba0    0x4  Data  Gb  flash_loader.o [1]
+__argv                       0xfba4   0x14  Data  Gb  flash_loader.o [1]
+__argvbuf                    0xfbb8   0x40  Data  Gb  flash_loader.o [1]
+__vector_table                  0x0         Data  Gb  flash_loader_asm.o [1]
+base_addr                    0xfbf8    0x4  Data  Gb  flash_loader_user.o [1]
+frameworkVersion               0xa6    0x2  Data  Gb  flash_loader.o [1]
+theFlashParams               0xfb8c   0x14  Data  Gb  flash_loader.o [1]
+
+
+[1] = F:\WQA\ISP\FlashLoader\IAR\Debug\Obj
+[2] = rt7M_tl.a
+
+  2'202 bytes of readonly  code memory
+      2 bytes of readonly  data memory
+  1'137 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
