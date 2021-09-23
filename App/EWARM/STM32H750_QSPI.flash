@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\STM32H750_QSPI.out</exe>
+  <page>256</page>
+  <block>8192 0x1000</block>	<!-- 块4K 8192块   32M Flash -->
+  <flash_base>0x90000000</flash_base>
+  <aggregate>1</aggregate>
+</flash_device>
