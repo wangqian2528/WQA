@@ -1,17 +1,13 @@
 /*
 *********************************************************************************************************
-*
-*	ģ������ : ThreadX�ں������ļ�
-*	�ļ����� : tx_user.h
-*	��    �� : V1.0
-*	˵    �� : �ں������ļ�
-*
-*	�޸ļ�¼ :
-*		�汾��    ����        ����     ˵��
-*		V1.0    2020-06-04  Eric2013   �״η���
-*
-*	Copyright (C), 2020-2030, ���������� www.armfly.com
-*
+*    @Brief   : ThreadX内核配置文件
+*    @Name    : tx_user.h
+*    @Version : V1.0
+*    @Note    : 内核配置文件
+*    @Logs    :
+*    Date            Author       Notes
+*    2021-08-19      Walker       Initial version.
+*    Copyright (c) 2021, <m18962063673@163.com>
 *********************************************************************************************************
 */
 
@@ -20,11 +16,11 @@
 
 /*
 *********************************************************************************************************
-*                                           �궨��
+*                                           宏定义
 *********************************************************************************************************
 */
 /*   
-   ����ٶ��Ż���Ҫ������ѡ�� :
+   最快速度优化需要开启的选项 :
 
         TX_MAX_PRIORITIES                       32
         TX_DISABLE_PREEMPTION_THRESHOLD
@@ -36,7 +32,7 @@
         TX_DISABLE_STACK_FILLING
         TX_INLINE_THREAD_RESUME_SUSPEND
    
-   ��С�����Ż���Ҫ������ѡ��:
+   最小代码优化需要开启的选项:
    
         TX_MAX_PRIORITIES                       32
         TX_DISABLE_PREEMPTION_THRESHOLD
@@ -47,7 +43,7 @@
  */
 
 
-/* ����tx_port.h ����ĺ궨��  */
+/* 覆盖tx_port.h 里面的宏定义  */
 /*
 #define TX_MAX_PRIORITIES                       32
 #define TX_MINIMUM_STACK                        ????
@@ -57,35 +53,48 @@
 */
 
 /* 
-   ȷ����ʱ���Ƿ��ڵĴ���������Ӧ�ö�ʱ�������ʱ��ͺ���tx_thread_sleep���õȣ�����ϵͳ��ʱ���������滹���ڶ�ʱ���ж�������á�
-   Ĭ�����ڶ�ʱ�������棬�����������溯���󣬽�ֱ���ڶ�ʱ���ж����洦��������ȥ����ʱ��������������Դ�� */
+   
+确定定时器是否到期的处理，比如应用定时器，溢出时间和函数tx_thread_sleep调用等，是在�
+�统定时器任务里面还是在定时器中断里面调用。
+   
+默认是在定时任务里面，当定义了下面函数后，将直接在定时器中断里面处理，可以去掉�
+�时器任务所消耗资源。 */
 //#define TX_TIMER_PROCESS_IN_ISR
 
 
-/* �������ö�ʱ�������Ƿ����������ʽ��Ĭ�ϴ˹����ǹرյġ����ʹ�ܺ�������ʽ��ִ���ٶȿ죬�����Ӵ����� */
+/* 
+用于设置定时器激活是否采用内联方式，默认此功能是关闭的。如果使能后，内联方式的�
+�行速度快，但增加代码量 */
 //#define TX_REACTIVATE_INLINE
 
 
-/* ���������Ƿ�ر�ջ��䣬Ĭ���������ʹ�ܵģ����������ջ�ռ�ȫ�����Ϊ0xEF��
-*  ����ThreadX���������������ʱջ�����õ���
+/* 用于设置是否关闭栈填充，默认情况下是使能的，所有任务的栈空间全部填充为0xEF，
+*  带有ThreadX调试组件或者运行时栈检测会用到。
 */
 //#define TX_DISABLE_STACK_FILLING
 
 
-/* ����ʹ��ջ��⣬Ĭ���ǹرյġ���ѡ��ʹ�ܺ󣬶�TX_DISABLE_STACK_FILLINGûʹ��ʱ��ջ��佫����������ջ��� */
+/* 
+用于使能栈检测，默认是关闭的。此选项使能后，而TX_DISABLE_STACK_FILLING没使能时，栈填充�
+�开启，方便栈检测 */
 //#define TX_ENABLE_STACK_CHECKING
 
 
-/* ���������Ƿ�ر���ռ��ֵ��Ĭ���ǿ����ġ����Ӧ�ó�����Ҫ�˹��ܣ��رպ���Խ��ʹ��������������� */
+/* 
+用于设置是否关闭抢占阀值，默认是开启的。如果应用程序不需要此功能，关闭后可以降�
+�代码需求，提升性能 */
 //#define TX_DISABLE_PREEMPTION_THRESHOLD
 
 
-/* ���������Ƿ�����ThreadXȫ�ֱ������������������������ThreadX����ǰ�����.bss�Σ���ô���Թرղ���Ҫ������ */
+/* 用于设置是否清零ThreadX全局变量，如果编译器启动代码在ThreadX运行前清除了.
+bss段，那么可以关闭不必要的清零 */
 //#define TX_DISABLE_REDUNDANT_CLEARING
 
 
-/* ȷ���Ƿ���Ҫ��ʱ���飬��ֹ����Ҫ�û�ע�͵�tx_initialize_low_level�ļ�����tx_timer_interrupt�ĵ��á�
-   ���⣬��ֹ�󣬱���ʹ��TX_TIMER_PROCESS_IN_ISR */
+/* 
+确定是否不需要定时器组，禁止后需要用户注释掉tx_initialize_low_level文件里面tx_timer_interrupt
+的调用。
+   另外，禁止后，必须使能TX_TIMER_PROCESS_IN_ISR */
 /*
 #define TX_NO_TIMER
 #ifndef TX_TIMER_PROCESS_IN_ISR
@@ -94,52 +103,54 @@
 */
 
 
-/* ���������Ƿ�ر�֪ͨ�ص���Ĭ����ʹ�ܵġ����Ӧ�ó���û���õ���Ϣ�ص����رյ�����Լ�С���룬���ҿ����������ܡ� */
+/* 
+用于设置是否关闭通知回调，默认是使能的。如果应用程序没有用到消息回调，关闭掉后�
+�以减小代码，并且可以提升性能。 */
 //#define TX_DISABLE_NOTIFY_CALLBACKS
 
 
-/* ʹ��tx_thread_resume��tx_thread_suspendʹ���������룬����������������������ִ�����ܣ����������Ӵ����� */
+/* 
+使能tx_thread_resume和tx_thread_suspend使用内联代码，优势是提升这两个函数的执行性能，劣势�
+�增加代码量 */
 //#define TX_INLINE_THREAD_RESUME_SUSPEND
 
 
-/* ����TreadX�ں˲����жϣ��ô��ǽ��ʹ������������Ҳ����Ĵ���С����������ʱ�� */
+/* 设置TreadX内核不可中断，好处是降低处理负担，并且产生的代码小。但增加锁时间 */
 //#define TX_NOT_INTERRUPTABLE
 
 
-/* ʹ���¼�Trace������΢���ӵ���� */
+/* 使能事件Trace，会稍微增加点代码 */
 //#define TX_ENABLE_EVENT_TRACE
 
 
-/* ʹ��BLOCK_POOL��Ϣ��ȡ */
+/* 使能BLOCK_POOL信息获取 */
 //#define TX_BLOCK_POOL_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ��BYTE_POOL��Ϣ��ȡ */
+/* 使能BYTE_POOL信息获取 */
 //#define TX_BYTE_POOL_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ���¼���־��Ϣ��ȡ */
+/* 使能事件标志信息获取 */
 //#define TX_EVENT_FLAGS_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ�ܻ����ź�����Ϣ��ȡ  */
+/* 使能互斥信号量信息获取  */
 //#define TX_MUTEX_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ����Ϣ������Ϣ��ȡ */
+/* 使能消息对象信息获取 */
 //#define TX_QUEUE_ENABLE_PERFORMANCE_INFO
 
-/* ʹ���ź�����Ϣ��ȡ  */
+/* 使能信号量信息获取  */
 //#define TX_SEMAPHORE_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ��������Ϣ��ȡ */
+/* 使能任务信息获取 */
 //#define TX_THREAD_ENABLE_PERFORMANCE_INFO
 
 
-/* ʹ�ܶ�ʱ����Ϣ��ȡ */
+/* 使能定时器信息获取 */
 //#define TX_TIMER_ENABLE_PERFORMANCE_INFO
 
 #endif
-
-/***************************** ���������� www.armfly.com (END OF FILE) *********************************/

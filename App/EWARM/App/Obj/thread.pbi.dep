@@ -44,6 +44,7 @@ thread.pbi: F:\WQA\App\Core\Src\thread.c \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dma.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_mdma.h \
+  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dma2d.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_exti.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_cortex.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_flash.h \
@@ -59,4 +60,13 @@ thread.pbi: F:\WQA\App\Core\Src\thread.c \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_uart.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
-  F:\WQA\App\EWARM\..\Bsp\inc/bsp_dwt.h
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_dwt.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_eeprom.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_touch.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_lcd.h \
+  F:\WQA\App\EWARM\..\GUI\App\gui_task.h \
+  F:\WQA\App\EWARM\..\GUI\gx_user.h \
+  F:\WQA\App\EWARM\..\GUI\common\inc\gx_api.h \
+  F:\WQA\App\EWARM\..\GUI\ports\inc\gx_port.h \
+  F:\WQA\App\EWARM\..\GUI\App/GUI_resources.h \
+  F:\WQA\App\EWARM\..\GUI\App/GUI_specifications.h

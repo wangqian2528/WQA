@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma2d.h"
 #include "ltdc.h"
 #include "usart.h"
 #include "gpio.h"
@@ -99,6 +100,7 @@ int main(void)
   MX_GPIO_Init();
   MX_LTDC_Init();
   MX_UART4_Init();
+  MX_DMA2D_Init();
   /* USER CODE BEGIN 2 */
   tx_kernel_enter();
   /* USER CODE END 2 */

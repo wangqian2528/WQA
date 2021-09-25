@@ -30,6 +30,7 @@ bsp_dwt.pbi: F:\WQA\App\Bsp\src\bsp_dwt.c \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dma.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_mdma.h \
+  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dma2d.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_exti.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_cortex.h \
   F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_flash.h \
@@ -50,4 +51,8 @@ bsp_dwt.pbi: F:\WQA\App\Bsp\src\bsp_dwt.c \
   D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
   D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
   D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
-  F:\WQA\App\EWARM\..\Bsp\inc/bsp_dwt.h
+  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdbool.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_dwt.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_eeprom.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_touch.h \
+  F:\WQA\App\EWARM\..\Bsp\inc/bsp_lcd.h

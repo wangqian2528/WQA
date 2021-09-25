@@ -19,10 +19,13 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
 
 /* 含底层驱动模块*/
 #include "bsp_dwt.h"
-
+#include "bsp_eeprom.h"
+#include "bsp_touch.h"
+#include "bsp_lcd.h"
 
 /* 开关全局中断的宏 */
 #define  ENABLE_INT()    __set_PRIMASK(0)    /* 使能全局中断 */

@@ -28,6 +28,14 @@ F:\WQA\App\EWARM\..\RTOS\ports\inc
 -I
 F:\WQA\App\EWARM\..\Bsp\inc
 -I
+F:\WQA\App\EWARM\..\GUI\common\inc
+-I
+F:\WQA\App\EWARM\..\GUI\ports\inc
+-I
+F:\WQA\App\EWARM\..\GUI
+-I
+F:\WQA\App\EWARM\..\GUI\App
+-I
 D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
 -I
 D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc\c
@@ -49,6 +57,14 @@ F:\WQA\App\RTOS\common\inc
 F:\WQA\App\RTOS\ports\inc
 -I
 F:\WQA\App\Bsp\inc
+-I
+F:\WQA\App\GUI\common\inc
+-I
+F:\WQA\App\GUI\ports\inc
+-I
+F:\WQA\App\GUI
+-I
+F:\WQA\App\GUI\App
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -347,6 +363,7 @@ F:\WQA\App\Bsp\inc
 -DTX_ENABLE_FPU_SUPPORT=1
 -DTX_ENABLE_STACK_CHECKING=1
 -DTX_INCLUDE_USER_DEFINE_FILE=1
+-DGX_INCLUDE_USER_DEFINE_FILE=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
 -D_DLIB_CONFIG_FILE_STRING="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V8.40.1.212/W32 for ARM"

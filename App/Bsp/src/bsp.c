@@ -24,8 +24,7 @@
 void bsp_Init(void)
 {
     bsp_InitDWT();  /* 初始化DWT时钟周期计数器 */
-
-
+    bsp_InitTouch();
 }
 
 /*
@@ -38,5 +37,5 @@ void bsp_Init(void)
 */
 void bsp_RunPer1ms(void)
 {
-    
+    bsp_TouchScan(0);
 }
