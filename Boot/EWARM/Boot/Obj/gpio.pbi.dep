@@ -40,4 +40,6 @@ gpio.pbi: F:\WQA\Boot\Core\Src\gpio.c \
   F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
   F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_pwr.h \
   F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
-  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_qspi.h
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_qspi.h \
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rtc.h \
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h

@@ -23,6 +23,7 @@ rule browsedata
 build gpio.pbi : index gpio.xcl
 build main.pbi : index main.xcl
 build quadspi.pbi : index quadspi.xcl
+build rtc.pbi : index rtc.xcl
 build stm32h7xx_hal_msp.pbi : index stm32h7xx_hal_msp.xcl
 build stm32h7xx_it.pbi : index stm32h7xx_it.xcl
 build w25qxx.pbi : index w25qxx.xcl
@@ -44,14 +45,16 @@ build stm32h7xx_hal_pwr_ex.pbi : index stm32h7xx_hal_pwr_ex.xcl
 build stm32h7xx_hal_qspi.pbi : index stm32h7xx_hal_qspi.xcl
 build stm32h7xx_hal_rcc.pbi : index stm32h7xx_hal_rcc.xcl
 build stm32h7xx_hal_rcc_ex.pbi : index stm32h7xx_hal_rcc_ex.xcl
+build stm32h7xx_hal_rtc.pbi : index stm32h7xx_hal_rtc.xcl
+build stm32h7xx_hal_rtc_ex.pbi : index stm32h7xx_hal_rtc_ex.xcl
 build stm32h7xx_hal_tim.pbi : index stm32h7xx_hal_tim.xcl
 build stm32h7xx_hal_tim_ex.pbi : index stm32h7xx_hal_tim_ex.xcl
-build Boot_part0.pbi : link gpio.pbi main.pbi quadspi.pbi stm32h7xx_hal_msp.pbi stm32h7xx_it.pbi
-build Boot_part1.pbi : link w25qxx.pbi system_stm32h7xx.pbi stm32h7xx_hal.pbi stm32h7xx_hal_cortex.pbi stm32h7xx_hal_dma.pbi
-build Boot_part2.pbi : link stm32h7xx_hal_dma_ex.pbi stm32h7xx_hal_exti.pbi stm32h7xx_hal_flash.pbi stm32h7xx_hal_flash_ex.pbi stm32h7xx_hal_gpio.pbi
-build Boot_part3.pbi : link stm32h7xx_hal_hsem.pbi stm32h7xx_hal_i2c.pbi stm32h7xx_hal_i2c_ex.pbi stm32h7xx_hal_mdma.pbi stm32h7xx_hal_pwr.pbi
-build Boot_part4.pbi : link stm32h7xx_hal_pwr_ex.pbi stm32h7xx_hal_qspi.pbi stm32h7xx_hal_rcc.pbi stm32h7xx_hal_rcc_ex.pbi stm32h7xx_hal_tim.pbi
-build Boot_part5.pbi : link stm32h7xx_hal_tim_ex.pbi
+build Boot_part0.pbi : link gpio.pbi main.pbi quadspi.pbi rtc.pbi stm32h7xx_hal_msp.pbi
+build Boot_part1.pbi : link stm32h7xx_it.pbi w25qxx.pbi system_stm32h7xx.pbi stm32h7xx_hal.pbi stm32h7xx_hal_cortex.pbi
+build Boot_part2.pbi : link stm32h7xx_hal_dma.pbi stm32h7xx_hal_dma_ex.pbi stm32h7xx_hal_exti.pbi stm32h7xx_hal_flash.pbi stm32h7xx_hal_flash_ex.pbi
+build Boot_part3.pbi : link stm32h7xx_hal_gpio.pbi stm32h7xx_hal_hsem.pbi stm32h7xx_hal_i2c.pbi stm32h7xx_hal_i2c_ex.pbi stm32h7xx_hal_mdma.pbi
+build Boot_part4.pbi : link stm32h7xx_hal_pwr.pbi stm32h7xx_hal_pwr_ex.pbi stm32h7xx_hal_qspi.pbi stm32h7xx_hal_rcc.pbi stm32h7xx_hal_rcc_ex.pbi
+build Boot_part5.pbi : link stm32h7xx_hal_rtc.pbi stm32h7xx_hal_rtc_ex.pbi stm32h7xx_hal_tim.pbi stm32h7xx_hal_tim_ex.pbi
 build Boot.pbd : link Boot_part0.pbi Boot_part1.pbi Boot_part2.pbi Boot_part3.pbi Boot_part4.pbi Boot_part5.pbi
 build Boot.pbw : browsedata Boot.pbd
 
