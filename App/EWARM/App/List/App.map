@@ -1,0 +1,1106 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  14/Oct/2021  17:38:24
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =  F:\WQA\App\EWARM\App\Exe\App.out
+#    Map file     =  F:\WQA\App\EWARM\App\List\App.map
+#    Command line =
+#        -f C:\Users\walker\AppData\Local\Temp\EW48BA.tmp
+#        (F:\WQA\App\EWARM\App\Obj\gpio.o F:\WQA\App\EWARM\App\Obj\main.o
+#        F:\WQA\App\EWARM\App\Obj\rtc.o
+#        F:\WQA\App\EWARM\App\Obj\startup_stm32h750xx.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_cortex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_dma.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_dma_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_exti.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_flash.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_flash_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_gpio.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_hsem.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_i2c.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_i2c_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_mdma.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_msp.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_pwr.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_pwr_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_rcc.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_rcc_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_rtc.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_rtc_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_tim.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_tim_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_timebase_tim.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_uart.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_hal_uart_ex.o
+#        F:\WQA\App\EWARM\App\Obj\stm32h7xx_it.o
+#        F:\WQA\App\EWARM\App\Obj\system_stm32h7xx.o
+#        F:\WQA\App\EWARM\App\Obj\task.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_allocate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_pool_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_block_release.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_allocate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_pool_search.o
+#        F:\WQA\App\EWARM\App\Obj\tx_byte_release.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_set.o
+#        F:\WQA\App\EWARM\App\Obj\tx_event_flags_set_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_iar.o
+#        F:\WQA\App\EWARM\App\Obj\tx_initialize_high_level.o
+#        F:\WQA\App\EWARM\App\Obj\tx_initialize_kernel_enter.o
+#        F:\WQA\App\EWARM\App\Obj\tx_initialize_kernel_setup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_initialize_low_level.o
+#        F:\WQA\App\EWARM\App\Obj\tx_misra.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_priority_change.o
+#        F:\WQA\App\EWARM\App\Obj\tx_mutex_put.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_flush.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_front_send.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_receive.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_send.o
+#        F:\WQA\App\EWARM\App\Obj\tx_queue_send_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_ceiling_put.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_cleanup.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_put.o
+#        F:\WQA\App\EWARM\App\Obj\tx_semaphore_put_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_context_restore.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_context_save.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_entry_exit_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_identify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_interrupt_control.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_interrupt_disable.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_interrupt_restore.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_preemption_change.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_priority_change.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_relinquish.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_reset.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_resume.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_schedule.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_shell_entry.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_sleep.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_stack_analyze.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_stack_build.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_stack_error_handler.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_stack_error_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_suspend.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_system_preempt_check.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_system_resume.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_system_return.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_system_suspend.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_terminate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_time_slice.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_time_slice_change.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_timeout.o
+#        F:\WQA\App\EWARM\App\Obj\tx_thread_wait_abort.o
+#        F:\WQA\App\EWARM\App\Obj\tx_time_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_time_set.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_activate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_change.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_create.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_deactivate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_delete.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_expiration_process.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_interrupt.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_performance_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_performance_system_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_system_activate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_system_deactivate.o
+#        F:\WQA\App\EWARM\App\Obj\tx_timer_thread_entry.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_buffer_full_notify.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_disable.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_enable.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_event_filter.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_event_unfilter.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_initialize.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_interrupt_control.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_isr_enter_insert.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_isr_exit_insert.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_object_register.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_object_unregister.o
+#        F:\WQA\App\EWARM\App\Obj\tx_trace_user_event_insert.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_allocate.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_pool_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_pool_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_pool_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_pool_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\txe_block_release.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_allocate.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_pool_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_pool_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_pool_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_pool_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\txe_byte_release.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_set.o
+#        F:\WQA\App\EWARM\App\Obj\txe_event_flags_set_notify.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\txe_mutex_put.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_flush.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_front_send.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_receive.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_send.o
+#        F:\WQA\App\EWARM\App\Obj\txe_queue_send_notify.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_ceiling_put.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_prioritize.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_put.o
+#        F:\WQA\App\EWARM\App\Obj\txe_semaphore_put_notify.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_entry_exit_notify.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_preemption_change.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_priority_change.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_relinquish.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_reset.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_resume.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_suspend.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_terminate.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_time_slice_change.o
+#        F:\WQA\App\EWARM\App\Obj\txe_thread_wait_abort.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_activate.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_change.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_create.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_deactivate.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_delete.o
+#        F:\WQA\App\EWARM\App\Obj\txe_timer_info_get.o
+#        F:\WQA\App\EWARM\App\Obj\usart.o --redirect _Printf=_PrintfFull
+#        --redirect _Scanf=_ScanfFull --no_out_extension -o
+#        F:\WQA\App\EWARM\App\Exe\App.out --map
+#        F:\WQA\App\EWARM\App\List\App.map --config
+#        F:\WQA\App\EWARM/stm32h750xx_flash.icf --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x9000'0000 { ro section .intvec };
+"P1":  place in [from 0x9000'0000 to 0x91ff'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"P2", part 1 of 3:                           0xe0
+  P2-1                        0x2000'0000    0xe0  <Init block>
+    .data            inited   0x2000'0000     0xc  stm32h7xx_hal.o [1]
+    .data            inited   0x2000'000c     0x8  system_stm32h7xx.o [1]
+    .data            inited   0x2000'0014     0x4  tx_thread_initialize.o [1]
+    .data            inited   0x2000'0018    0x38  xlocale_c.o [2]
+    .data            inited   0x2000'0050    0x48  xlocale_c.o [2]
+    .data            inited   0x2000'0098    0x48  xfiles.o [2]
+                            - 0x2000'00e0    0xe0
+
+"P2", part 2 of 3:                         0x5430
+  .bss               zero     0x2000'00e0  0x4c80  task.o [1]
+  .bss               zero     0x2000'4d60   0x568  tx_timer_initialize.o [1]
+  .bss               zero     0x2000'52c8    0xac  tx_thread_initialize.o [1]
+  .bss               zero     0x2000'5374    0x90  usart.o [1]
+  .bss               zero     0x2000'5404    0x50  xfiles.o [2]
+  .bss               zero     0x2000'5454    0x4c  stm32h7xx_hal_timebase_tim.o [1]
+  .bss               zero     0x2000'54a0    0x30  tx_initialize_high_level.o [1]
+  .bss               zero     0x2000'54d0    0x24  rtc.o [1]
+  FREE_MEM           zero     0x2000'54f4    0x10  tx_initialize_low_level.o [1]
+  .bss               zero     0x2000'5504     0x4  tx_initialize_high_level.o [1]
+  .bss               zero     0x2000'5508     0x4  tx_thread_initialize.o [1]
+  .bss               zero     0x2000'550c     0x4  xfail_s.o [2]
+                            - 0x2000'5510  0x5430
+
+"P2", part 3 of 3:                         0x2000
+  CSTACK                      0x2000'5510  0x2000  <Block>
+    CSTACK           uninit   0x2000'5510  0x2000  <Block tail>
+                            - 0x2000'7510  0x2000
+
+"A0":                                       0x298
+  .intvec            ro code  0x9000'0000   0x298  startup_stm32h750xx.o [1]
+                            - 0x9000'0298   0x298
+
+"P1":                                      0x638b
+  .text              ro code  0x9000'0298  0x10c6  xprintffull.o [2]
+  .text              ro code  0x9000'135e    0x3a  zero_init3.o [4]
+  .text              ro code  0x9000'1398    0x7c  xlocale_c.o [2]
+  .text              ro code  0x9000'1414    0x16  strchr.o [4]
+  .text              ro code  0x9000'142a    0x1e  xencoding_8859_1.o [2]
+  .text              ro code  0x9000'1448    0x40  xfail_s.o [2]
+  .text              ro code  0x9000'1488    0x36  strlen.o [4]
+  .text              ro code  0x9000'14be    0x1a  xsnprout.o [2]
+  .text              ro code  0x9000'14d8    0x58  memchr.o [4]
+  .text              ro code  0x9000'1530    0xa6  ABImemcpy.o [4]
+  .rodata            const    0x9000'15d6     0x2  xlocale_c.o [2]
+  .text              ro code  0x9000'15d8    0x70  frexp.o [3]
+  .text              ro code  0x9000'1648    0x2e  DblCmpLe.o [3]
+  .rodata            const    0x9000'1676     0x2  xlocale_c.o [2]
+  .text              ro code  0x9000'1678    0x2e  DblCmpGe.o [3]
+  .rodata            const    0x9000'16a6     0x1  xlocale_c.o [2]
+  .text              ro code  0x9000'16a8   0x104  ldexp.o [3]
+  .text              ro code  0x9000'17ac     0xe  DblToS32.o [3]
+  .text              ro code  0x9000'17ba     0xe  S32ToDbl.o [3]
+  .text              ro code  0x9000'17c8    0x12  DblSub.o [3]
+  .text              ro code  0x9000'17da    0x12  DblDiv.o [3]
+  .text              ro code  0x9000'17ec     0xe  DblToU32.o [3]
+  .text              ro code  0x9000'17fa     0xe  U32ToDbl.o [3]
+  .text              ro code  0x9000'1808    0x12  DblMul.o [3]
+  .text              ro code  0x9000'181a     0xa  xmbcurmax.o [2]
+  .text              ro code  0x9000'1824   0x106  I64DivMod_small.o [4]
+  .text              ro code  0x9000'192a     0x6  abort.o [2]
+  .text              ro code  0x9000'1930     0x2  I64DivZer.o [4]
+  .text              ro code  0x9000'1934    0x14  exit.o [5]
+  .text              ro code  0x9000'1948   0xb20  stm32h7xx_hal_rcc_ex.o [1]
+  .text              ro code  0x9000'2468     0xc  stm32h7xx_hal.o [1]
+  .text              ro code  0x9000'2474   0x8b4  stm32h7xx_hal_rcc.o [1]
+  .text              ro code  0x9000'2d28    0xac  stm32h7xx_hal_timebase_tim.o [1]
+  .text              ro code  0x9000'2dd4    0x68  stm32h7xx_hal.o [1]
+  .text              ro code  0x9000'2e3c   0x11c  stm32h7xx_hal_cortex.o [1]
+  .text              ro code  0x9000'2f58   0x342  stm32h7xx_hal_tim.o [1]
+  .text              ro code  0x9000'329c    0x20  stm32h7xx_hal_msp.o [1]
+  .text              ro code  0x9000'32bc     0x2  stm32h7xx_hal_tim.o [1]
+  .text              ro code  0x9000'32be     0x2  stm32h7xx_hal_tim.o [1]
+  .text              ro code  0x9000'32c0   0x220  main.o [1]
+  .text              ro code  0x9000'34e0     0x2  stm32h7xx_hal_tim_ex.o [1]
+  .text              ro code  0x9000'34e2     0x2  stm32h7xx_hal_tim_ex.o [1]
+  .text              ro code  0x9000'34e4     0x2  stm32h7xx_hal_tim.o [1]
+  .text              ro code  0x9000'34e6     0x2  stm32h7xx_hal_tim_ex.o [1]
+  .text              ro code  0x9000'34e8     0x2  stm32h7xx_hal_tim.o [1]
+  .text              ro code  0x9000'34ec    0x98  gpio.o [1]
+  .text              ro code  0x9000'3584    0xec  rtc.o [1]
+  .text              ro code  0x9000'3670   0x110  usart.o [1]
+  .text              ro code  0x9000'3780    0x44  tx_initialize_kernel_enter.o [1]
+  .text              ro code  0x9000'37c4     0x6  ABImemclr4.o [4]
+  .text              ro code  0x9000'37cc    0x48  stm32h7xx_hal_pwr_ex.o [1]
+  .text              ro code  0x9000'3814    0x10  stm32h7xx_hal_pwr.o [1]
+  .text              ro code  0x9000'3824    0x10  stm32h7xx_hal.o [1]
+  .text              ro code  0x9000'3834    0x14  memset.o [4]
+  .text              ro code  0x9000'3848   0x210  stm32h7xx_hal_gpio.o [1]
+  .text              ro code  0x9000'3a58   0x2de  stm32h7xx_hal_rtc.o [1]
+  .text              ro code  0x9000'3d38    0x1c  stm32h7xx_hal_rtc_ex.o [1]
+  .text              ro code  0x9000'3d54   0x70c  stm32h7xx_hal_uart.o [1]
+  .text              ro code  0x9000'4460    0xf4  stm32h7xx_hal_uart_ex.o [1]
+  .text              ro code  0x9000'4554    0x74  tx_initialize_low_level.o [1]
+  .text              ro code  0x9000'45c8    0x2c  tx_initialize_high_level.o [1]
+  .text              ro code  0x9000'45f4   0x364  task.o [1]
+  .text              ro code  0x9000'4958    0xc0  tx_thread_schedule.o [1]
+  .text              ro code  0x9000'4a18    0x32  ABImemset48.o [4]
+  .text              ro code  0x9000'4a4c    0x12  ABImemset_small.o [4]
+  .text              ro code  0x9000'4a60    0xb8  tx_timer_interrupt.o [1]
+  .text              ro code  0x9000'4b18    0x40  tx_thread_initialize.o [1]
+  .text              ro code  0x9000'4b58    0x94  tx_timer_initialize.o [1]
+  .text              ro code  0x9000'4bec   0x140  txe_thread_create.o [1]
+  .text              ro code  0x9000'4d2c    0x80  tx_thread_sleep.o [1]
+  .text              ro code  0x9000'4dac    0xb8  txe_mutex_create.o [1]
+  .text              ro code  0x9000'4e64    0x3c  vsnprint.o [2]
+  .text              ro code  0x9000'4ea0    0x60  txe_mutex_get.o [1]
+  .text              ro code  0x9000'4f00    0x28  printf.o [2]
+  .text              ro code  0x9000'4f28    0x38  txe_mutex_put.o [1]
+  .text              ro code  0x9000'4f60    0x20  tx_timer_expiration_process.o [1]
+  .text              ro code  0x9000'4f80   0x13c  tx_thread_time_slice.o [1]
+  .text              ro code  0x9000'50bc   0x148  tx_thread_create.o [1]
+  .text              ro code  0x9000'5204    0xb4  tx_thread_system_preempt_check.o [1]
+  .text              ro code  0x9000'52b8   0x294  tx_thread_system_suspend.o [1]
+  .text              ro code  0x9000'554c    0x60  tx_mutex_create.o [1]
+  .text              ro code  0x9000'55ac   0x108  tx_mutex_get.o [1]
+  .text              ro code  0x9000'56b4   0x1c0  tx_mutex_put.o [1]
+  .text              ro code  0x9000'5874   0x276  tx_thread_system_resume.o [1]
+  .text              ro code  0x9000'5aec    0x1c  tx_thread_stack_error_handler.o [1]
+  .text              ro code  0x9000'5b08    0x7c  tx_thread_stack_analyze.o [1]
+  .text              ro code  0x9000'5b84    0x44  tx_thread_stack_build.o [1]
+  .text              ro code  0x9000'5bc8    0x60  tx_timer_system_activate.o [1]
+  .text              ro code  0x9000'5c28    0xc8  tx_mutex_priority_change.o [1]
+  .text              ro code  0x9000'5cf0    0x9c  tx_mutex_prioritize.o [1]
+  .text              ro code  0x9000'5d8c    0x2c  tx_timer_system_deactivate.o [1]
+  .text              ro code  0x9000'5db8   0x104  tx_timer_thread_entry.o [1]
+  .rodata            const    0x9000'5ebc   0x100  task.o [1]
+  .text              ro code  0x9000'5fbc    0xe0  system_stm32h7xx.o [1]
+  .text              ro code  0x9000'609c    0xbc  tx_mutex_cleanup.o [1]
+  .text              ro code  0x9000'6158    0x7c  tx_thread_shell_entry.o [1]
+  .text              ro code  0x9000'61d4    0x78  lz77_init_single.o [4]
+  .text              ro code  0x9000'624c    0x34  tx_thread_timeout.o [1]
+  .rodata            const    0x9000'6280    0x28  task.o [1]
+  .text              ro code  0x9000'62a8    0x28  data_init.o [4]
+  .text              ro code  0x9000'62d0    0x22  fpinit_M.o [3]
+  .iar.init_table    const    0x9000'62f4    0x20  - Linker created -
+  .text              ro code  0x9000'6314    0x1e  cmain.o [4]
+  .text              ro code  0x9000'6332     0x4  low_level_init.o [2]
+  .text              ro code  0x9000'6336     0x4  exit.o [2]
+  .text              ro code  0x9000'633c     0xa  cexit.o [4]
+  .text              ro code  0x9000'6348    0x18  stm32h7xx_it.o [1]
+  .text              ro code  0x9000'6360    0x16  xprout.o [2]
+  .text              ro code  0x9000'6378     0xc  putchar.o [2]
+  .text              ro code  0x9000'6384    0x10  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6394     0xc  cstartup_M.o [4]
+  .text              ro code  0x9000'63a0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63a4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63a8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63ac     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63b0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63b4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63b8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63bc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63c0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63c4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63c8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63cc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63d0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63d4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63d8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63dc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63e0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63e4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63e8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63ec     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63f0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63f4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63f8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'63fc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6400     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6404     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6408     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'640c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6410     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6414     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6418     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'641c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6420     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6424     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6428     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'642c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6430     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6434     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6438     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'643c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6440     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6444     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6448     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'644c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6450     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6454     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6458     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'645c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6460     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6464     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6468     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'646c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6470     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6474     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6478     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'647c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6480     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6484     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6488     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'648c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6490     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6494     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6498     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'649c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64a0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64a4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64a8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64ac     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64b0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64b4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64b8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64bc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64c0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64c4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64c8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64cc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64d0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64d4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64d8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64dc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64e0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64e4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64e8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64ec     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64f0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64f4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64f8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'64fc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6500     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6504     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6508     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'650c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6510     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6514     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6518     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'651c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6520     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6524     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6528     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'652c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6530     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6534     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6538     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'653c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6540     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6544     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6548     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'654c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6550     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6554     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6558     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'655c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6560     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6564     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6568     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'656c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6570     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6574     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6578     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'657c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6580     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6584     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6588     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'658c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6590     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6594     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'6598     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'659c     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65a0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65a4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65a8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65ac     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65b0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65b4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65b8     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65bc     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65c0     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65c4     0x4  startup_stm32h750xx.o [1]
+  .text              ro code  0x9000'65c8     0x4  startup_stm32h750xx.o [1]
+  .rodata            const    0x9000'65cc     0x0  zero_init3.o [4]
+  .rodata            const    0x9000'65cc     0x0  lz77_init_single.o [4]
+  Initializer bytes  const    0x9000'65cc    0x57  <for P2-1>
+                            - 0x9000'6623  0x638b
+
+Unused ranges:
+
+         From           To        Size
+         ----           --        ----
+  0x2000'7510  0x2001'ffff    0x1'8af0
+  0x9000'6623  0x91ff'ffff  0x1ff'99dd
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x5430:
+          0x2000'00e0  0x5430
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x57 (38% of destination):
+          0x9000'65cc    0x57
+    1 destination range, total size 0xe0:
+          0x2000'0000    0xe0
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                            ro code  ro data  rw data
+    ------                            -------  -------  -------
+command line/config:
+    -----------------------------------------------------------
+    Total:
+
+F:\WQA\App\EWARM\App\Obj: [1]
+    gpio.o                                152
+    main.o                                544
+    rtc.o                                 236                36
+    startup_stm32h750xx.o               1'236
+    stm32h7xx_hal.o                       132        4       12
+    stm32h7xx_hal_cortex.o                284
+    stm32h7xx_hal_gpio.o                  528
+    stm32h7xx_hal_msp.o                    32
+    stm32h7xx_hal_pwr.o                    16
+    stm32h7xx_hal_pwr_ex.o                 72
+    stm32h7xx_hal_rcc.o                 2'228
+    stm32h7xx_hal_rcc_ex.o              2'848
+    stm32h7xx_hal_rtc.o                   734
+    stm32h7xx_hal_rtc_ex.o                 28
+    stm32h7xx_hal_tim.o                   842
+    stm32h7xx_hal_tim_ex.o                  6
+    stm32h7xx_hal_timebase_tim.o          172                76
+    stm32h7xx_hal_uart.o                1'804
+    stm32h7xx_hal_uart_ex.o               244
+    stm32h7xx_it.o                         24
+    system_stm32h7xx.o                    224        3        8
+    task.o                                868      296   19'584
+    tx_initialize_high_level.o             44                52
+    tx_initialize_kernel_enter.o           68
+    tx_initialize_low_level.o             116                16
+    tx_mutex_cleanup.o                    188
+    tx_mutex_create.o                      96
+    tx_mutex_get.o                        264
+    tx_mutex_prioritize.o                 156
+    tx_mutex_priority_change.o            200
+    tx_mutex_put.o                        448
+    tx_thread_create.o                    328
+    tx_thread_initialize.o                 64        2      180
+    tx_thread_schedule.o                  192
+    tx_thread_shell_entry.o               124
+    tx_thread_sleep.o                     128
+    tx_thread_stack_analyze.o             124
+    tx_thread_stack_build.o                68
+    tx_thread_stack_error_handler.o        28
+    tx_thread_system_preempt_check.o      180
+    tx_thread_system_resume.o             630
+    tx_thread_system_suspend.o            660
+    tx_thread_time_slice.o                316
+    tx_thread_timeout.o                    52
+    tx_timer_expiration_process.o          32
+    tx_timer_initialize.o                 148             1'384
+    tx_timer_interrupt.o                  184
+    tx_timer_system_activate.o             96
+    tx_timer_system_deactivate.o           44
+    tx_timer_thread_entry.o               260
+    txe_mutex_create.o                    184
+    txe_mutex_get.o                        96
+    txe_mutex_put.o                        56
+    txe_thread_create.o                   320
+    usart.o                               272               144
+    -----------------------------------------------------------
+    Total:                             19'420      305   21'492
+
+dl7M_tlf.a: [2]
+    abort.o                                 6
+    exit.o                                  4
+    low_level_init.o                        4
+    printf.o                               40
+    putchar.o                              12
+    vsnprint.o                             60
+    xencoding_8859_1.o                     30
+    xfail_s.o                              64                 4
+    xfiles.o                                        28      152
+    xlocale_c.o                           124       55      128
+    xmbcurmax.o                            10
+    xprintffull.o                       4'294
+    xprout.o                               22
+    xsnprout.o                             26
+    -----------------------------------------------------------
+    Total:                              4'696       83      284
+
+m7M_tlv.a: [3]
+    DblCmpGe.o                             46
+    DblCmpLe.o                             46
+    DblDiv.o                               18
+    DblMul.o                               18
+    DblSub.o                               18
+    DblToS32.o                             14
+    DblToU32.o                             14
+    S32ToDbl.o                             14
+    U32ToDbl.o                             14
+    fpinit_M.o                             34
+    frexp.o                               112
+    ldexp.o                               260
+    -----------------------------------------------------------
+    Total:                                608
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                            6
+    ABImemcpy.o                           166
+    ABImemset48.o                          50
+    ABImemset_small.o                      18
+    I64DivMod_small.o                     262
+    I64DivZer.o                             2
+    cexit.o                                10
+    cmain.o                                30
+    cstartup_M.o                           12
+    data_init.o                            40
+    lz77_init_single.o                    120
+    memchr.o                               88
+    memset.o                               20
+    strchr.o                               22
+    strlen.o                               54
+    zero_init3.o                           58
+    -----------------------------------------------------------
+    Total:                                958
+
+shb_l.a: [5]
+    exit.o                                 20
+    -----------------------------------------------------------
+    Total:                                 20
+
+    Gaps                                   23        2
+    Linker created                                  32    8'192
+---------------------------------------------------------------
+    Grand Total:                       25'725      422   29'968
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base   0x9000'62f4           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x9000'6314           --   Gb  - Linker created -
+?main                   0x9000'6315          Code  Gb  cmain.o [4]
+AppPrintfSemp           0x2000'052c    0x34  Data  Lc  task.o [1]
+AppTaskCOM              0x9000'47bd    0x3a  Code  Lc  task.o [1]
+AppTaskCOMStk           0x2000'2560  0x1000  Data  Lc  task.o [1]
+AppTaskCOMTCB           0x2000'025c    0xb4  Data  Lc  task.o [1]
+AppTaskIDLE             0x9000'4851    0x14  Code  Lc  task.o [1]
+AppTaskIdleStk          0x2000'4560   0x400  Data  Lc  task.o [1]
+AppTaskIdleTCB          0x2000'03c4    0xb4  Data  Lc  task.o [1]
+AppTaskMsgPro           0x9000'473d    0x74  Code  Lc  task.o [1]
+AppTaskMsgProStk        0x2000'1560  0x1000  Data  Lc  task.o [1]
+AppTaskMsgProTCB        0x2000'01a8    0xb4  Data  Lc  task.o [1]
+AppTaskStart            0x9000'467d    0xa6  Code  Lc  task.o [1]
+AppTaskStartStk         0x2000'0560  0x1000  Data  Lc  task.o [1]
+AppTaskStartTCB         0x2000'00f4    0xb4  Data  Lc  task.o [1]
+AppTaskStat             0x9000'47f9    0x56  Code  Lc  task.o [1]
+AppTaskStatStk          0x2000'4960   0x400  Data  Lc  task.o [1]
+AppTaskStatTCB          0x2000'0478    0xb4  Data  Lc  task.o [1]
+AppTaskUserIF           0x9000'47b1     0xa  Code  Lc  task.o [1]
+AppTaskUserIFStk        0x2000'3560  0x1000  Data  Lc  task.o [1]
+AppTaskUserIFTCB        0x2000'0310    0xb4  Data  Lc  task.o [1]
+App_Printf              0x9000'4865    0x34  Code  Lc  task.o [1]
+BusFault_Handler        0x9000'634f     0x2  Code  Gb  stm32h7xx_it.o [1]
+CSTACK$$Base            0x2000'5510           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'7510           --   Gb  - Linker created -
+CacheMore               0x9000'139d    0x28  Code  Lc  xlocale_c.o [2]
+D1CorePrescTable        0x9000'608c    0x10  Data  Gb  system_stm32h7xx.o [1]
+DebugMon_Handler        0x9000'6355     0x2  Code  Gb  stm32h7xx_it.o [1]
+Error_Handler           0x9000'34dd     0x4  Code  Gb  main.o [1]
+HAL_GPIO_Init           0x9000'3849   0x1d2  Code  Gb  stm32h7xx_hal_gpio.o [1]
+HAL_GPIO_WritePin       0x9000'3a1b     0x8  Code  Gb  stm32h7xx_hal_gpio.o [1]
+HAL_GetREVID            0x9000'2e1f     0x8  Code  Gb  stm32h7xx_hal.o [1]
+HAL_GetTick             0x9000'2469     0xc  Code  Wk  stm32h7xx_hal.o [1]
+HAL_IncTick             0x9000'3825    0x10  Code  Wk  stm32h7xx_hal.o [1]
+HAL_Init                0x9000'2dd5    0x4a  Code  Gb  stm32h7xx_hal.o [1]
+HAL_InitTick            0x9000'2d29    0x7c  Code  Gb  stm32h7xx_hal_timebase_tim.o [1]
+HAL_MPU_ConfigRegion    0x9000'2ef1    0x4c  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_MPU_Disable         0x9000'2ec3    0x14  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_MPU_Enable          0x9000'2ed7    0x1a  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_MspInit             0x9000'329d    0x20  Code  Gb  stm32h7xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ      0x9000'2ead    0x16  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority    0x9000'2e71    0x3a  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_NVIC_SetPriorityGrouping
+                        0x9000'2e57    0x1a  Code  Gb  stm32h7xx_hal_cortex.o [1]
+HAL_PWREx_ConfigSupply  0x9000'37cd    0x44  Code  Gb  stm32h7xx_hal_pwr_ex.o [1]
+HAL_PWR_EnableBkUpAccess
+                        0x9000'3815     0xc  Code  Gb  stm32h7xx_hal_pwr.o [1]
+HAL_RCCEx_GetD3PCLK1Freq
+                        0x9000'20a5     0xa  Code  Gb  stm32h7xx_hal_rcc_ex.o [1]
+HAL_RCCEx_GetPLL2ClockFreq
+                        0x9000'20c5    0x58  Code  Gb  stm32h7xx_hal_rcc_ex.o [1]
+HAL_RCCEx_GetPLL3ClockFreq
+                        0x9000'211d    0x58  Code  Gb  stm32h7xx_hal_rcc_ex.o [1]
+HAL_RCCEx_PeriphCLKConfig
+                        0x9000'1949   0x726  Code  Gb  stm32h7xx_hal_rcc_ex.o [1]
+HAL_RCC_ClockConfig     0x9000'2475   0x1ac  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_GetClockConfig  0x9000'27df    0x4c  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq     0x9000'277b    0x34  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK1Freq    0x9000'27af    0x10  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK2Freq    0x9000'27bf     0xe  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_GetSysClockFreq
+                        0x9000'267d    0xf0  Code  Gb  stm32h7xx_hal_rcc.o [1]
+HAL_RCC_OscConfig       0x9000'286d   0x4bc  Code  Wk  stm32h7xx_hal_rcc.o [1]
+HAL_RTCEx_BKUPRead      0x9000'3d47     0xe  Code  Gb  stm32h7xx_hal_rtc_ex.o [1]
+HAL_RTCEx_BKUPWrite     0x9000'3d39     0xe  Code  Gb  stm32h7xx_hal_rtc_ex.o [1]
+HAL_RTC_Init            0x9000'3a59    0x96  Code  Gb  stm32h7xx_hal_rtc.o [1]
+HAL_RTC_MspInit         0x9000'3625    0x3e  Code  Gb  rtc.o [1]
+HAL_RTC_SetDate         0x9000'3bb7    0x9e  Code  Gb  stm32h7xx_hal_rtc.o [1]
+HAL_RTC_SetTime         0x9000'3aef    0xc2  Code  Gb  stm32h7xx_hal_rtc.o [1]
+HAL_RTC_WaitForSynchro  0x9000'3c55    0x32  Code  Gb  stm32h7xx_hal_rtc.o [1]
+HAL_ResumeTick          0x9000'2db3     0xe  Code  Gb  stm32h7xx_hal_timebase_tim.o [1]
+HAL_SuspendTick         0x9000'2da5     0xe  Code  Gb  stm32h7xx_hal_timebase_tim.o [1]
+HAL_TIMEx_Break2Callback
+                        0x9000'34e3     0x2  Code  Wk  stm32h7xx_hal_tim_ex.o [1]
+HAL_TIMEx_BreakCallback
+                        0x9000'34e1     0x2  Code  Wk  stm32h7xx_hal_tim_ex.o [1]
+HAL_TIMEx_CommutCallback
+                        0x9000'34e7     0x2  Code  Wk  stm32h7xx_hal_tim_ex.o [1]
+HAL_TIM_Base_Init       0x9000'2f59    0x1a  Code  Gb  stm32h7xx_hal_tim.o [1]
+HAL_TIM_Base_Start_IT   0x9000'2f73    0x68  Code  Gb  stm32h7xx_hal_tim.o [1]
+HAL_TIM_IRQHandler      0x9000'306d   0x15c  Code  Gb  stm32h7xx_hal_tim.o [1]
+HAL_TIM_PeriodElapsedCallback
+                        0x9000'34b7     0xe  Code  Gb  main.o [1]
+HAL_UARTEx_DisableFifoMode
+                        0x9000'4461    0x3a  Code  Gb  stm32h7xx_hal_uart_ex.o [1]
+HAL_UARTEx_SetRxFifoThreshold
+                        0x9000'44b1    0x14  Code  Gb  stm32h7xx_hal_uart_ex.o [1]
+HAL_UARTEx_SetTxFifoThreshold
+                        0x9000'449b    0x16  Code  Gb  stm32h7xx_hal_uart_ex.o [1]
+HAL_UART_Init           0x9000'3d55    0x36  Code  Gb  stm32h7xx_hal_uart.o [1]
+HAL_UART_MspInit        0x9000'36cf    0x8a  Code  Gb  usart.o [1]
+HAL_UART_Transmit       0x9000'3dd5    0xb8  Code  Gb  stm32h7xx_hal_uart.o [1]
+HardFault_Handler       0x9000'634b     0x2  Code  Gb  stm32h7xx_it.o [1]
+MX_GPIO_Init            0x9000'34ed    0x98  Code  Gb  gpio.o [1]
+MX_RTC_Init             0x9000'3585    0xa0  Code  Gb  rtc.o [1]
+MX_USART3_UART_Init     0x9000'3671    0x5e  Code  Gb  usart.o [1]
+MemManage_Handler       0x9000'634d     0x2  Code  Gb  stm32h7xx_it.o [1]
+NMI_Handler             0x9000'6349     0x2  Code  Gb  stm32h7xx_it.o [1]
+OSCPUUsage              0x2000'00e8     0x4  Data  Gb  task.o [1]
+OSIdleCtr               0x2000'00e4     0x4  Data  Gb  task.o [1]
+OSIdleCtrMax            0x2000'00ec     0x4  Data  Gb  task.o [1]
+OSIdleCtrRun            0x2000'00f0     0x4  Data  Gb  task.o [1]
+OSStatRdy               0x2000'00e0     0x1  Data  Gb  task.o [1]
+PendSV_Handler          0x9000'4985          Code  Gb  tx_thread_schedule.o [1]
+RCCEx_PLL2_Config       0x9000'22a5    0xac  Code  Lc  stm32h7xx_hal_rcc_ex.o [1]
+RCCEx_PLL3_Config       0x9000'2351    0xac  Code  Lc  stm32h7xx_hal_rcc_ex.o [1]
+RTC_ByteToBcd2          0x9000'3d21    0x16  Code  Gb  stm32h7xx_hal_rtc.o [1]
+RTC_EnterInitMode       0x9000'3c87    0x3c  Code  Gb  stm32h7xx_hal_rtc.o [1]
+RTC_ExitInitMode        0x9000'3cc3    0x4c  Code  Gb  stm32h7xx_hal_rtc.o [1]
+Region$$Table$$Base     0x9000'62f4           --   Gb  - Linker created -
+Region$$Table$$Limit    0x9000'6314           --   Gb  - Linker created -
+SVC_Handler             0x9000'6353     0x2  Code  Gb  stm32h7xx_it.o [1]
+SysTick_Handler         0x9000'459b          Code  Gb  tx_initialize_low_level.o [1]
+SystemClock_Config      0x9000'33ef    0xc8  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'000c     0x4  Data  Gb  system_stm32h7xx.o [1]
+SystemD2Clock           0x2000'0010     0x4  Data  Gb  system_stm32h7xx.o [1]
+SystemInit              0x9000'5fbd    0xa2  Code  Gb  system_stm32h7xx.o [1]
+TIM7_IRQHandler         0x9000'6357     0x6  Code  Gb  stm32h7xx_it.o [1]
+TIM_Base_SetConfig      0x9000'31cf    0xaa  Code  Gb  stm32h7xx_hal_tim.o [1]
+UARTEx_SetNbDataToProcess
+                        0x9000'4505    0x3e  Code  Lc  stm32h7xx_hal_uart_ex.o [1]
+UARTEx_SetNbDataToProcess::denominator
+                        0x9000'454c     0x8  Data  Lc  stm32h7xx_hal_uart_ex.o [1]
+UARTEx_SetNbDataToProcess::numerator
+                        0x9000'4544     0x8  Data  Lc  stm32h7xx_hal_uart_ex.o [1]
+UARTPrescTable          0x9000'440c    0x18  Data  Gb  stm32h7xx_hal_uart.o [1]
+UART_AdvFeatureConfig   0x9000'424d    0xc8  Code  Gb  stm32h7xx_hal_uart.o [1]
+UART_CheckIdleState     0x9000'4315    0x5e  Code  Gb  stm32h7xx_hal_uart.o [1]
+UART_SetConfig          0x9000'3e8d   0x3a6  Code  Gb  stm32h7xx_hal_uart.o [1]
+UART_WaitOnFlagUntilTimeout
+                        0x9000'4373    0x98  Code  Gb  stm32h7xx_hal_uart.o [1]
+UsageFault_Handler      0x9000'6351     0x2  Code  Gb  stm32h7xx_it.o [1]
+_Encoding_8859_1_Mbrlen
+                        0x9000'143d     0x2  Code  Gb  xencoding_8859_1.o [2]
+_Encoding_8859_1_Wctomb
+                        0x9000'142b    0x12  Code  Gb  xencoding_8859_1.o [2]
+_LitobFull              0x9000'11ab   0x10a  Code  Lc  xprintffull.o [2]
+_Locale_lconv           0x2000'0018    0x38  Data  Lc  xlocale_c.o [2]
+_PrintfFull             0x9000'0299   0xcc4  Code  Gb  xprintffull.o [2]
+_Prout                  0x9000'6361    0x16  Code  Gb  xprout.o [2]
+_PutcharsFull           0x9000'131d    0x2e  Code  Lc  xprintffull.o [2]
+_PutstrFull             0x9000'10eb    0xc0  Code  Lc  xprintffull.o [2]
+_PuttxtFull             0x9000'0fdf   0x10c  Code  Lc  xprintffull.o [2]
+_SNProut                0x9000'14bf    0x1a  Code  Gb  xsnprout.o [2]
+__NVIC_SetPriority      0x9000'2e3d    0x1a  Code  Lc  stm32h7xx_hal_cortex.o [1]
+__aeabi_cdcmple         0x9000'1649          Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple        0x9000'1679          Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz            0x9000'17ad     0xe  Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz           0x9000'17ed     0xe  Code  Gb  DblToU32.o [3]
+__aeabi_ddiv            0x9000'17db    0x12  Code  Gb  DblDiv.o [3]
+__aeabi_dmul            0x9000'1809    0x12  Code  Gb  DblMul.o [3]
+__aeabi_dsub            0x9000'17c9    0x12  Code  Gb  DblSub.o [3]
+__aeabi_i2d             0x9000'17bb     0xe  Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0           0x9000'1931          Code  Gb  I64DivZer.o [4]
+__aeabi_memclr4         0x9000'37c5          Code  Gb  ABImemclr4.o [4]
+__aeabi_memcpy          0x9000'1531          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4         0x9000'1551          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8         0x9000'1551          Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d            0x9000'17fb     0xe  Code  Gb  U32ToDbl.o [3]
+__cmain                 0x9000'6315          Code  Gb  cmain.o [4]
+__exit                  0x9000'1935    0x14  Code  Gb  exit.o [5]
+__iar_Fail_s            0x9000'1449    0x1c  Code  Gb  xfail_s.o [2]
+__iar_Mbcurmax          0x9000'181b     0xa  Code  Gb  xmbcurmax.o [2]
+__iar_Memchr            0x9000'14d9          Code  Gb  memchr.o [4]
+__iar_Memset4_word      0x9000'4a19          Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word      0x9000'4a19          Code  Gb  ABImemset48.o [4]
+__iar_Stdout            0x2000'0098    0x48  Data  Gb  xfiles.o [2]
+__iar_Strchr            0x9000'1415          Code  Gb  strchr.o [4]
+__iar_data_init3        0x9000'62a9    0x28  Code  Gb  data_init.o [4]
+__iar_frexp             0x9000'15e5          Code  Gb  frexp.o [3]
+__iar_frexpl            0x9000'15e5          Code  Gb  frexp.o [3]
+__iar_globLocale        0x2000'0050    0x48  Data  Lc  xlocale_c.o [2]
+__iar_global_Locale     0x9000'1399     0x4  Code  Gb  xlocale_c.o [2]
+__iar_init_vfp          0x9000'62d1          Code  Gb  fpinit_M.o [3]
+__iar_ldexp64           0x9000'16bd          Code  Gb  ldexp.o [3]
+__iar_lz77_init_single3
+                        0x9000'61d5    0x78  Code  Gb  lz77_init_single.o [4]
+__iar_program_start     0x9000'6395          Code  Gb  cstartup_M.o [4]
+__iar_scalbln64         0x9000'16bd          Code  Gb  ldexp.o [3]
+__iar_scalbn64          0x9000'16bd          Code  Gb  ldexp.o [3]
+__iar_small_Memset      0x9000'4a4d          Code  Gb  ABImemset_small.o [4]
+__iar_small_Memset_word
+                        0x9000'4a4d          Code  Gb  ABImemset_small.o [4]
+__iar_small_memset      0x9000'4a4d          Code  Gb  ABImemset_small.o [4]
+__iar_small_uldivmod    0x9000'1825          Code  Gb  I64DivMod_small.o [4]
+__iar_softfp___iar_frexp64
+                        0x9000'15d9          Code  Gb  frexp.o [3]
+__iar_softfp___iar_ldexp64
+                        0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp___iar_scalbln64
+                        0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp___iar_scalbn64
+                        0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_frexp      0x9000'15d9          Code  Gb  frexp.o [3]
+__iar_softfp_frexpl     0x9000'15d9          Code  Gb  frexp.o [3]
+__iar_softfp_ldexp      0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_ldexpl     0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_scalbln    0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_scalblnl   0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_scalbn     0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_softfp_scalbnl    0x9000'16a9          Code  Gb  ldexp.o [3]
+__iar_zero_init3        0x9000'135f    0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init        0x9000'6333     0x4  Code  Gb  low_level_init.o [2]
+__tx_PendSVHandler      0x9000'4985          Code  Gb  tx_thread_schedule.o [1]
+__tx_SysTickHandler     0x9000'459b          Code  Gb  tx_initialize_low_level.o [1]
+__tx_free_memory_start  0x2000'54f4          Data  Gb  tx_initialize_low_level.o [1]
+__vector_table          0x9000'0000          Data  Gb  startup_stm32h750xx.o [1]
+_call_main              0x9000'6321          Code  Gb  cmain.o [4]
+_exit                   0x9000'633d          Code  Gb  cexit.o [4]
+_gLocale_mblen          0x9000'1401     0x4  Code  Gb  xlocale_c.o [2]
+_gLocale_mblenInt       0x9000'13c5    0x2c  Code  Gb  xlocale_c.o [2]
+_gLocale_wctomb         0x9000'1405     0x4  Code  Gb  xlocale_c.o [2]
+_gLocale_wctombInt      0x9000'13fd     0x4  Code  Gb  xlocale_c.o [2]
+_main                   0x9000'632f          Code  Gb  cmain.o [4]
+_tx_block_pool_created_count
+                        0x2000'54c4     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_block_pool_created_ptr
+                        0x2000'54c0     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_build_options       0x2000'52e4     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_byte_pool_created_count
+                        0x2000'54cc     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_byte_pool_created_ptr
+                        0x2000'54c8     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_event_flags_created_count
+                        0x2000'54b4     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_event_flags_created_ptr
+                        0x2000'54b0     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_initialize_high_level
+                        0x9000'45c9    0x2c  Code  Gb  tx_initialize_high_level.o [1]
+_tx_initialize_kernel_enter
+                        0x9000'3781    0x44  Code  Gb  tx_initialize_kernel_enter.o [1]
+_tx_initialize_low_level
+                        0x9000'4555          Code  Gb  tx_initialize_low_level.o [1]
+_tx_initialize_unused_memory
+                        0x2000'5504     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_mutex_cleanup       0x9000'609d    0x6e  Code  Gb  tx_mutex_cleanup.o [1]
+_tx_mutex_create        0x9000'554d    0x60  Code  Gb  tx_mutex_create.o [1]
+_tx_mutex_created_count
+                        0x2000'54bc     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_mutex_created_ptr   0x2000'54b8     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_mutex_get           0x9000'55ad   0x108  Code  Gb  tx_mutex_get.o [1]
+_tx_mutex_prioritize    0x9000'5cf1    0x9c  Code  Gb  tx_mutex_prioritize.o [1]
+_tx_mutex_priority_change
+                        0x9000'5c29    0xc8  Code  Gb  tx_mutex_priority_change.o [1]
+_tx_mutex_put           0x9000'56b5   0x1c0  Code  Gb  tx_mutex_put.o [1]
+_tx_mutex_thread_release
+                        0x9000'610d    0x3e  Code  Gb  tx_mutex_cleanup.o [1]
+_tx_queue_created_count
+                        0x2000'54ac     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_queue_created_ptr   0x2000'54a8     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_semaphore_created_count
+                        0x2000'54a4     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_semaphore_created_ptr
+                        0x2000'54a0     0x4  Data  Gb  tx_initialize_high_level.o [1]
+_tx_thread_application_stack_error_handler
+                        0x2000'52e8     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_create       0x9000'50bd   0x148  Code  Gb  tx_thread_create.o [1]
+_tx_thread_created_count
+                        0x2000'52d4     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_created_ptr  0x2000'52d0     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_current_ptr  0x2000'52c8     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_execute_ptr  0x2000'52cc     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_highest_priority
+                        0x2000'52d8     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_initialize   0x9000'4b19    0x40  Code  Gb  tx_thread_initialize.o [1]
+_tx_thread_mutex_release
+                        0x2000'52e0     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_preempt_disable
+                        0x2000'52dc     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_preempted_maps
+                        0x2000'52f0     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_priority_list
+                        0x2000'52f4    0x80  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_priority_maps
+                        0x2000'52ec     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_schedule     0x9000'4959          Code  Gb  tx_thread_schedule.o [1]
+_tx_thread_shell_entry  0x9000'6159    0x7c  Code  Gb  tx_thread_shell_entry.o [1]
+_tx_thread_sleep        0x9000'4d2d    0x80  Code  Gb  tx_thread_sleep.o [1]
+_tx_thread_stack_analyze
+                        0x9000'5b09    0x7c  Code  Gb  tx_thread_stack_analyze.o [1]
+_tx_thread_stack_build  0x9000'5b85          Code  Gb  tx_thread_stack_build.o [1]
+_tx_thread_stack_error_handler
+                        0x9000'5aed    0x1c  Code  Gb  tx_thread_stack_error_handler.o [1]
+_tx_thread_system_preempt_check
+                        0x9000'5205    0xb4  Code  Gb  tx_thread_system_preempt_check.o [1]
+_tx_thread_system_resume
+                        0x9000'5875   0x22e  Code  Gb  tx_thread_system_resume.o [1]
+_tx_thread_system_stack_ptr
+                        0x2000'5508     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_system_state
+                        0x2000'0014     0x4  Data  Gb  tx_thread_initialize.o [1]
+_tx_thread_system_suspend
+                        0x9000'52b9   0x294  Code  Gb  tx_thread_system_suspend.o [1]
+_tx_thread_time_slice   0x9000'4f81   0x13c  Code  Gb  tx_thread_time_slice.o [1]
+_tx_thread_timeout      0x9000'624d    0x34  Code  Gb  tx_thread_timeout.o [1]
+_tx_timer_created_count
+                        0x2000'4d7c     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_created_ptr   0x2000'4d78     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_current_ptr   0x2000'4d70     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_expiration_process
+                        0x9000'4f61    0x20  Code  Gb  tx_timer_expiration_process.o [1]
+_tx_timer_expired       0x2000'4d74     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_expired_time_slice
+                        0x2000'4d64     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_expired_timer_ptr
+                        0x2000'4d80     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_initialize    0x9000'4b59    0x72  Code  Gb  tx_timer_initialize.o [1]
+_tx_timer_interrupt     0x9000'4a61          Code  Gb  tx_timer_interrupt.o [1]
+_tx_timer_list          0x2000'4d94    0x80  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_list_end      0x2000'4d6c     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_list_start    0x2000'4d68     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_priority      0x2000'4d8c     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_stack_size    0x2000'4d88     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_stack_start   0x2000'4d84     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_system_activate
+                        0x9000'5bc9    0x60  Code  Gb  tx_timer_system_activate.o [1]
+_tx_timer_system_clock  0x2000'4d60     0x4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_system_deactivate
+                        0x9000'5d8d    0x2c  Code  Gb  tx_timer_system_deactivate.o [1]
+_tx_timer_thread        0x2000'4e14    0xb4  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_thread_entry  0x9000'5db9   0x104  Code  Gb  tx_timer_thread_entry.o [1]
+_tx_timer_thread_stack_area
+                        0x2000'4ec8   0x400  Data  Gb  tx_timer_initialize.o [1]
+_tx_timer_time_slice    0x2000'4d90     0x4  Data  Gb  tx_timer_initialize.o [1]
+_txe_mutex_create       0x9000'4dad    0xb8  Code  Gb  txe_mutex_create.o [1]
+_txe_mutex_get          0x9000'4ea1    0x60  Code  Gb  txe_mutex_get.o [1]
+_txe_mutex_put          0x9000'4f29    0x38  Code  Gb  txe_mutex_put.o [1]
+_txe_thread_create      0x9000'4bed   0x140  Code  Gb  txe_thread_create.o [1]
+abort                   0x9000'192b     0x6  Code  Gb  abort.o [2]
+exit                    0x9000'6337     0x4  Code  Gb  exit.o [2]
+fputc                   0x9000'3759    0x14  Code  Gb  usart.o [1]
+hrtc                    0x2000'54d0    0x24  Data  Gb  rtc.o [1]
+htim7                   0x2000'5454    0x4c  Data  Gb  stm32h7xx_hal_timebase_tim.o [1]
+huart3                  0x2000'5374    0x90  Data  Gb  usart.o [1]
+ldexp                   0x9000'16bd          Code  Gb  ldexp.o [3]
+ldexpl                  0x9000'16bd          Code  Gb  ldexp.o [3]
+localeconv              0x9000'1409     0x4  Code  Gb  xlocale_c.o [2]
+main                    0x9000'32c1   0x116  Code  Gb  main.o [1]
+memchr                  0x9000'14d9          Code  Gb  memchr.o [4]
+memset                  0x9000'3835    0x14  Code  Gb  memset.o [4]
+obuf                    0x2000'5404    0x50  Data  Lc  xfiles.o [2]
+printf                  0x9000'4f01    0x28  Code  Gb  printf.o [2]
+putchar                 0x9000'6379     0xc  Code  Gb  putchar.o [2]
+scalbln                 0x9000'16bd          Code  Gb  ldexp.o [3]
+scalblnl                0x9000'16bd          Code  Gb  ldexp.o [3]
+scalbn                  0x9000'16bd          Code  Gb  ldexp.o [3]
+scalbnl                 0x9000'16bd          Code  Gb  ldexp.o [3]
+scale                   0x9000'12b5    0x46  Code  Lc  xprintffull.o [2]
+sec_hand                0x2000'550c     0x4  Data  Lc  xfail_s.o [2]
+strchr                  0x9000'1415          Code  Gb  strchr.o [4]
+strlen                  0x9000'1489          Code  Gb  strlen.o [4]
+tx_application_define   0x9000'45f5    0x88  Code  Gb  task.o [1]
+tx_thread_fpu_disable   0x9000'4a07          Code  Gb  tx_thread_schedule.o [1]
+tx_thread_fpu_enable    0x9000'4a07          Code  Gb  tx_thread_schedule.o [1]
+uwTick                  0x2000'0004     0x4  Data  Gb  stm32h7xx_hal.o [1]
+uwTickFreq              0x2000'0000     0x1  Data  Gb  stm32h7xx_hal.o [1]
+uwTickPrio              0x2000'0008     0x4  Data  Gb  stm32h7xx_hal.o [1]
+vsnprintf               0x9000'4e65    0x3c  Code  Gb  vsnprint.o [2]
+
+
+[1] = F:\WQA\App\EWARM\App\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tlv.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  25'725 bytes of readonly  code memory
+     422 bytes of readonly  data memory
+  29'968 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

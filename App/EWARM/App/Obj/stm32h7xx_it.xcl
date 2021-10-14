@@ -20,9 +20,15 @@ F:\WQA\App\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include
 -I
 F:\WQA\App\EWARM/../Drivers/CMSIS/Include
 -I
-D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
+F:\WQA\App\EWARM\..\ThreadX\common\inc
 -I
-D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc\c
+F:\WQA\App\EWARM\..\ThreadX\ports\inc
+-I
+F:\WQA\App\EWARM\..\Task
+-I
+C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\arm\inc
+-I
+C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\arm\inc\c
 -I
 F:\WQA\App\Core\Inc
 -I
@@ -33,6 +39,12 @@ F:\WQA\App\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy
 F:\WQA\App\Drivers\CMSIS\Device\ST\STM32H7xx\Include
 -I
 F:\WQA\App\Drivers\CMSIS\Include
+-I
+F:\WQA\App\ThreadX\common\inc
+-I
+F:\WQA\App\ThreadX\ports\inc
+-I
+F:\WQA\App\Task
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -328,8 +340,11 @@ F:\WQA\App\Drivers\CMSIS\Include
 -D__EDG_INT128_EXTENSIONS_ALLOWED=0
 -DUSE_HAL_DRIVER=1
 -DSTM32H750xx=1
--D_DLIB_CONFIG_FILE_HEADER_NAME="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
--D_DLIB_CONFIG_FILE_STRING="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
+-DTX_ENABLE_FPU_SUPPORT=1
+-DTX_ENABLE_STACK_CHECKING=1
+-DTX_INCLUDE_USER_DEFINE_FILE=1
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\\Program Files (x86)\\IAR Systems ARM\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems ARM\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V8.40.1.212/W32 for ARM"
 -D_VA_DEFINED=
 -D_VA_LIST=struct __va_list
