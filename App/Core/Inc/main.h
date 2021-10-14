@@ -66,6 +66,12 @@ void Error_Handler(void);
 #define DBG_TX_GPIO_Port GPIOD
 #define DBG_RX_Pin GPIO_PIN_9
 #define DBG_RX_GPIO_Port GPIOD
+#define EE_WP_Pin GPIO_PIN_5
+#define EE_WP_GPIO_Port GPIOB
+#define EE_SCL_Pin GPIO_PIN_6
+#define EE_SCL_GPIO_Port GPIOB
+#define EE_SDA_Pin GPIO_PIN_7
+#define EE_SDA_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -100,8 +100,8 @@ int main(void)
   MX_RTC_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_SuspendTick();/* 内核开启前关闭HAL的时间基准 */
-  tx_kernel_enter();/* 进入ThreadX内核 */
+  HAL_SuspendTick();
+  tx_kernel_enter();
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -13,25 +13,10 @@
 #ifndef _TASK_H
 #define _TASK_H
 
-#define TRUE        1
-#define FALSE       0
+#define TRUE 1
+#define FALSE 0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void App_Printf(const char *fmt, ...);
+void DispTaskInfo(void);
 
 #endif // !_TASK_H

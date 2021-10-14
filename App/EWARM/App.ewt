@@ -1196,6 +1196,18 @@
         <group>
             <name>User</name>
             <group>
+                <name>Bsp</name>
+                <file>
+                    <name>$PROJ_DIR$\..\Bsp\bsp.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Bsp\bsp_dwt.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\..\Bsp\bsp_eeprom.c</name>
+                </file>
+            </group>
+            <group>
                 <name>Core</name>
                 <file>
                     <name>$PROJ_DIR$\..\Core\Src\gpio.c</name>
