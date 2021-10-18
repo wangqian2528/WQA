@@ -1,0 +1,20 @@
+fx_file_seek.pbi: F:\WQA\App\FileX\common\src\fx_file_seek.c \
+  F:\WQA\App\EWARM\..\FileX\common\inc\fx_api.h \
+  F:\WQA\App\EWARM\..\FileX\ports\inc\fx_port.h \
+  F:\WQA\App\EWARM\..\ThreadX\common\inc\tx_api.h \
+  F:\WQA\App\EWARM\..\ThreadX\ports\inc\tx_port.h \
+  F:\WQA\App\EWARM\..\ThreadX\common\inc\tx_user.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\\Program\ Files\ (x86)\\IAR\ Systems\ ARM\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\intrinsics.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\iar_intrinsics_common.h \
+  F:\WQA\App\EWARM\..\FileX\common\inc\fx_file.h

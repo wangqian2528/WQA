@@ -1,4 +1,4 @@
-"F:\WQA\App\Task\task.c"
+"F:\WQA\App\Core\Src\task.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
@@ -8,7 +8,7 @@ F:\WQA\App\EWARM\App\Obj\task.pbi.dep
 -o
 task.pbi
 -I
-F:\WQA\App\Task
+F:\WQA\App\Core\Src
 -I
 F:\WQA\App\EWARM/../Core/Inc
 -I
@@ -24,13 +24,27 @@ F:\WQA\App\EWARM\..\ThreadX\common\inc
 -I
 F:\WQA\App\EWARM\..\ThreadX\ports\inc
 -I
-F:\WQA\App\EWARM\..\Task
--I
 F:\WQA\App\EWARM\..\Bsp
 -I
-D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc
+F:\WQA\App\EWARM/../USB_DEVICE/App
 -I
-D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\arm\inc\c
+F:\WQA\App\EWARM/../USB_DEVICE/Target
+-I
+F:\WQA\App\EWARM/../Middlewares/ST/STM32_USB_Device_Library/Core/Inc
+-I
+F:\WQA\App\EWARM/../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc
+-I
+F:\WQA\App\EWARM\..\FileX\common\inc
+-I
+F:\WQA\App\EWARM\..\FileX\ports\inc
+-I
+F:\WQA\App\EWARM\..\GUI\lvgl\ports
+-I
+F:\WQA\App\EWARM\..\GUI\lvgl
+-I
+C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\arm\inc
+-I
+C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\arm\inc\c
 -I
 F:\WQA\App\Core\Inc
 -I
@@ -46,9 +60,23 @@ F:\WQA\App\ThreadX\common\inc
 -I
 F:\WQA\App\ThreadX\ports\inc
 -I
-F:\WQA\App\Task
--I
 F:\WQA\App\Bsp
+-I
+F:\WQA\App\USB_DEVICE\App
+-I
+F:\WQA\App\USB_DEVICE\Target
+-I
+F:\WQA\App\Middlewares\ST\STM32_USB_Device_Library\Core\Inc
+-I
+F:\WQA\App\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc
+-I
+F:\WQA\App\FileX\common\inc
+-I
+F:\WQA\App\FileX\ports\inc
+-I
+F:\WQA\App\GUI\lvgl\ports
+-I
+F:\WQA\App\GUI\lvgl
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -347,8 +375,8 @@ F:\WQA\App\Bsp
 -DTX_ENABLE_FPU_SUPPORT=1
 -DTX_ENABLE_STACK_CHECKING=1
 -DTX_INCLUDE_USER_DEFINE_FILE=1
--D_DLIB_CONFIG_FILE_HEADER_NAME="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
--D_DLIB_CONFIG_FILE_STRING="D:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\\Program Files (x86)\\IAR Systems ARM\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems ARM\\Embedded Workbench 8.3\\arm\\inc\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V8.40.1.212/W32 for ARM"
 -D_VA_DEFINED=
 -D_VA_LIST=struct __va_list

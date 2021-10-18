@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.general.xcl" --backend -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.general.xcl" --backend -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.general.xcl" "--debug_file=%~1" --backend -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.general.xcl" "--debug_file=%~1" --backend -f "F:\WQA\Boot\EWARM\settings\Boot.Boot.driver.xcl" 
 
 @echo off 
 :end

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "stm32h7xx_hal.h": "c",
-        "bsp.h": "c"
+        "bsp.h": "c",
+        "includes.h": "c"
     }
 }

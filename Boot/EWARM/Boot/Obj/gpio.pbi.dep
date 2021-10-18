@@ -1,0 +1,11 @@
+gpio.pbi: F:\WQA\Boot\Core\Src\gpio.c \
+  F:\WQA\Boot\EWARM/../Core/Inc\gpio.h \
+  F:\WQA\Boot\EWARM/../Core/Inc/main.h \
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal.h \
+  F:\WQA\Boot\EWARM/../Core/Inc\stm32h7xx_hal_conf.h \
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rcc.h \
+  F:\WQA\Boot\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
+  F:\WQA\Boot\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include\stm32h7xx.h \
+  F:\WQA\Boot\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
+  F:\WQA\Boot\EWARM/../Drivers/CMSIS/Include\core_cm7.h \
+  F:\WQA\Boot\EWARM/../Core/Inc\stdint.h

@@ -20,12 +20,24 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
+
+#include "tim.h"
+#include "adc.h"
+#include "sdmmc.h"
+#include "rtc.h"
 
 #include "bsp_dwt.h"
 #include "bsp_eeprom.h"
+#include "bsp_cli.h"
+#include "bsp_lcd.h"
+#include "bsp_touch.h"
+#include "bsp_adc.h"
+#include "bsp_sdio.h"
 
 /* 函数定义 */
 void bsp_Init(void);
 void bsp_RunPer1ms(void);
+extern void App_Printf(const char *fmt, ...);
 
 #endif

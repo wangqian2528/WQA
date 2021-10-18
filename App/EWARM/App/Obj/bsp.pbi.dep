@@ -1,53 +1,70 @@
-bsp.pbi: F:\WQA\App\Bsp\bsp.c F:\WQA\App\Bsp/bsp.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include\stm32h750xx.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Include\core_cm7.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
-  D:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Include/cmsis_version.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Include/cmsis_compiler.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Include\cmsis_iccarm.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Include/mpu_armv7.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal.h \
-  F:\WQA\App\EWARM/../Core/Inc\stm32h7xx_hal_conf.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rcc.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include\stm32h7xx.h \
-  F:\WQA\App\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\math.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_float_setup.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_gpio.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_dma.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_mdma.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_exti.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_cortex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_flash.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_hsem.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_i2c.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_pwr.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_rtc.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rtc_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_tim.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc\stm32h7xx_hal_uart.h \
-  F:\WQA\App\EWARM/../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdio.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
-  D:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
-  F:\WQA\App\Bsp/bsp_dwt.h F:\WQA\App\Bsp/bsp_eeprom.h
+bsp.pbi: F:\WQA\App\Bsp\bsp_sdio.h F:\WQA\App\Bsp\bsp_adc.h \
+  F:\WQA\App\Bsp\bsp_touch.h F:\WQA\App\Bsp\bsp_lcd.h \
+  F:\WQA\App\Bsp\bsp_cli.h F:\WQA\App\Bsp\bsp_eeprom.h \
+  F:\WQA\App\Bsp\bsp_dwt.h F:\WQA\App\EWARM\..\Core\Inc\rtc.h \
+  F:\WQA\App\EWARM\..\Core\Inc\sdmmc.h \
+  F:\WQA\App\EWARM\..\Core\Inc\adc.h F:\WQA\App\EWARM\..\Core\Inc\main.h \
+  F:\WQA\App\EWARM\..\Core\Inc\tim.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdbool.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdio.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pcd_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_usb.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pcd.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_uart.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_tim.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_sd_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_delayblock.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_sdmmc.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_sd.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rtc_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rtc.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_pwr.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_ltdc_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_ltdc.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_i2c.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_hsem.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_flash.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_adc_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_ll_adc.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_adc.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_cortex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_exti.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_mdma.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_dma.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio_ex.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_gpio.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc_ex.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_float_setup.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\math.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_def.h \
+  F:\WQA\App\EWARM\..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
+  F:\WQA\App\EWARM\..\Core\Inc\stm32h7xx_hal_conf.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Include\mpu_armv7.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Include\cmsis_iccarm.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Include\cmsis_version.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Include\core_cm7.h \
+  F:\WQA\App\EWARM\..\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h750xx.h \
+  F:\WQA\App\Bsp\bsp.h F:\WQA\App\Bsp\bsp.c

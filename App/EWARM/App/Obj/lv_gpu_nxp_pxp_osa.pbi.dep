@@ -1,0 +1,12 @@
+lv_gpu_nxp_pxp_osa.pbi: F:\WQA\App\GUI\lvgl\src\gpu\lv_gpu_nxp_pxp_osa.c \
+  F:\WQA\App\GUI\lvgl\src\gpu/../lv_conf_internal.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\\Program\ Files\ (x86)\\IAR\ Systems\ ARM\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\ ARM\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  F:\WQA\App\GUI\lvgl\src\gpu/../lv_conf_kconfig.h \
+  F:\WQA\App\EWARM\..\GUI\lvgl\lv_conf.h \
+  F:\WQA\App\GUI\lvgl\src\gpu/../misc/lv_log.h \
+  F:\WQA\App\GUI\lvgl\src\gpu/../misc/../lv_conf_internal.h
