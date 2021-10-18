@@ -27,6 +27,8 @@
 #include "sdmmc.h"
 #include "rtc.h"
 
+#include "lvgl.h"
+
 #include "bsp_dwt.h"
 #include "bsp_eeprom.h"
 #include "bsp_cli.h"

@@ -41,6 +41,7 @@ void bsp_RunPer1ms(void)
 {
     bsp_touch_RunPeriod(1);
     bsp_adc_RunPeriod(1);
+    lv_tick_inc(1);
 }
 
 /*

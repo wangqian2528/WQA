@@ -19,6 +19,7 @@
 */
 #define APP_CFG_TASK_START_PRIO 2u
 #define APP_CFG_TASK_FILEX_PRIO 3u
+#define APP_CFG_TASK_GUI_PRIO 4u
 #define APP_CFG_TASK_CLI_PRIO 15u
 #define APP_CFG_TASK_STAT_PRIO 30u
 #define APP_CFG_TASK_IDLE_PRIO 31u
@@ -33,6 +34,7 @@
 #define APP_CFG_TASK_IDLE_STK_SIZE 1024u
 #define APP_CFG_TASK_STAT_STK_SIZE 1024u
 #define APP_CFG_TASK_FILEX_STK_SIZE 4096u
+#define APP_CFG_TASK_GUI_STK_SIZE 4096u
 
 /*
 *********************************************************************************************************
@@ -53,6 +55,9 @@ static uint64_t AppTaskStatStk[APP_CFG_TASK_STAT_STK_SIZE / 8];
 
 static TX_THREAD AppTaskFileXTCB;
 static uint64_t AppTaskFileXStk[APP_CFG_TASK_FILEX_STK_SIZE / 8];
+
+static TX_THREAD AppTaskGUITCB;
+static uint64_t AppTaskGUIStk[APP_CFG_TASK_GUI_STK_SIZE / 8];
 /*
 *********************************************************************************************************
 *                                      函数声明
@@ -63,6 +68,7 @@ static void AppTaskCli(ULONG thread_input);
 static void AppTaskIdle(ULONG thread_input);
 static void AppTaskStat(ULONG thread_input);
 static void AppTaskFileX(ULONG thread_input);
+static void AppTaskGUI(ULONG thread_input);
 
 static void AppTaskCreate(void);
 static void AppObjCreate(void);
@@ -237,16 +243,16 @@ static void AppTaskIdle(ULONG thread_input)
 static void AppTaskCreate(void)
 {
     /**************创建命令行任务*********************/
-    tx_thread_create(&AppTaskCliTCB,              /* 任务控制块地址 */
-                     "App Task Cli",              /* 任务名 */
-                     AppTaskCli,                  /* 启动任务函数地址 */
-                     0,                           /* 传递给任务的参数 */
-                     &AppTaskCliStk[0],           /* 堆栈基地址 */
-                     APP_CFG_TASK_CLI_STK_SIZE,   /* 堆栈空间大小 */
-                     APP_CFG_TASK_CLI_PRIO,       /* 任务优先级*/
-                     APP_CFG_TASK_CLI_PRIO,       /* 任务抢占阀值 */
-                     TX_NO_TIME_SLICE,            /* 不开启时间片 */
-                     TX_AUTO_START);              /* 创建后立即启动 */
+    tx_thread_create(&AppTaskCliTCB,            /* 任务控制块地址 */
+                     "App Task Cli",            /* 任务名 */
+                     AppTaskCli,                /* 启动任务函数地址 */
+                     0,                         /* 传递给任务的参数 */
+                     &AppTaskCliStk[0],         /* 堆栈基地址 */
+                     APP_CFG_TASK_CLI_STK_SIZE, /* 堆栈空间大小 */
+                     APP_CFG_TASK_CLI_PRIO,     /* 任务优先级*/
+                     APP_CFG_TASK_CLI_PRIO,     /* 任务抢占阀值 */
+                     TX_NO_TIME_SLICE,          /* 不开启时间片 */
+                     TX_AUTO_START);            /* 创建后立即启动 */
 
     /**************创建FILEX TEST任务*********************/
     tx_thread_create(&AppTaskFileXTCB,            /* 任务控制块地址 */
@@ -259,6 +265,18 @@ static void AppTaskCreate(void)
                      APP_CFG_TASK_FILEX_PRIO,     /* 任务抢占阀值 */
                      TX_NO_TIME_SLICE,            /* 不开启时间片 */
                      TX_AUTO_START);              /* 创建后立即启动 */
+
+    /**************创建GUI任务*********************/
+    tx_thread_create(&AppTaskGUITCB,            /* 任务控制块地址 */
+                     "App GUI TASK",            /* 任务名 */
+                     AppTaskGUI,                /* 启动任务函数地址 */
+                     0,                         /* 传递给任务的参数 */
+                     &AppTaskGUIStk[0],         /* 堆栈基地址 */
+                     APP_CFG_TASK_GUI_STK_SIZE, /* 堆栈空间大小 */
+                     APP_CFG_TASK_GUI_PRIO,     /* 任务优先级*/
+                     APP_CFG_TASK_GUI_PRIO,     /* 任务抢占阀值 */
+                     TX_NO_TIME_SLICE,          /* 不开启时间片 */
+                     TX_AUTO_START);            /* 创建后立即启动 */
 }
 
 /*
@@ -371,7 +389,7 @@ cmd_register("os_info", do_show_os_info, "list all os task info");
  * @brief       文件系统任务
  * @param[in]   thread_input - 创建该任务时传递的形参
  * @return      none
- * @priority    3
+ * @priority    4
  ********************************************************************************************************
  */
 extern void DemoFileX(void);
@@ -381,5 +399,33 @@ static void AppTaskFileX(ULONG thread_input)
     while (1)
     {
         DemoFileX();
+    }
+}
+
+/*
+ ********************************************************************************************************
+ * @func        AppTaskGUI
+ * @brief       GUI任务
+ * @param[in]   thread_input - 创建该任务时传递的形参
+ * @return      none
+ * @priority    5
+ ********************************************************************************************************
+ */
+static void AppTaskGUI(ULONG thread_input)
+{
+    (void)thread_input;
+
+    lv_init();
+    lv_port_disp_init();
+    lv_port_indev_init();
+
+    lv_obj_t *btn = lv_btn_create(lv_disp_get_scr_act(NULL));
+    lv_obj_set_pos(btn, 100, 100);
+    lv_obj_set_size(btn, 100, 100);
+
+    while (1)
+    {
+        lv_task_handler();
+        tx_thread_sleep(10);
     }
 }
