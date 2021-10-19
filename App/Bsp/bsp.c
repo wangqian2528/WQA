@@ -10,7 +10,7 @@
  * 2021-09-20     walker       Initial version.
  ******************************************************************************/
 
-#include "bsp.h"
+#include "includes.h"
 
 /*
  ********************************************************************************************************
@@ -43,21 +43,3 @@ void bsp_RunPer1ms(void)
     bsp_adc_RunPeriod(1);
     lv_tick_inc(1);
 }
-
-/*
- * @brief      rtc命令
- */
-static int do_rtc_cmd(uint32_t argc, char *argv[])
-{
-    RTC_DateTypeDef GetData;
-    RTC_TimeTypeDef GetTime;
-
-    HAL_RTC_GetTime(&hrtc, &GetTime, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &GetData, RTC_FORMAT_BIN);
-
-    App_Printf("%02d/%02d/%02d\r\n", 2000 + GetData.Year, GetData.Month, GetData.Date);
-    App_Printf("%02d:%02d:%02d\r\n", GetTime.Hours, GetTime.Minutes, GetTime.Seconds);
-
-    return 1;
-}
-cmd_register("rtc", do_rtc_cmd, "rtc control cmd");

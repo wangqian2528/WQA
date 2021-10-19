@@ -13,10 +13,9 @@
 #ifndef _BSP_ADC_H
 #define _BSP_ADC_H
 
-#define ADC_READ_PERIOD 100
+#define ADC_READ_PERIOD 100 //ms
 
 extern float g_power_voltage;
-
 void bsp_adc_RunPeriod(uint32_t period);
 
 #endif // !_BSP_ADC_H

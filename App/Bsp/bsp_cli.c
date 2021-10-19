@@ -10,9 +10,7 @@
  * 2021-09-20     walker       Initial version.
  ******************************************************************************/
 
-#include "bsp.h"
-
-#define MIN(a, b) ((a) < (b)) ? (a) : (b)
+#include "includes.h"
 
 static uint8_t rxbuf[CLI_RXBUF_SIZE]; /* 接收缓冲区 */
 static ring_buffer_t rbrecv;          /* 缓冲区管理 */
@@ -22,94 +20,6 @@ static const cli_item_t cmd_tbl_end SECTION("cli.cmd.2") = {0};
 
 static char recvbuf[CLI_MAX_CMD_LEN + 1]; /*命令接收缓冲区*/
 static uint16_t recvcnt;                  /*最大接收长度*/
-
-/*
- ********************************************************************************************************
- *@func       ring_buf_init
- *@brief      构造一个空环形缓冲区
- *@param[in]  r    - 环形缓冲区管理器
- *@param[in]  buf  - 数据缓冲区
- *@param[in]  len  - buf长度(必须是2的N次幂)
- *@retval     bool
- ********************************************************************************************************
- */
-bool ring_buf_init(ring_buffer_t *r, uint8_t *buf, uint32_t len)
-{
-    r->buf = buf;
-    r->size = len;
-    r->front = r->rear = 0;
-    return buf != NULL && (len & len - 1) == 0;
-}
-
-/*
- ********************************************************************************************************
- *@func       ring_buf_clr
- *@brief      清空环形缓冲区
- *@param[in]  r    - 环形缓冲区管理器
- *@retval     none
- ********************************************************************************************************
- */
-void ring_buf_clr(ring_buffer_t *r)
-{
-    r->front = r->rear = 0;
-}
-
-/*
- ********************************************************************************************************
- *@func       ring_buf_len
- *@brief      获取环形缓冲区数据长度
- *@param[in]  r - 环形缓冲区管理器
- *@retval     有效字节数
- ********************************************************************************************************
- */
-uint32_t ring_buf_len(ring_buffer_t *r)
-{
-    return r->rear - r->front;
-}
-
-/*
- ********************************************************************************************************
- *@func       ring_buf_put
- *@brief      将指定长度的数据放到环形缓冲区中
- *@param[in]  buf - 数据缓冲区
- *            len - 缓冲区长度
- *@retval     实际放到中的数据长度
- ********************************************************************************************************
- */
-uint32_t ring_buf_put(ring_buffer_t *r, uint8_t *buf, uint32_t len)
-{
-    uint32_t i;
-    uint32_t left;
-    left = r->size + r->front - r->rear;
-    len = MIN(len, left);
-    i = MIN(len, r->size - (r->rear & r->size - 1));
-    memcpy(r->buf + (r->rear & r->size - 1), buf, i);
-    memcpy(r->buf, buf + i, len - i);
-    r->rear += len;
-    return len;
-}
-
-/*
- ********************************************************************************************************
- *@func       ring_buf_put
- *@brief      从环形缓冲区中读取指定长度的数据
- *@param[in]  buf - 数据缓冲区
- *            len - 缓冲区长度
- *@retval     实际读取长度
- ********************************************************************************************************
- */
-uint32_t ring_buf_get(ring_buffer_t *r, uint8_t *buf, uint32_t len)
-{
-    uint32_t i;
-    uint32_t left;
-    left = r->rear - r->front;
-    len = MIN(len, left);
-    i = MIN(len, r->size - (r->front & r->size - 1));
-    memcpy(buf, r->buf + (r->front & r->size - 1), i);
-    memcpy(buf + i, r->buf, len - i);
-    r->front += len;
-    return len;
-}
 
 /*
  ********************************************************************************************************
@@ -349,5 +259,23 @@ static int do_help(uint32_t argc, char *argv[])
 }
 
 /*注册帮助命令 ---------------------------------------------------------------*/
-cmd_register("help", do_help, "list all command");
+cmd_register("help", do_help, "list all cmd");
 cmd_register("?", do_help, "alias for 'help'");
+
+/*
+ * @brief      rtc命令
+ */
+static int do_rtc_cmd(uint32_t argc, char *argv[])
+{
+    RTC_DateTypeDef GetData;
+    RTC_TimeTypeDef GetTime;
+
+    HAL_RTC_GetTime(&hrtc, &GetTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &GetData, RTC_FORMAT_BIN);
+
+    App_Printf("%02d/%02d/%02d\r\n", 2000 + GetData.Year, GetData.Month, GetData.Date);
+    App_Printf("%02d:%02d:%02d\r\n", GetTime.Hours, GetTime.Minutes, GetTime.Seconds);
+
+    return 1;
+}
+cmd_register("rtc", do_rtc_cmd, "show dev rtc");

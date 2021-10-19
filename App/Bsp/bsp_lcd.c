@@ -10,7 +10,7 @@
  * 2021-09-20     walker       Initial version.
  ******************************************************************************/
 
-#include "bsp.h"
+#include "includes.h"
 
 /*
  ********************************************************************************************************
@@ -221,37 +221,21 @@ void bsp_InitLCD(void)
     bsp_DelayMS(10);
     LCD_SET;
     bsp_lcd_clear(WHITE);
-    LCD_BK_SET(g_sys_para_lcd_bklight);
+    // LCD_BK_SET(g_sys_para_lcd_bklight);
 }
 
 /*
- * @brief      LCD测试命令
+ * @brief      背光控制cmd
  */
-static int do_lcd_ctl(uint32_t argc, char *argv[])
+static int do_lcd_bk(uint32_t argc, char *argv[])
 {
-    if (argc < 3)
-    {
-        App_Printf("cmd para error\r\n");
+    if (argc < 2)
         return 0;
-    }
-
-    if (strcasecmp(argv[1], "bk") == 0)
-    {
-        uint8_t bk_temp = atoi(argv[2]);
-        if (bk_temp > 100)
-        {
-            App_Printf("cmd para error\r\n");
-            return 0;
-        }
-        else
-        {
-            g_sys_para_lcd_bklight = bk_temp;
-            LCD_BK_SET(g_sys_para_lcd_bklight);
-            bsp_eeprom_save(EEPROM_DATA_LCD_BKLIGHT);
-            App_Printf("lcd bk set %d\r\n", g_sys_para_lcd_bklight);
-        }
-    }
-
+    uint8_t bk_temp = atoi(argv[1]);
+    __LimitValue(bk_temp, 10, 100);
+    g_sys_para_lcd_bklight = bk_temp;
+    LCD_BK_SET(g_sys_para_lcd_bklight);
+    bsp_eeprom_save(EEPROM_DATA_LCD_BKLIGHT);
     return 1;
 }
-cmd_register("lcd", do_lcd_ctl, "lcd control cmd");
+cmd_register("lcd_bk", do_lcd_bk, "lcd bk light cmd");

@@ -11,9 +11,7 @@
 
 /* Include necessary system files.  */
 #include "fx_stm32_sd_driver.h"
-#include "bsp.h"
-#include "tx_api.h"
-#include "fx_api.h"
+#include "includes.h"
 
 ALIGN_32BYTES(UCHAR scratch[DEFAULT_SECTOR_SIZE]);
 

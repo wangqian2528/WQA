@@ -10,7 +10,7 @@
  * 2021-09-20     walker       Initial version.
  ******************************************************************************/
 
-#include "bsp.h"
+#include "includes.h"
 
 uint16_t g_touch_x[CT_MAX_TOUCH]; //当前坐标
 uint16_t g_touch_y[CT_MAX_TOUCH];

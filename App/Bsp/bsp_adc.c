@@ -10,7 +10,7 @@
  * 2021-09-20     walker       Initial version.
  ******************************************************************************/
 
-#include "bsp.h"
+#include "includes.h"
 
 float g_power_voltage;
 
@@ -48,7 +48,7 @@ void bsp_adc_RunPeriod(uint32_t period)
  */
 static int do_adc_get(uint32_t argc, char *argv[])
 {
-    printf("power voltage : %.4f V\r\n", g_power_voltage);
+    App_Printf("power voltage : %.4f V\r\n", g_power_voltage);
     return 1;
 }
-cmd_register("adc", do_adc_get, "get power voltage");
+cmd_register("adc", do_adc_get, "CMD:adc; --get power voltage");

@@ -15,9 +15,20 @@
 
 /*
 *********************************************************************************************************
-*                                        宏定义
+*                                           通用宏定义
 *********************************************************************************************************
 */
+#define ANONY_CONN(type, var, line) type var##line
+#define ANONY_DEF(type, prefix, line) ANONY_CONN(type, prefix, line)
+#define ANONY_TYPE(type, prefix) ANONY_DEF(type, prefix, __LINE__)
+#define SECTION(x) @x
+#define USED __root
+
+#ifndef TRUE
+#define TRUE 1
+#define FALSE 0
+#endif
+
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) > (b) ? (a) : (b))
 #define constrain(amt, low, high) ((amt) < (low) ? (low) : ((amt) > (high) ? (high) : (amt)))
@@ -131,7 +142,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
 #include <math.h>
+
+/*
+*********************************************************************************************************
+*                                         STM32
+*********************************************************************************************************
+*/
+#include "stm32h750xx.h"
+#include "stm32h7xx_hal.h"
+
+#include "tim.h"
+#include "adc.h"
+#include "sdmmc.h"
+#include "rtc.h"
+#include "gpio.h"
+#include "usart.h"
 
 /*
 *********************************************************************************************************
@@ -157,18 +185,21 @@
 *********************************************************************************************************
 */
 #include "bsp.h"
-
-/*
-*********************************************************************************************************
-*                                        TASK
-*********************************************************************************************************
-*/
-#include "task.h"
+#include "bsp_dwt.h"
+#include "bsp_eeprom.h"
+#include "bsp_cli.h"
+#include "bsp_lcd.h"
+#include "bsp_touch.h"
+#include "bsp_adc.h"
+#include "bsp_sdio.h"
+#include "bsp_ringbuffer.h"
 
 /*
 *********************************************************************************************************
 *                                        变量和函数
 *********************************************************************************************************
 */
+
+extern void App_Printf(const char *fmt, ...);
 
 #endif
