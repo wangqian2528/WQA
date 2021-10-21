@@ -419,13 +419,18 @@ static void AppTaskGUI(ULONG thread_input)
     lv_port_disp_init();
     lv_port_indev_init();
 
-    lv_obj_t *btn = lv_btn_create(lv_disp_get_scr_act(NULL));
-    lv_obj_set_pos(btn, 100, 100);
-    lv_obj_set_size(btn, 100, 100);
+    lv_theme_set_current(lv_theme_mono_init(200, NULL));
+
+    AppWindow_Create();
+
+    Page_Init();
+
+    LCD_BK_SET(g_sys_para_lcd_bklight);
 
     while (1)
     {
         lv_task_handler();
+        Page_Running();
         tx_thread_sleep(10);
     }
 }

@@ -80,6 +80,14 @@ void Error_Handler(void);
 #define DBG_TX_GPIO_Port GPIOD
 #define DBG_RX_Pin GPIO_PIN_9
 #define DBG_RX_GPIO_Port GPIOD
+#define DBG_DE_Pin GPIO_PIN_11
+#define DBG_DE_GPIO_Port GPIOD
+#define RS485_DE_Pin GPIO_PIN_8
+#define RS485_DE_GPIO_Port GPIOA
+#define RS485_TX_Pin GPIO_PIN_9
+#define RS485_TX_GPIO_Port GPIOA
+#define RS485_RX_Pin GPIO_PIN_10
+#define RS485_RX_GPIO_Port GPIOA
 #define EE_WP_Pin GPIO_PIN_5
 #define EE_WP_GPIO_Port GPIOB
 #define EE_SCL_Pin GPIO_PIN_6

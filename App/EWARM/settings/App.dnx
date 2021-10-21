@@ -20,7 +20,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>657432233</Checksum>
+        <Checksum>3923454880</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -130,13 +130,18 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Src\sdmmc.c}.41.3" 0 0 1 "" 0 "" 0</Bp0>
-        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Src\sdmmc.c}.62.3" 0 0 1 "" 0 "" 0</Bp1>
-        <Count>2</Count>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Display\display_Basic.c}.135.1" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Display\display_Basic.c}.135.1" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Display\page_start.c}.35.5" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Display\page_start.c}.73.5" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Core\Display\page_start.c}.118.5" 0 0 1 "" 0 "" 0</Bp4>
+        <Count>5</Count>
     </Breakpoints2>
     <Aliases>
-        <A0>_ "F:\WQA\App\Task\task.c" ""</A0>
-        <Count>1</Count>
+        <A0>_ "F:\WQA\App\Core\Display\display_Basic.c" ""</A0>
+        <A1>_ "F:\WQA\App\FileX\ports\fx_stm32_sdio_driver.c" ""</A1>
+        <A2>_ "F:\WQA\App\Task\task.c" ""</A2>
+        <Count>3</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
 </settings>

@@ -28,7 +28,7 @@ static void DeleteDirFile(void);
 ALIGN_32BYTES(uint32_t media_memory[64 * 1024] @0x30000000);
 ALIGN_32BYTES(char FsReadBuf[1024]);
 ALIGN_32BYTES(char FsWriteBuf[1024]) = {"ThreadX FileX Write Demo \r\n www.armfly.com \r\n"};
-ALIGN_32BYTES(uint8_t g_TestBuf[BUF_SIZE]);
+ALIGN_32BYTES(uint8_t g_TestBuf[BUF_SIZE] @0x38000000);
 
 /* FileX相关变量 */
 FX_MEDIA sdio_disk;
