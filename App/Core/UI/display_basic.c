@@ -54,7 +54,7 @@ void Page_Init(void)
     PageRegister_Start(PAGE_START);
     PageRegister_Home(PAGE_HOME);
 
-    Page_ChangeTo(PAGE_START);
+    Page_ChangeTo(PAGE_HOME);
 }
 
 /*

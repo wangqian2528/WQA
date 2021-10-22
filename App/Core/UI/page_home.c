@@ -21,8 +21,37 @@ static lv_obj_t *contTitle;
 /*时间信息*/
 static lv_obj_t *lableTime;
 
-/*时间修改按钮*/
-static lv_obj_t *imgBtnTime;
+/*日期信息*/
+static lv_obj_t *lableDate;
+
+/*曲线按钮*/
+static lv_obj_t *imgbtnLChart;
+
+/*菜单按钮*/
+static lv_obj_t *btnInfo;
+static lv_obj_t *btnCal;
+static lv_obj_t *btnMro;
+static lv_obj_t *btnSet;
+
+static lv_obj_t *labelInfo;
+static lv_obj_t *labelCal;
+static lv_obj_t *labelMro;
+static lv_obj_t *labelSet;
+
+/*通道切换按钮*/
+static lv_obj_t *imgbtnChLeft;
+static lv_obj_t *imgbtnChRight;
+
+/*通道号显示*/
+static lv_obj_t *labelChannel;
+
+/*测量值显示*/
+static lv_obj_t *labCalValue;
+static lv_obj_t *labCalUnit;
+
+/*温度显示*/
+static lv_obj_t *labelTempera;
+static lv_obj_t *imgTempera;
 
 /*时间刷新任务*/
 static lv_task_t *taskTimeUpdate;
@@ -39,6 +68,34 @@ static void btn_event_cb(lv_obj_t *obj, lv_event_t event)
 {
     if (event == LV_EVENT_RELEASED)
     {
+        if (obj == btnInfo)
+        {
+            App_Printf("信息\r\n");
+        }
+        else if (obj == btnCal)
+        {
+            App_Printf("校准\r\n");
+        }
+        else if (obj == btnMro)
+        {
+            App_Printf("维护\r\n");
+        }
+        else if (obj == btnSet)
+        {
+            App_Printf("设置\r\n");
+        }
+        else if (obj == imgbtnChLeft)
+        {
+            App_Printf("左\r\n");
+        }
+        else if (obj == imgbtnChRight)
+        {
+            App_Printf("右\r\n");
+        }
+        else if (obj == imgbtnLChart)
+        {
+            App_Printf("曲线\r\n");
+        }
     }
 }
 
@@ -53,14 +110,15 @@ static void btn_event_cb(lv_obj_t *obj, lv_event_t event)
 static void Task_TimeUpdate(lv_task_t *task)
 {
     static uint8_t toggle_flg = 0;
-    static RTC_DateTypeDef GetData;
+    static RTC_DateTypeDef GetDate;
     static RTC_TimeTypeDef GetTime;
     HAL_RTC_GetTime(&hrtc, &GetTime, RTC_FORMAT_BIN);
-    HAL_RTC_GetDate(&hrtc, &GetData, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &GetDate, RTC_FORMAT_BIN);
     if (toggle_flg)
         lv_label_set_text_fmt(lableTime, "%02d:%02d", GetTime.Hours, GetTime.Minutes);
     else
         lv_label_set_text_fmt(lableTime, "%02d %02d", GetTime.Hours, GetTime.Minutes);
+    lv_label_set_text_fmt(lableDate, "%4d/%02d/%02d", 2000 + GetDate.Year, GetDate.Month, GetDate.Date);
     toggle_flg = !toggle_flg;
 }
 
@@ -84,23 +142,6 @@ static void ContTitle_Creat(void)
     title_cont_style.body.radius = 0;
     lv_cont_set_style(contTitle, LV_LABEL_STYLE_MAIN, &title_cont_style);
     lv_obj_align(contTitle, NULL, LV_ALIGN_IN_TOP_MID, 0, 0);
-    lv_obj_set_auto_realign(contTitle, true);
-
-    //时间调整按钮
-    LV_IMG_DECLARE(IconTimeW);
-    LV_IMG_DECLARE(IconTimeB);
-    imgBtnTime = lv_imgbtn_create(contTitle, NULL);
-    lv_obj_set_size(imgBtnTime, 32, 32);
-    static lv_style_t btn_time_on, btn_time_off;
-    btn_time_on = *lv_btn_get_style(imgBtnTime, LV_BTN_STYLE_PR);
-    btn_time_off = *lv_btn_get_style(imgBtnTime, LV_BTN_STYLE_REL);
-    btn_time_off.body.opa = LV_OPA_TRANSP;
-    btn_time_on.body.opa = LV_OPA_TRANSP;
-    lv_imgbtn_set_src(imgBtnTime, LV_BTN_STATE_PR, &IconTimeB);
-    lv_imgbtn_set_src(imgBtnTime, LV_BTN_STATE_REL, &IconTimeW);
-    lv_obj_align(imgBtnTime, NULL, LV_ALIGN_IN_RIGHT_MID, -55, 0);
-    lv_obj_set_auto_realign(imgBtnTime, true);
-    lv_obj_set_event_cb(imgBtnTime, btn_event_cb);
 
     //时间显示
     LV_FONT_DECLARE(SYHT_MED_16);
@@ -110,8 +151,148 @@ static void ContTitle_Creat(void)
     lable_time_style.text.font = &SYHT_MED_16;
     lable_time_style.text.color = LV_COLOR_WHITE;
     lv_label_set_style(lableTime, LV_LABEL_STYLE_MAIN, &lable_time_style);
-    lv_obj_align(lableTime, NULL, LV_ALIGN_IN_RIGHT_MID, -5, 3);
+    lv_obj_align(lableTime, NULL, LV_ALIGN_IN_BOTTOM_RIGHT, -3, 7);
     lv_obj_set_auto_realign(lableTime, true);
+
+    //日期显示
+    LV_FONT_DECLARE(SYHT_MED_16);
+    lableDate = lv_label_create(contTitle, lableTime);
+    lv_obj_align(lableDate, NULL, LV_ALIGN_IN_TOP_RIGHT, -3, 3);
+    lv_obj_set_auto_realign(lableDate, true);
+}
+
+/*
+ ********************************************************************************************************
+ *@func       Body_Creat
+ *@brief      创建主显示区控件
+ *@param[in]  node
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void Body_Creat(void)
+{
+    //显示曲线图标
+    LV_IMG_DECLARE(LChartW);
+    LV_IMG_DECLARE(LChartB);
+    imgbtnLChart = lv_imgbtn_create(appWindow, NULL);
+    lv_imgbtn_set_src(imgbtnLChart, LV_BTN_STATE_REL, &LChartB);
+    lv_imgbtn_set_src(imgbtnLChart, LV_BTN_STATE_PR, &LChartW);
+    lv_obj_set_size(imgbtnLChart, 32, 32);
+    lv_obj_align(imgbtnLChart, NULL, LV_ALIGN_IN_LEFT_MID, 0, -60);
+    lv_obj_set_event_cb(imgbtnLChart, btn_event_cb);
+
+    //菜单按钮
+    LV_FONT_DECLARE(SYHT_MED_16);
+    btnInfo = lv_btn_create(appWindow, NULL);
+    lv_obj_set_size(btnInfo, 75, 40);
+    static lv_style_t btn_info_style_rel, btn_info_style_pr;
+    btn_info_style_rel = *lv_btn_get_style(btnInfo, LV_BTN_STYLE_REL);
+    btn_info_style_pr = *lv_btn_get_style(btnInfo, LV_BTN_STYLE_PR);
+    btn_info_style_rel.text.font = &SYHT_MED_16;
+    btn_info_style_pr.text.font = &SYHT_MED_16;
+    lv_btn_set_style(btnInfo, LV_BTN_STYLE_REL, &btn_info_style_rel);
+    lv_btn_set_style(btnInfo, LV_BTN_STYLE_PR, &btn_info_style_pr);
+    lv_btn_set_layout(btnInfo, LV_LAYOUT_OFF);
+    labelInfo = lv_label_create(btnInfo, NULL);
+    lv_label_set_text(labelInfo, "信息");
+    lv_obj_align(btnInfo, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 3, -2);
+    lv_obj_align(labelInfo, NULL, LV_ALIGN_CENTER, 0, 5);
+
+    btnCal = lv_btn_create(appWindow, btnInfo);
+    labelCal = lv_label_create(btnCal, labelInfo);
+    lv_label_set_text(labelCal, "校准");
+    lv_obj_align(btnCal, btnInfo, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+
+    btnMro = lv_btn_create(appWindow, btnInfo);
+    labelMro = lv_label_create(btnMro, labelInfo);
+    lv_label_set_text(labelMro, "维护");
+    lv_obj_align(btnMro, btnCal, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+
+    btnSet = lv_btn_create(appWindow, btnInfo);
+    labelSet = lv_label_create(btnSet, labelInfo);
+    lv_label_set_text(labelSet, "设置");
+    lv_obj_align(btnSet, btnMro, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+
+    lv_obj_set_event_cb(btnInfo, btn_event_cb);
+    lv_obj_set_event_cb(btnCal, btn_event_cb);
+    lv_obj_set_event_cb(btnMro, btn_event_cb);
+    lv_obj_set_event_cb(btnSet, btn_event_cb);
+
+    //通道号显示
+    LV_FONT_DECLARE(SYHT_BOLD_20);
+    labelChannel = lv_label_create(appWindow, NULL);
+    static lv_style_t label_channel_style;
+    label_channel_style = *lv_label_get_style(labelChannel, LV_LABEL_STYLE_MAIN);
+    label_channel_style.text.font = &SYHT_BOLD_20;
+    label_channel_style.text.color = LV_COLOR_BLACK;
+    lv_label_set_style(labelChannel, LV_LABEL_STYLE_MAIN, &label_channel_style);
+    lv_obj_align(labelChannel, NULL, LV_ALIGN_CENTER, 0, -50);
+    lv_obj_set_auto_realign(labelChannel, true);
+    lv_label_set_text(labelChannel, "Channel_1");
+
+    //通道切换图标
+    LV_IMG_DECLARE(LeftW);
+    LV_IMG_DECLARE(LeftB);
+    LV_IMG_DECLARE(RightW);
+    LV_IMG_DECLARE(RightB);
+    imgbtnChLeft = lv_imgbtn_create(appWindow, NULL);
+    lv_obj_set_size(imgbtnChLeft, 32, 32);
+    lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_REL, &LeftB);
+    lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_PR, &LeftW);
+    imgbtnChRight = lv_imgbtn_create(appWindow, NULL);
+    lv_obj_set_size(imgbtnChRight, 32, 32);
+    lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_REL, &RightB);
+    lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_PR, &RightW);
+    lv_obj_set_event_cb(imgbtnChLeft, btn_event_cb);
+    lv_obj_set_event_cb(imgbtnChRight, btn_event_cb);
+
+    lv_obj_align(imgbtnChLeft, labelChannel, LV_ALIGN_OUT_LEFT_MID, -5, -5);
+    lv_obj_align(imgbtnChRight, labelChannel, LV_ALIGN_OUT_RIGHT_MID, 5, -5);
+    lv_obj_set_auto_realign(imgbtnChLeft, true);
+    lv_obj_set_auto_realign(imgbtnChRight, true);
+
+    //测量值显示
+    LV_FONT_DECLARE(SYHT_BOLD_40);
+    labCalValue = lv_label_create(appWindow, NULL);
+    static lv_style_t label_cal_value;
+    label_cal_value = *lv_label_get_style(labCalValue, LV_LABEL_STYLE_MAIN);
+    label_cal_value.text.font = &SYHT_BOLD_40;
+    label_cal_value.text.color = LV_COLOR_BLACK;
+    lv_label_set_style(labCalValue, LV_LABEL_STYLE_MAIN, &label_cal_value);
+    lv_obj_align(labCalValue, NULL, LV_ALIGN_CENTER, 0, 0);
+    lv_obj_set_auto_realign(labCalValue, true);
+    lv_label_set_text(labCalValue, "98.72");
+
+    //测量单位显示
+    LV_FONT_DECLARE(SYHT_BOLD_20);
+    labCalUnit = lv_label_create(appWindow, NULL);
+    static lv_style_t label_cal_unit;
+    label_cal_unit = *lv_label_get_style(labCalUnit, LV_LABEL_STYLE_MAIN);
+    label_cal_unit.text.font = &SYHT_BOLD_20;
+    label_cal_unit.text.color = LV_COLOR_BLACK;
+    lv_label_set_style(labCalUnit, LV_LABEL_STYLE_MAIN, &label_cal_unit);
+    lv_obj_align(labCalUnit, labCalValue, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -12);
+    lv_obj_set_auto_realign(labCalUnit, true);
+    lv_label_set_text(labCalUnit, "msC");
+
+    //温度显示
+    LV_FONT_DECLARE(SYHT_BOLD_20);
+    labelTempera = lv_label_create(appWindow, NULL);
+    static lv_style_t label_tempera_style;
+    label_tempera_style = *lv_label_get_style(labelTempera, LV_LABEL_STYLE_MAIN);
+    label_tempera_style.text.font = &SYHT_BOLD_20;
+    label_tempera_style.text.color = LV_COLOR_BLACK;
+    lv_label_set_style(labelTempera, LV_LABEL_STYLE_MAIN, &label_tempera_style);
+    lv_obj_align(labelTempera, NULL, LV_ALIGN_CENTER, 7, 40);
+    lv_obj_set_auto_realign(labelTempera, true);
+    lv_label_set_text(labelTempera, "30.1 ℃");
+
+    //温度图标
+    LV_IMG_DECLARE(IconTemp);
+    imgTempera = lv_img_create(appWindow, NULL);
+    lv_img_set_src(imgTempera, &IconTemp);
+    lv_obj_align(imgTempera, labelTempera, LV_ALIGN_OUT_LEFT_MID, -8, -5);
+    lv_obj_set_auto_realign(imgTempera, true);
 }
 
 /*
@@ -143,6 +324,7 @@ static void Setup(void)
 
     /*创建控件*/
     ContTitle_Creat();
+    Body_Creat();
 
     /*创建任务*/
     Task_Create();
@@ -159,6 +341,7 @@ static void Setup(void)
 static void Exit(void)
 {
     /*关任务*/
+    lv_task_del(taskTimeUpdate);
 
     /*删除此页面上的子控件*/
     lv_obj_clean(appWindow);

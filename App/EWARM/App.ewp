@@ -1164,16 +1164,37 @@
                         <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_20.c</name>
                     </file>
                     <file>
+                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_32.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_40.c</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_MED_16.c</name>
                     </file>
                 </group>
                 <group>
                     <name>IMG</name>
                     <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconTimeB.c</name>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconTemp.c</name>
                     </file>
                     <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconTimeW.c</name>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\LChartB.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\LChartW.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\LeftB.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\LeftW.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\RightB.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\RightW.c</name>
                     </file>
                 </group>
                 <group>
