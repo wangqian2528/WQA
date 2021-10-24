@@ -279,3 +279,13 @@ static int do_rtc_cmd(uint32_t argc, char *argv[])
     return 1;
 }
 cmd_register("rtc", do_rtc_cmd, "show dev rtc");
+
+/*
+ * @brief      软复位命令
+ */
+static int do_reset_cmd(uint32_t argc, char *argv[])
+{
+    SCB->AIRCR = 0X05FA0000 | (uint32_t)0x04;
+    return 1;
+}
+cmd_register("reset", do_reset_cmd, "system soft reset");

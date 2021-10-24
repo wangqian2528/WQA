@@ -1176,6 +1176,12 @@
                 <group>
                     <name>IMG</name>
                     <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconBackB.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconBackW.c</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\Core\UI\IMG\IconTemp.c</name>
                     </file>
                     <file>
@@ -1201,6 +1207,9 @@
                     <name>Page</name>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_home.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\page_set.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_start.c</name>

@@ -38,12 +38,12 @@ static lv_obj_t *labelCal;
 static lv_obj_t *labelMro;
 static lv_obj_t *labelSet;
 
-/*通道切换按钮*/
-static lv_obj_t *imgbtnChLeft;
-static lv_obj_t *imgbtnChRight;
+// /*通道切换按钮*/
+// static lv_obj_t *imgbtnChLeft;
+// static lv_obj_t *imgbtnChRight;
 
-/*通道号显示*/
-static lv_obj_t *labelChannel;
+// /*通道号显示*/
+// static lv_obj_t *labelChannel;
 
 /*测量值显示*/
 static lv_obj_t *labCalValue;
@@ -82,16 +82,16 @@ static void btn_event_cb(lv_obj_t *obj, lv_event_t event)
         }
         else if (obj == btnSet)
         {
-            App_Printf("设置\r\n");
+            Page_ChangeTo(PAGE_SET);
         }
-        else if (obj == imgbtnChLeft)
-        {
-            App_Printf("左\r\n");
-        }
-        else if (obj == imgbtnChRight)
-        {
-            App_Printf("右\r\n");
-        }
+        // else if (obj == imgbtnChLeft)
+        // {
+        //     App_Printf("左\r\n");
+        // }
+        // else if (obj == imgbtnChRight)
+        // {
+        //     App_Printf("右\r\n");
+        // }
         else if (obj == imgbtnLChart)
         {
             App_Printf("曲线\r\n");
@@ -183,73 +183,74 @@ static void Body_Creat(void)
 
     //菜单按钮
     LV_FONT_DECLARE(SYHT_MED_16);
-    btnInfo = lv_btn_create(appWindow, NULL);
-    lv_obj_set_size(btnInfo, 75, 40);
-    static lv_style_t btn_info_style_rel, btn_info_style_pr;
-    btn_info_style_rel = *lv_btn_get_style(btnInfo, LV_BTN_STYLE_REL);
-    btn_info_style_pr = *lv_btn_get_style(btnInfo, LV_BTN_STYLE_PR);
-    btn_info_style_rel.text.font = &SYHT_MED_16;
-    btn_info_style_pr.text.font = &SYHT_MED_16;
-    lv_btn_set_style(btnInfo, LV_BTN_STYLE_REL, &btn_info_style_rel);
-    lv_btn_set_style(btnInfo, LV_BTN_STYLE_PR, &btn_info_style_pr);
-    lv_btn_set_layout(btnInfo, LV_LAYOUT_OFF);
-    labelInfo = lv_label_create(btnInfo, NULL);
-    lv_label_set_text(labelInfo, "信息");
-    lv_obj_align(btnInfo, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 3, -2);
-    lv_obj_align(labelInfo, NULL, LV_ALIGN_CENTER, 0, 5);
 
-    btnCal = lv_btn_create(appWindow, btnInfo);
-    labelCal = lv_label_create(btnCal, labelInfo);
+    btnSet = lv_btn_create(appWindow, NULL);
+    lv_obj_set_size(btnSet, 75, 40);
+    static lv_style_t btn_set_style_rel, btn_set_style_pr;
+    btn_set_style_rel = *lv_btn_get_style(btnSet, LV_BTN_STYLE_REL);
+    btn_set_style_pr = *lv_btn_get_style(btnSet, LV_BTN_STYLE_PR);
+    btn_set_style_rel.text.font = &SYHT_MED_16;
+    btn_set_style_pr.text.font = &SYHT_MED_16;
+    lv_btn_set_style(btnSet, LV_BTN_STYLE_REL, &btn_set_style_rel);
+    lv_btn_set_style(btnSet, LV_BTN_STYLE_PR, &btn_set_style_pr);
+    lv_btn_set_layout(btnSet, LV_LAYOUT_OFF);
+    labelSet = lv_label_create(btnSet, NULL);
+    lv_label_set_text(labelSet, "设置");
+    lv_obj_align(btnSet, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 3, -2);
+    lv_obj_align(labelSet, NULL, LV_ALIGN_CENTER, 0, 5);
+
+    btnCal = lv_btn_create(appWindow, btnSet);
+    labelCal = lv_label_create(btnCal, labelSet);
     lv_label_set_text(labelCal, "校准");
-    lv_obj_align(btnCal, btnInfo, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+    lv_obj_align(btnCal, btnSet, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    btnMro = lv_btn_create(appWindow, btnInfo);
-    labelMro = lv_label_create(btnMro, labelInfo);
+    btnMro = lv_btn_create(appWindow, btnSet);
+    labelMro = lv_label_create(btnMro, labelSet);
     lv_label_set_text(labelMro, "维护");
     lv_obj_align(btnMro, btnCal, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    btnSet = lv_btn_create(appWindow, btnInfo);
-    labelSet = lv_label_create(btnSet, labelInfo);
-    lv_label_set_text(labelSet, "设置");
-    lv_obj_align(btnSet, btnMro, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+    btnInfo = lv_btn_create(appWindow, btnSet);
+    labelInfo = lv_label_create(btnInfo, labelSet);
+    lv_label_set_text(labelInfo, "信息");
+    lv_obj_align(btnInfo, btnMro, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    lv_obj_set_event_cb(btnInfo, btn_event_cb);
+    lv_obj_set_event_cb(btnSet, btn_event_cb);
     lv_obj_set_event_cb(btnCal, btn_event_cb);
     lv_obj_set_event_cb(btnMro, btn_event_cb);
-    lv_obj_set_event_cb(btnSet, btn_event_cb);
+    lv_obj_set_event_cb(btnInfo, btn_event_cb);
 
-    //通道号显示
-    LV_FONT_DECLARE(SYHT_BOLD_20);
-    labelChannel = lv_label_create(appWindow, NULL);
-    static lv_style_t label_channel_style;
-    label_channel_style = *lv_label_get_style(labelChannel, LV_LABEL_STYLE_MAIN);
-    label_channel_style.text.font = &SYHT_BOLD_20;
-    label_channel_style.text.color = LV_COLOR_BLACK;
-    lv_label_set_style(labelChannel, LV_LABEL_STYLE_MAIN, &label_channel_style);
-    lv_obj_align(labelChannel, NULL, LV_ALIGN_CENTER, 0, -50);
-    lv_obj_set_auto_realign(labelChannel, true);
-    lv_label_set_text(labelChannel, "Channel_1");
+    // //通道号显示
+    // LV_FONT_DECLARE(SYHT_BOLD_20);
+    // labelChannel = lv_label_create(appWindow, NULL);
+    // static lv_style_t label_channel_style;
+    // label_channel_style = *lv_label_get_style(labelChannel, LV_LABEL_STYLE_MAIN);
+    // label_channel_style.text.font = &SYHT_BOLD_20;
+    // label_channel_style.text.color = LV_COLOR_BLACK;
+    // lv_label_set_style(labelChannel, LV_LABEL_STYLE_MAIN, &label_channel_style);
+    // lv_obj_align(labelChannel, NULL, LV_ALIGN_CENTER, 0, -50);
+    // lv_obj_set_auto_realign(labelChannel, true);
+    // lv_label_set_text(labelChannel, "Channel_1");
 
-    //通道切换图标
-    LV_IMG_DECLARE(LeftW);
-    LV_IMG_DECLARE(LeftB);
-    LV_IMG_DECLARE(RightW);
-    LV_IMG_DECLARE(RightB);
-    imgbtnChLeft = lv_imgbtn_create(appWindow, NULL);
-    lv_obj_set_size(imgbtnChLeft, 32, 32);
-    lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_REL, &LeftB);
-    lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_PR, &LeftW);
-    imgbtnChRight = lv_imgbtn_create(appWindow, NULL);
-    lv_obj_set_size(imgbtnChRight, 32, 32);
-    lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_REL, &RightB);
-    lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_PR, &RightW);
-    lv_obj_set_event_cb(imgbtnChLeft, btn_event_cb);
-    lv_obj_set_event_cb(imgbtnChRight, btn_event_cb);
+    // //通道切换图标
+    // LV_IMG_DECLARE(LeftW);
+    // LV_IMG_DECLARE(LeftB);
+    // LV_IMG_DECLARE(RightW);
+    // LV_IMG_DECLARE(RightB);
+    // imgbtnChLeft = lv_imgbtn_create(appWindow, NULL);
+    // lv_obj_set_size(imgbtnChLeft, 32, 32);
+    // lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_REL, &LeftB);
+    // lv_imgbtn_set_src(imgbtnChLeft, LV_BTN_STATE_PR, &LeftW);
+    // imgbtnChRight = lv_imgbtn_create(appWindow, NULL);
+    // lv_obj_set_size(imgbtnChRight, 32, 32);
+    // lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_REL, &RightB);
+    // lv_imgbtn_set_src(imgbtnChRight, LV_BTN_STATE_PR, &RightW);
+    // lv_obj_set_event_cb(imgbtnChLeft, btn_event_cb);
+    // lv_obj_set_event_cb(imgbtnChRight, btn_event_cb);
 
-    lv_obj_align(imgbtnChLeft, labelChannel, LV_ALIGN_OUT_LEFT_MID, -5, -5);
-    lv_obj_align(imgbtnChRight, labelChannel, LV_ALIGN_OUT_RIGHT_MID, 5, -5);
-    lv_obj_set_auto_realign(imgbtnChLeft, true);
-    lv_obj_set_auto_realign(imgbtnChRight, true);
+    // lv_obj_align(imgbtnChLeft, labelChannel, LV_ALIGN_OUT_LEFT_MID, -5, -5);
+    // lv_obj_align(imgbtnChRight, labelChannel, LV_ALIGN_OUT_RIGHT_MID, 5, -5);
+    // lv_obj_set_auto_realign(imgbtnChLeft, true);
+    // lv_obj_set_auto_realign(imgbtnChRight, true);
 
     //测量值显示
     LV_FONT_DECLARE(SYHT_BOLD_40);

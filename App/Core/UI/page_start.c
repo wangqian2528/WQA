@@ -25,7 +25,7 @@ static lv_obj_t *barStart;
 static lv_task_t *taskPageJump;
 
 /*显示字符串*/
-const char *COMPANY_NAME = "上海微创生命科技";
+const char *COMPANY_NAME = "苏州讴劲电子有限公司";
 
 /*
  ********************************************************************************************************
