@@ -419,18 +419,20 @@ static void AppTaskGUI(ULONG thread_input)
     lv_port_disp_init();
     lv_port_indev_init();
 
-    lv_theme_set_current(lv_theme_mono_init(200, NULL));
+    // lv_theme_set_current(lv_theme_mono_init(200, NULL));
 
-    AppWindow_Create();
+    // AppWindow_Create();
 
-    Page_Init();
+    // Page_Init();
 
     LCD_BK_SET(g_sys_para_lcd_bklight);
+
+    lv_demo_widgets();
 
     while (1)
     {
         lv_task_handler();
-        Page_Running();
+        //Page_Running();
         tx_thread_sleep(10);
     }
 }

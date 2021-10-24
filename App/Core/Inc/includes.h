@@ -160,7 +160,7 @@
 #include "rtc.h"
 #include "gpio.h"
 #include "usart.h"
-#include "display.h"
+// #include "display.h"
 
 /*
 *********************************************************************************************************
@@ -180,6 +180,7 @@
 #include "lv_port_disp.h"
 #include "lv_port_indev.h"
 
+#include "lv_demo_widgets/lv_demo_widgets.h"
 /*
 *********************************************************************************************************
 *                                        APP / BSP
