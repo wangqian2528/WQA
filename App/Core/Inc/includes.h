@@ -160,7 +160,7 @@
 #include "rtc.h"
 #include "gpio.h"
 #include "usart.h"
-// #include "display.h"
+#include "display.h"
 
 /*
 *********************************************************************************************************

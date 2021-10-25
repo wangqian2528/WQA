@@ -71,15 +71,21 @@ void AppWindow_Create(void)
 {
     for (int i = 0; i < PAGE_MAX; i++)
     {
-        appWindow_Grp[i].cont = lv_cont_create(lv_scr_act(), NULL);
+        appWindow_Grp[i].cont = lv_obj_create(lv_scr_act());
 
         lv_obj_set_size(appWindow_Grp[i].cont, AppWindow_GetWidth(), AppWindow_GetHeight());
-        lv_obj_align(appWindow_Grp[i].cont, NULL, LV_ALIGN_CENTER, 0, 0);
-        lv_cont_set_fit(appWindow_Grp[i].cont, LV_FIT_NONE);
+        lv_obj_center(appWindow_Grp[i].cont);
+        lv_obj_set_style_base_dir(appWindow_Grp[i].cont, LV_BASE_DIR_LTR, 0);
 
-        appWindow_Grp[i].style = lv_style_plain;
-        appWindow_Grp[i].style.body.main_color = LV_COLOR_WHITE;
-        appWindow_Grp[i].style.body.grad_color = LV_COLOR_WHITE;
-        lv_cont_set_style(appWindow_Grp[i].cont, LV_CONT_STYLE_MAIN, &appWindow_Grp[i].style);
+        lv_style_init(&appWindow_Grp[i].style);
+        lv_style_set_border_width(&appWindow_Grp[i].style, 0);
+        lv_style_set_bg_opa(&appWindow_Grp[i].style, 0);
+        lv_style_set_radius(&appWindow_Grp[i].style, 0);
+        lv_style_set_pad_all(&appWindow_Grp[i].style, 0);
+
+        lv_style_set_bg_color(&appWindow_Grp[i].style, lv_color_make(0xFF, 0xFF, 0xFF));
+        lv_style_set_bg_grad_color(&appWindow_Grp[i].style, lv_color_make(0xFF, 0xFF, 0xFF));
+
+        lv_obj_add_style(appWindow_Grp[i].cont, &appWindow_Grp[i].style, 0);
     }
 }

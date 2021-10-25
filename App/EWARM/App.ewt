@@ -1472,12 +1472,6 @@
         <group>
             <name>GUIX</name>
             <group>
-                <name>demo</name>
-                <file>
-                    <name>$PROJ_DIR$\..\Middlewares\GUIX\lvgl_demo\src\lv_demo_widgets\lv_demo_widgets.c</name>
-                </file>
-            </group>
-            <group>
                 <name>Port</name>
                 <file>
                     <name>$PROJ_DIR$\..\Middlewares\GUIX\lvgl\port\lv_port_disp.c</name>
@@ -1858,6 +1852,9 @@
                     <name>$PROJ_DIR$\..\Middlewares\GUIX\lvgl\src\extra\widgets\win\lv_win.c</name>
                 </file>
             </group>
+            <file>
+                <name>$PROJ_DIR$\..\Middlewares\GUIX\lvgl_demo\src\lv_demo_widgets\lv_demo_widgets.c</name>
+            </file>
         </group>
         <group>
             <name>USB_Device_Library</name>

@@ -54,7 +54,7 @@ static lv_obj_t *labelTempera;
 static lv_obj_t *imgTempera;
 
 /*时间刷新任务*/
-static lv_task_t *taskTimeUpdate;
+static lv_timer_t *tmrUpdate;
 
 /*
  ********************************************************************************************************
@@ -64,50 +64,48 @@ static lv_task_t *taskTimeUpdate;
  *@retval     none
  ********************************************************************************************************
  */
-static void btn_event_cb(lv_obj_t *obj, lv_event_t event)
+static void btn_event_cb(lv_event_t *event)
 {
-    if (event == LV_EVENT_RELEASED)
+    lv_obj_t *obj = lv_event_get_target(event);
+    if (obj == btnInfo)
     {
-        if (obj == btnInfo)
-        {
-            App_Printf("信息\r\n");
-        }
-        else if (obj == btnCal)
-        {
-            App_Printf("校准\r\n");
-        }
-        else if (obj == btnMro)
-        {
-            App_Printf("维护\r\n");
-        }
-        else if (obj == btnSet)
-        {
-            Page_ChangeTo(PAGE_SET);
-        }
-        // else if (obj == imgbtnChLeft)
-        // {
-        //     App_Printf("左\r\n");
-        // }
-        // else if (obj == imgbtnChRight)
-        // {
-        //     App_Printf("右\r\n");
-        // }
-        else if (obj == imgbtnLChart)
-        {
-            App_Printf("曲线\r\n");
-        }
+        App_Printf("信息\r\n");
+    }
+    else if (obj == btnCal)
+    {
+        App_Printf("校准\r\n");
+    }
+    else if (obj == btnMro)
+    {
+        App_Printf("维护\r\n");
+    }
+    else if (obj == btnSet)
+    {
+        Page_ChangeTo(PAGE_SET);
+    }
+    // else if (obj == imgbtnChLeft)
+    // {
+    //     App_Printf("左\r\n");
+    // }
+    // else if (obj == imgbtnChRight)
+    // {
+    //     App_Printf("右\r\n");
+    // }
+    else if (obj == imgbtnLChart)
+    {
+        App_Printf("曲线\r\n");
     }
 }
 
 /*
  ********************************************************************************************************
- *@func       Task_TimeUpdate
+ *@func       TimerCB_TimeUpdate
  *@brief      时间刷新回调
  *@param[in]  node
  *@retval     none
  ********************************************************************************************************
  */
-static void Task_TimeUpdate(lv_task_t *task)
+static void TimerCB_TimeUpdate(lv_timer_t *tmr)
 {
     static uint8_t toggle_flg = 0;
     static RTC_DateTypeDef GetDate;
@@ -133,32 +131,40 @@ static void Task_TimeUpdate(lv_task_t *task)
 static void ContTitle_Creat(void)
 {
     //标题栏
-    contTitle = lv_cont_create(appWindow, NULL);
+    contTitle = lv_obj_create(appWindow);
     lv_obj_set_size(contTitle, 320, 40);
+    lv_obj_clear_flag(contTitle, LV_OBJ_FLAG_SCROLLABLE);
+
     static lv_style_t title_cont_style;
-    title_cont_style = *lv_cont_get_style(contTitle, LV_LABEL_STYLE_MAIN);
-    title_cont_style.body.main_color = LV_COLOR_BLACK;
-    title_cont_style.body.grad_color = LV_COLOR_DARK_GRAY;
-    title_cont_style.body.radius = 0;
-    lv_cont_set_style(contTitle, LV_LABEL_STYLE_MAIN, &title_cont_style);
-    lv_obj_align(contTitle, NULL, LV_ALIGN_IN_TOP_MID, 0, 0);
+    lv_style_init(&title_cont_style);
+    lv_style_set_bg_color(&title_cont_style, lv_color_black());
+    lv_style_set_bg_grad_color(&title_cont_style, lv_color_make(0xA9, 0xA9, 0xA9));
+    lv_style_set_bg_grad_dir(&title_cont_style, LV_GRAD_DIR_VER);
+    lv_style_set_border_width(&title_cont_style, 0);
+
+    lv_style_set_radius(&title_cont_style, 0);
+    lv_style_set_pad_all(&title_cont_style, 0);
+    lv_obj_add_style(contTitle, &title_cont_style, 0);
+    lv_obj_align(contTitle, LV_ALIGN_TOP_MID, 0, 0);
 
     //时间显示
     LV_FONT_DECLARE(SYHT_MED_16);
-    lableTime = lv_label_create(contTitle, NULL);
+    lableTime = lv_label_create(contTitle);
+
     static lv_style_t lable_time_style;
-    lable_time_style = *lv_label_get_style(lableTime, LV_LABEL_STYLE_MAIN);
-    lable_time_style.text.font = &SYHT_MED_16;
-    lable_time_style.text.color = LV_COLOR_WHITE;
-    lv_label_set_style(lableTime, LV_LABEL_STYLE_MAIN, &lable_time_style);
-    lv_obj_align(lableTime, NULL, LV_ALIGN_IN_BOTTOM_RIGHT, -3, 7);
-    lv_obj_set_auto_realign(lableTime, true);
+    lv_style_init(&lable_time_style);
+    lv_style_set_text_color(&lable_time_style, lv_color_white());
+    lv_style_set_text_font(&lable_time_style, &SYHT_MED_16);
+    lv_style_set_pad_all(&lable_time_style, 0);
+
+    lv_obj_add_style(lableTime, &lable_time_style, 0);
+    lv_obj_align(lableTime, LV_ALIGN_BOTTOM_RIGHT, -3, 5);
 
     //日期显示
     LV_FONT_DECLARE(SYHT_MED_16);
-    lableDate = lv_label_create(contTitle, lableTime);
-    lv_obj_align(lableDate, NULL, LV_ALIGN_IN_TOP_RIGHT, -3, 3);
-    lv_obj_set_auto_realign(lableDate, true);
+    lableDate = lv_label_create(contTitle);
+    lv_obj_add_style(lableDate, &lable_time_style, 0);
+    lv_obj_align(lableDate, LV_ALIGN_TOP_RIGHT, -3, 5);
 }
 
 /*
@@ -174,50 +180,71 @@ static void Body_Creat(void)
     //显示曲线图标
     LV_IMG_DECLARE(LChartW);
     LV_IMG_DECLARE(LChartB);
-    imgbtnLChart = lv_imgbtn_create(appWindow, NULL);
-    lv_imgbtn_set_src(imgbtnLChart, LV_BTN_STATE_REL, &LChartB);
-    lv_imgbtn_set_src(imgbtnLChart, LV_BTN_STATE_PR, &LChartW);
+    imgbtnLChart = lv_imgbtn_create(appWindow);
+    lv_imgbtn_set_src(imgbtnLChart, LV_IMGBTN_STATE_RELEASED, NULL, &LChartB, NULL);
+    lv_imgbtn_set_src(imgbtnLChart, LV_IMGBTN_STATE_PRESSED, NULL, &LChartW, NULL);
     lv_obj_set_size(imgbtnLChart, 32, 32);
-    lv_obj_align(imgbtnLChart, NULL, LV_ALIGN_IN_LEFT_MID, 0, -60);
-    lv_obj_set_event_cb(imgbtnLChart, btn_event_cb);
+    lv_obj_align(imgbtnLChart, LV_ALIGN_LEFT_MID, 0, -60);
+    lv_obj_add_event_cb(imgbtnLChart, btn_event_cb, LV_EVENT_CLICKED, NULL);
 
     //菜单按钮
     LV_FONT_DECLARE(SYHT_MED_16);
 
-    btnSet = lv_btn_create(appWindow, NULL);
+    static lv_style_t btn_style_rel, btn_style_pr;
+    lv_style_init(&btn_style_rel);
+    lv_style_set_text_font(&btn_style_rel, &SYHT_MED_16);
+    lv_style_set_text_color(&btn_style_rel, lv_color_black());
+    lv_style_set_bg_color(&btn_style_rel, lv_color_white());
+    lv_style_set_border_width(&btn_style_rel, 2);
+    lv_style_set_border_color(&btn_style_rel, lv_color_black());
+
+    lv_style_init(&btn_style_pr);
+    lv_style_set_text_font(&btn_style_pr, &SYHT_MED_16);
+    lv_style_set_text_color(&btn_style_pr, lv_color_white());
+    lv_style_set_bg_color(&btn_style_pr, lv_color_black());
+    lv_style_set_border_width(&btn_style_pr, 2);
+    lv_style_set_border_color(&btn_style_pr, lv_color_black());
+
+    btnSet = lv_btn_create(appWindow);
     lv_obj_set_size(btnSet, 75, 40);
-    static lv_style_t btn_set_style_rel, btn_set_style_pr;
-    btn_set_style_rel = *lv_btn_get_style(btnSet, LV_BTN_STYLE_REL);
-    btn_set_style_pr = *lv_btn_get_style(btnSet, LV_BTN_STYLE_PR);
-    btn_set_style_rel.text.font = &SYHT_MED_16;
-    btn_set_style_pr.text.font = &SYHT_MED_16;
-    lv_btn_set_style(btnSet, LV_BTN_STYLE_REL, &btn_set_style_rel);
-    lv_btn_set_style(btnSet, LV_BTN_STYLE_PR, &btn_set_style_pr);
-    lv_btn_set_layout(btnSet, LV_LAYOUT_OFF);
-    labelSet = lv_label_create(btnSet, NULL);
+    lv_obj_add_style(btnSet, &btn_style_rel, 0);
+    lv_obj_add_style(btnSet, &btn_style_pr, LV_STATE_PRESSED);
+    labelSet = lv_label_create(btnSet);
     lv_label_set_text(labelSet, "设置");
-    lv_obj_align(btnSet, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 3, -2);
-    lv_obj_align(labelSet, NULL, LV_ALIGN_CENTER, 0, 5);
+    lv_obj_align(labelSet, LV_ALIGN_CENTER, 0, 4);
+    lv_obj_align(btnSet, LV_ALIGN_BOTTOM_LEFT, 3, -3);
 
-    btnCal = lv_btn_create(appWindow, btnSet);
-    labelCal = lv_label_create(btnCal, labelSet);
+    btnCal = lv_btn_create(appWindow);
+    lv_obj_set_size(btnCal, 75, 40);
+    lv_obj_add_style(btnCal, &btn_style_rel, 0);
+    lv_obj_add_style(btnCal, &btn_style_pr, LV_STATE_PRESSED);
+    labelCal = lv_label_create(btnCal);
     lv_label_set_text(labelCal, "校准");
-    lv_obj_align(btnCal, btnSet, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+    lv_obj_align(labelCal, LV_ALIGN_CENTER, 0, 4);
+    lv_obj_align_to(btnCal, btnSet, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    btnMro = lv_btn_create(appWindow, btnSet);
-    labelMro = lv_label_create(btnMro, labelSet);
+    btnMro = lv_btn_create(appWindow);
+    lv_obj_set_size(btnMro, 75, 40);
+    lv_obj_add_style(btnMro, &btn_style_rel, 0);
+    lv_obj_add_style(btnMro, &btn_style_pr, LV_STATE_PRESSED);
+    labelMro = lv_label_create(btnMro);
     lv_label_set_text(labelMro, "维护");
-    lv_obj_align(btnMro, btnCal, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+    lv_obj_align(labelMro, LV_ALIGN_CENTER, 0, 4);
+    lv_obj_align_to(btnMro, btnCal, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    btnInfo = lv_btn_create(appWindow, btnSet);
-    labelInfo = lv_label_create(btnInfo, labelSet);
+    btnInfo = lv_btn_create(appWindow);
+    lv_obj_set_size(btnInfo, 75, 40);
+    lv_obj_add_style(btnInfo, &btn_style_rel, 0);
+    lv_obj_add_style(btnInfo, &btn_style_pr, LV_STATE_PRESSED);
+    labelInfo = lv_label_create(btnInfo);
     lv_label_set_text(labelInfo, "信息");
-    lv_obj_align(btnInfo, btnMro, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
+    lv_obj_align(labelInfo, LV_ALIGN_CENTER, 0, 4);
+    lv_obj_align_to(btnInfo, btnMro, LV_ALIGN_OUT_RIGHT_TOP, 5, 0);
 
-    lv_obj_set_event_cb(btnSet, btn_event_cb);
-    lv_obj_set_event_cb(btnCal, btn_event_cb);
-    lv_obj_set_event_cb(btnMro, btn_event_cb);
-    lv_obj_set_event_cb(btnInfo, btn_event_cb);
+    lv_obj_add_event_cb(btnSet, btn_event_cb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(btnCal, btn_event_cb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(btnMro, btn_event_cb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(btnInfo, btn_event_cb, LV_EVENT_CLICKED, NULL);
 
     // //通道号显示
     // LV_FONT_DECLARE(SYHT_BOLD_20);
@@ -254,46 +281,33 @@ static void Body_Creat(void)
 
     //测量值显示
     LV_FONT_DECLARE(SYHT_BOLD_40);
-    labCalValue = lv_label_create(appWindow, NULL);
-    static lv_style_t label_cal_value;
-    label_cal_value = *lv_label_get_style(labCalValue, LV_LABEL_STYLE_MAIN);
-    label_cal_value.text.font = &SYHT_BOLD_40;
-    label_cal_value.text.color = LV_COLOR_BLACK;
-    lv_label_set_style(labCalValue, LV_LABEL_STYLE_MAIN, &label_cal_value);
-    lv_obj_align(labCalValue, NULL, LV_ALIGN_CENTER, 0, 0);
-    lv_obj_set_auto_realign(labCalValue, true);
+    labCalValue = lv_label_create(appWindow);
+    lv_obj_set_style_text_font(labCalValue, &SYHT_BOLD_40, 0);
+    lv_obj_set_style_text_color(labCalValue, lv_color_black(), 0);
+    lv_obj_align(labCalValue, LV_ALIGN_CENTER, 0, -10);
     lv_label_set_text(labCalValue, "98.72");
 
     //测量单位显示
     LV_FONT_DECLARE(SYHT_BOLD_20);
-    labCalUnit = lv_label_create(appWindow, NULL);
-    static lv_style_t label_cal_unit;
-    label_cal_unit = *lv_label_get_style(labCalUnit, LV_LABEL_STYLE_MAIN);
-    label_cal_unit.text.font = &SYHT_BOLD_20;
-    label_cal_unit.text.color = LV_COLOR_BLACK;
-    lv_label_set_style(labCalUnit, LV_LABEL_STYLE_MAIN, &label_cal_unit);
-    lv_obj_align(labCalUnit, labCalValue, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -12);
-    lv_obj_set_auto_realign(labCalUnit, true);
+    labCalUnit = lv_label_create(appWindow);
+    lv_obj_set_style_text_font(labCalUnit, &SYHT_BOLD_20, 0);
+    lv_obj_set_style_text_color(labCalUnit, lv_color_black(), 0);
+    lv_obj_align_to(labCalUnit, labCalValue, LV_ALIGN_OUT_RIGHT_BOTTOM, 5, -12);
     lv_label_set_text(labCalUnit, "msC");
 
     //温度显示
     LV_FONT_DECLARE(SYHT_BOLD_20);
-    labelTempera = lv_label_create(appWindow, NULL);
-    static lv_style_t label_tempera_style;
-    label_tempera_style = *lv_label_get_style(labelTempera, LV_LABEL_STYLE_MAIN);
-    label_tempera_style.text.font = &SYHT_BOLD_20;
-    label_tempera_style.text.color = LV_COLOR_BLACK;
-    lv_label_set_style(labelTempera, LV_LABEL_STYLE_MAIN, &label_tempera_style);
-    lv_obj_align(labelTempera, NULL, LV_ALIGN_CENTER, 7, 40);
-    lv_obj_set_auto_realign(labelTempera, true);
+    labelTempera = lv_label_create(appWindow);
+    lv_obj_set_style_text_font(labelTempera, &SYHT_BOLD_20, 0);
+    lv_obj_set_style_text_color(labelTempera, lv_color_black(), 0);
+    lv_obj_align(labelTempera, LV_ALIGN_CENTER, 7, 40);
     lv_label_set_text(labelTempera, "30.1 ℃");
 
     //温度图标
     LV_IMG_DECLARE(IconTemp);
-    imgTempera = lv_img_create(appWindow, NULL);
+    imgTempera = lv_img_create(appWindow);
     lv_img_set_src(imgTempera, &IconTemp);
-    lv_obj_align(imgTempera, labelTempera, LV_ALIGN_OUT_LEFT_MID, -8, -5);
-    lv_obj_set_auto_realign(imgTempera, true);
+    lv_obj_align_to(imgTempera, labelTempera, LV_ALIGN_OUT_LEFT_MID, -8, -5);
 }
 
 /*
@@ -306,8 +320,8 @@ static void Body_Creat(void)
  */
 static void Task_Create(void)
 {
-    taskTimeUpdate = lv_task_create(Task_TimeUpdate, 2000, LV_TASK_PRIO_MID, NULL);
-    Task_TimeUpdate(taskTimeUpdate);
+    tmrUpdate = lv_timer_create(TimerCB_TimeUpdate, 2000, NULL);
+    TimerCB_TimeUpdate(tmrUpdate);
 }
 
 /*
@@ -341,8 +355,8 @@ static void Setup(void)
  */
 static void Exit(void)
 {
-    /*关任务*/
-    lv_task_del(taskTimeUpdate);
+    /*删除任务*/
+    lv_timer_del(tmrUpdate);
 
     /*删除此页面上的子控件*/
     lv_obj_clean(appWindow);

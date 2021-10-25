@@ -21,11 +21,11 @@ static lv_obj_t *labelTitle;
 /*启动进度条*/
 static lv_obj_t *barStart;
 
-/*页面跳转任务*/
-static lv_task_t *taskPageJump;
+/*页面跳转定时器*/
+static lv_timer_t *tmrPageJump;
 
 /*显示字符串*/
-const char *COMPANY_NAME = "苏州讴劲电子有限公司";
+const char *COMPANY_NAME = "Hello World!";
 
 /*
  ********************************************************************************************************
@@ -38,15 +38,11 @@ const char *COMPANY_NAME = "苏州讴劲电子有限公司";
 static void LabelTitle_Creat(void)
 {
     LV_FONT_DECLARE(SYHT_BOLD_20);
-    labelTitle = lv_label_create(appWindow, NULL);
-    static lv_style_t title_style;
-    title_style = *lv_label_get_style(labelTitle, LV_LABEL_STYLE_MAIN);
-    title_style.text.font = &SYHT_BOLD_20;
-    title_style.text.color = LV_COLOR_BLACK;
-    lv_label_set_style(labelTitle, LV_LABEL_STYLE_MAIN, &title_style);
+    labelTitle = lv_label_create(appWindow);
+    lv_obj_set_style_text_font(labelTitle, &SYHT_BOLD_20, 0);
+    lv_obj_set_style_text_color(labelTitle, lv_color_black(), 0);
     lv_label_set_text(labelTitle, COMPANY_NAME);
-    lv_obj_align(labelTitle, NULL, LV_ALIGN_CENTER, 0, -10);
-    lv_obj_set_auto_realign(labelTitle, true);
+    lv_obj_align(labelTitle, LV_ALIGN_CENTER, 0, -10);
 }
 
 /*
@@ -59,44 +55,48 @@ static void LabelTitle_Creat(void)
  */
 static void BarStart_Creat(void)
 {
-    barStart = lv_bar_create(appWindow, NULL);
-    static lv_style_t bar_bg_style;
-    static lv_style_t bar_indic_style;
+    barStart = lv_bar_create(appWindow);
 
-    bar_bg_style = *lv_bar_get_style(barStart, LV_BAR_STYLE_BG);
-    bar_indic_style = *lv_bar_get_style(barStart, LV_BAR_STYLE_INDIC);
+    lv_obj_set_style_bg_color(barStart, lv_color_white(), 0);
+    lv_obj_set_style_border_color(barStart, lv_color_black(), 0);
+    lv_obj_set_style_border_width(barStart, 2, 0);
+    lv_obj_set_style_pad_all(barStart, 6, 0);
+    lv_obj_set_style_radius(barStart, 6, 0);
+    lv_obj_set_style_anim_time(barStart, 5000, 0);
 
-    bar_bg_style.body.radius = 0;
-    bar_indic_style.body.radius = 0;
+    lv_obj_set_style_bg_opa(barStart, LV_OPA_COVER, LV_PART_INDICATOR);
+    lv_obj_set_style_bg_color(barStart, lv_color_black(), LV_PART_INDICATOR);
+    lv_obj_set_style_radius(barStart, 3, LV_PART_INDICATOR);
 
-    lv_bar_set_style(barStart, LV_BAR_STYLE_BG, &bar_bg_style);
-    lv_bar_set_style(barStart, LV_BAR_STYLE_INDIC, &bar_indic_style);
-
-    lv_obj_set_size(barStart, 150, 20);
-
-    lv_bar_set_value(barStart, 0, LV_ANIM_OFF);
-    lv_bar_set_anim_time(barStart, 5000);
+    lv_obj_set_size(barStart, 200, 20);
+    lv_obj_align(barStart, LV_ALIGN_CENTER, 0, 20);
     lv_bar_set_value(barStart, 100, LV_ANIM_ON);
-    lv_obj_align(barStart, NULL, LV_ALIGN_CENTER, 0, 10);
-    lv_obj_set_auto_realign(barStart, true);
 }
 
-static void Task_PageJump(lv_task_t *task)
+/*
+ ********************************************************************************************************
+ *@func       TimerCB_PageJump
+ *@brief      定时器任务回调
+ *@param[in]  tmr
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void TimerCB_PageJump(lv_timer_t *tmr)
 {
     Page_ChangeTo(PAGE_HOME);
 }
 
 /*
  ********************************************************************************************************
- *@func       Task_Create
+ *@func       Timer_Create
  *@brief      创建任务/定时器
  *@param[in]  node
  *@retval     none
  ********************************************************************************************************
  */
-static void Task_Create(void)
+static void Timer_Create(void)
 {
-    taskPageJump = lv_task_create(Task_PageJump, 7000, LV_TASK_PRIO_MID, NULL);
+    tmrPageJump = lv_timer_create(TimerCB_PageJump, 7000, NULL);
 }
 
 /*
@@ -116,8 +116,8 @@ static void Setup(void)
     LabelTitle_Creat();
     BarStart_Creat();
 
-    /*创建任务*/
-    Task_Create();
+    /*创建定时器任务*/
+    Timer_Create();
 }
 
 /*
@@ -131,7 +131,7 @@ static void Setup(void)
 static void Exit(void)
 {
     /*关任务*/
-    lv_task_del(taskPageJump);
+    lv_timer_del(tmrPageJump);
 
     /*删除此页面上的子控件*/
     lv_obj_clean(appWindow);

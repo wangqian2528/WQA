@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "path": "D:/Program Files (x86)/IAR Systems/Embedded Workbench 8.3/",
+    "path": "C:/Program Files (x86)/IAR Systems ARM/Embedded Workbench 8.3/",
     "project": "F:/WQA/App/EWARM/App.ewp",
     "config": "App",
     "parallel" : true

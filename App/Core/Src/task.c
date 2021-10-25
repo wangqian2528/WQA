@@ -418,21 +418,20 @@ static void AppTaskGUI(ULONG thread_input)
     lv_init();
     lv_port_disp_init();
     lv_port_indev_init();
-
-    // lv_theme_set_current(lv_theme_mono_init(200, NULL));
-
-    // AppWindow_Create();
-
-    // Page_Init();
-
     LCD_BK_SET(g_sys_para_lcd_bklight);
 
-    lv_demo_widgets();
+    LV_FONT_DECLARE(SYHT_MED_16);
+    lv_theme_default_init(NULL, lv_color_black(), lv_color_white(), LV_THEME_DEFAULT_DARK, &SYHT_MED_16);
+
+    AppWindow_Create();
+
+    Page_Init();
+    // lv_demo_widgets();
 
     while (1)
     {
         lv_task_handler();
-        //Page_Running();
+        Page_Running();
         tx_thread_sleep(10);
     }
 }
