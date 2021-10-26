@@ -59,6 +59,8 @@ void Page_Running(void);
 
 void PageRegister_Start(Page_Type pageID);
 void PageRegister_Home(Page_Type pageID);
+void PageRegister_Info(Page_Type pageID);
+
 void PageRegister_Set(Page_Type pageID);
 
 #include "lvgl/lvgl.h"

@@ -25,7 +25,7 @@ static lv_obj_t *barStart;
 static lv_timer_t *tmrPageJump;
 
 /*显示字符串*/
-const char *COMPANY_NAME = "Hello World!";
+const char *COMPANY_NAME = "Welcom";
 
 /*
  ********************************************************************************************************
@@ -37,10 +37,10 @@ const char *COMPANY_NAME = "Hello World!";
  */
 static void LabelTitle_Creat(void)
 {
-    LV_FONT_DECLARE(SYHT_BOLD_20);
     labelTitle = lv_label_create(appWindow);
-    lv_obj_set_style_text_font(labelTitle, &SYHT_BOLD_20, 0);
-    lv_obj_set_style_text_color(labelTitle, lv_color_black(), 0);
+    lv_obj_remove_style_all(labelTitle);
+    lv_obj_set_style_text_font(labelTitle, &lv_font_montserrat_20, 0);
+    lv_obj_set_style_text_opa(labelTitle, LV_OPA_60, 0);
     lv_label_set_text(labelTitle, COMPANY_NAME);
     lv_obj_align(labelTitle, LV_ALIGN_CENTER, 0, -10);
 }
@@ -56,18 +56,13 @@ static void LabelTitle_Creat(void)
 static void BarStart_Creat(void)
 {
     barStart = lv_bar_create(appWindow);
-
-    lv_obj_set_style_bg_color(barStart, lv_color_white(), 0);
-    lv_obj_set_style_border_color(barStart, lv_color_black(), 0);
-    lv_obj_set_style_border_width(barStart, 2, 0);
-    lv_obj_set_style_pad_all(barStart, 6, 0);
-    lv_obj_set_style_radius(barStart, 6, 0);
-    lv_obj_set_style_anim_time(barStart, 5000, 0);
+    lv_obj_set_style_pad_all(barStart, 5, 0);
+    lv_obj_set_style_radius(barStart, LV_RADIUS_CIRCLE, 0);
 
     lv_obj_set_style_bg_opa(barStart, LV_OPA_COVER, LV_PART_INDICATOR);
-    lv_obj_set_style_bg_color(barStart, lv_color_black(), LV_PART_INDICATOR);
-    lv_obj_set_style_radius(barStart, 3, LV_PART_INDICATOR);
+    lv_obj_set_style_radius(barStart, LV_RADIUS_CIRCLE, LV_PART_INDICATOR);
 
+    lv_obj_set_style_anim_time(barStart, 5000, 0);
     lv_obj_set_size(barStart, 200, 20);
     lv_obj_align(barStart, LV_ALIGN_CENTER, 0, 20);
     lv_bar_set_value(barStart, 100, LV_ANIM_ON);

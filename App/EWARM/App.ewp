@@ -1162,52 +1162,25 @@
                 <group>
                     <name>Font</name>
                     <file>
-                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_20.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_32.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_BOLD_40.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\Font\SYHT_MED_16.c</name>
+                        <name>$PROJ_DIR$\..\Core\UI\Font\my_font_14.c</name>
                     </file>
                 </group>
                 <group>
                     <name>IMG</name>
                     <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconBackB.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconBackW.c</name>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconCels.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\IMG\IconTemp.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\LChartB.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\LChartW.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\LeftB.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\LeftW.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\RightB.c</name>
-                    </file>
-                    <file>
-                        <name>$PROJ_DIR$\..\Core\UI\IMG\RightW.c</name>
                     </file>
                 </group>
                 <group>
                     <name>Page</name>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_home.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\page_info.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_set.c</name>

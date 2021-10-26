@@ -411,6 +411,7 @@ static void AppTaskFileX(ULONG thread_input)
  * @priority    5
  ********************************************************************************************************
  */
+// #define UI_TEST
 static void AppTaskGUI(ULONG thread_input)
 {
     (void)thread_input;
@@ -420,18 +421,24 @@ static void AppTaskGUI(ULONG thread_input)
     lv_port_indev_init();
     LCD_BK_SET(g_sys_para_lcd_bklight);
 
-    LV_FONT_DECLARE(SYHT_MED_16);
-    lv_theme_default_init(NULL, lv_color_black(), lv_color_white(), LV_THEME_DEFAULT_DARK, &SYHT_MED_16);
+    LV_FONT_DECLARE(my_font_14);
+    // lv_theme_default_init(NULL, lv_color_black(), lv_color_white(), LV_THEME_DEFAULT_DARK, &SYHT_MED_16);
+    lv_theme_default_init(NULL, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), LV_THEME_DEFAULT_DARK, &my_font_14);
 
+#ifdef UI_TEST
+    lv_demo_widgets();
+#else
     AppWindow_Create();
-
     Page_Init();
-    // lv_demo_widgets();
+#endif
+    //
 
     while (1)
     {
         lv_task_handler();
+#ifndef UI_TEST
         Page_Running();
+#endif
         tx_thread_sleep(10);
     }
 }
