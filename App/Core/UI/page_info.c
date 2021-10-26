@@ -12,17 +12,79 @@
 
 #include "includes.h"
 
+typedef enum
+{
+    TAB_SENSOR = 0,
+    TAB_RELAY,
+    TAB_ANALOG,
+    TAB_CAL,
+    TAB_VER,
+    TAB_ERROR,
+    TAB_MAX,
+} TAB_NAME_E;
+
+const char *tab_name[] = {
+    "传感器信息",
+    "继电器信息",
+    "模拟输出信息",
+    "校准数据信息",
+    "软硬件版本",
+    "错误信息",
+};
+
 /*此页面窗口*/
 static lv_obj_t *appWindow;
 
 /*标题栏容器*/
 static lv_obj_t *contTitle;
 static lv_obj_t *contBody;
-
 static lv_obj_t *btnBack;
 
+static lv_obj_t *btnLeft;
+static lv_obj_t *btnRight;
+
+static lv_obj_t *labelTabName;
+static lv_obj_t *labelNextTabName;
+static lv_obj_t *labelLastTabName;
+
+static TAB_NAME_E tab_index;
+
 /*子窗口*/
-static lv_obj_t *tab1;
+static lv_obj_t *tabSensor;
+static lv_obj_t *tabRelay;
+static lv_obj_t *tabAnalog;
+static lv_obj_t *tabCal;
+static lv_obj_t *tabVer;
+static lv_obj_t *tabError;
+
+/*
+ ********************************************************************************************************
+ *@func       tab_name_refresh
+ *@brief      重绘tab name
+ *@param[in]  node
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void tab_name_refresh(void)
+{
+    if (tab_index == TAB_SENSOR)
+    {
+        lv_label_set_text(labelNextTabName, tab_name[TAB_RELAY]);
+        lv_label_set_text(labelLastTabName, tab_name[TAB_ERROR]);
+    }
+    else if (tab_index == TAB_ERROR)
+    {
+        lv_label_set_text(labelNextTabName, tab_name[TAB_SENSOR]);
+        lv_label_set_text(labelLastTabName, tab_name[TAB_VER]);
+    }
+    else
+    {
+        lv_label_set_text(labelNextTabName, tab_name[tab_index + 1]);
+        lv_label_set_text(labelLastTabName, tab_name[tab_index - 1]);
+    }
+    lv_label_set_text(labelTabName, tab_name[tab_index]);
+    lv_tabview_set_act(contBody, tab_index, LV_ANIM_ON);
+}
 
 /*
  ********************************************************************************************************
@@ -39,6 +101,22 @@ static void btn_event_cb(lv_event_t *event)
     {
         Page_ChangeTo(PAGE_HOME);
     }
+    else if (obj == btnLeft)
+    {
+        if (tab_index > TAB_SENSOR)
+            tab_index--;
+        else
+            tab_index = TAB_ERROR;
+        tab_name_refresh();
+    }
+    else if (obj == btnRight)
+    {
+        if (tab_index < TAB_ERROR)
+            tab_index++;
+        else
+            tab_index = TAB_SENSOR;
+        tab_name_refresh();
+    }
 }
 
 /*
@@ -52,7 +130,6 @@ static void btn_event_cb(lv_event_t *event)
 static void Layout_Creat(void)
 {
     contTitle = lv_obj_create(appWindow);
-    // contBody = lv_obj_create(appWindow);
     contBody = lv_tabview_create(appWindow, LV_DIR_TOP, 0);
     lv_obj_set_style_border_width(contBody, 2, 0);
     lv_obj_set_style_border_color(contBody, lv_color_make(0xdb, 0xdb, 0xdb), 0);
@@ -96,6 +173,62 @@ static void Layout_Creat(void)
  */
 static void ContTitle_Creat(void)
 {
+    lv_obj_clear_flag(contTitle, LV_OBJ_FLAG_SCROLLABLE);
+    lv_obj_set_style_pad_hor(contTitle, 3, 0);
+
+    //左右切换按键
+    static lv_style_t btn_style;
+    lv_style_init(&btn_style);
+    lv_style_set_radius(&btn_style, LV_RADIUS_CIRCLE);
+    lv_style_set_text_color(&btn_style, lv_color_white());
+    lv_style_set_text_font(&btn_style, &lv_font_montserrat_14);
+    lv_style_set_shadow_opa(&btn_style, 0);
+
+    btnLeft = lv_btn_create(contTitle);
+    btnRight = lv_btn_create(contTitle);
+    lv_obj_set_size(btnLeft, 20, 20);
+    lv_obj_set_size(btnRight, 20, 20);
+    lv_obj_add_style(btnLeft, &btn_style, 0);
+    lv_obj_add_style(btnLeft, &btn_style, LV_STATE_PRESSED);
+    lv_obj_add_style(btnRight, &btn_style, 0);
+    lv_obj_add_style(btnRight, &btn_style, LV_STATE_PRESSED);
+
+    lv_obj_align(btnLeft, LV_ALIGN_LEFT_MID, 0, 0);
+    lv_obj_align(btnRight, LV_ALIGN_RIGHT_MID, 0, 0);
+
+    static lv_obj_t *label_left;
+    static lv_obj_t *label_right;
+    label_left = lv_label_create(btnLeft);
+    label_right = lv_label_create(btnRight);
+    lv_obj_center(label_left);
+    lv_obj_center(label_right);
+    lv_label_set_text(label_left, LV_SYMBOL_LEFT);
+    lv_label_set_text(label_right, LV_SYMBOL_RIGHT);
+
+    lv_obj_add_event_cb(btnLeft, btn_event_cb, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(btnRight, btn_event_cb, LV_EVENT_CLICKED, NULL);
+
+    //TAB NAME
+    labelTabName = lv_label_create(contTitle);
+    lv_obj_set_style_text_font(labelTabName, &my_font_14, 0);
+    // lv_obj_set_style_text_opa(labelTabName, LV_OPA_90, 0);
+    lv_obj_center(labelTabName);
+
+    labelLastTabName = lv_label_create(contTitle);
+    lv_label_set_long_mode(labelLastTabName, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_obj_set_style_anim_speed(labelLastTabName, 15, 0);
+    lv_obj_set_width(labelLastTabName, 60);
+    lv_obj_set_style_text_font(labelLastTabName, &my_font_14, 0);
+    lv_obj_set_style_text_opa(labelLastTabName, LV_OPA_50, 0);
+    lv_obj_align(labelLastTabName, LV_ALIGN_LEFT_MID, 30, 0);
+
+    labelNextTabName = lv_label_create(contTitle);
+    lv_label_set_long_mode(labelNextTabName, LV_LABEL_LONG_SCROLL_CIRCULAR);
+    lv_obj_set_style_anim_speed(labelNextTabName, 15, 0);
+    lv_obj_set_width(labelNextTabName, 60);
+    lv_obj_set_style_text_font(labelNextTabName, &my_font_14, 0);
+    lv_obj_set_style_text_opa(labelNextTabName, LV_OPA_50, 0);
+    lv_obj_align(labelNextTabName, LV_ALIGN_RIGHT_MID, -30, 0);
 }
 
 /*
@@ -108,7 +241,12 @@ static void ContTitle_Creat(void)
  */
 static void Body_Creat(void)
 {
-    tab1 = lv_tabview_add_tab(contBody, "1");
+    tabSensor = lv_tabview_add_tab(contBody, "传感器信息");
+    tabRelay = lv_tabview_add_tab(contBody, "继电器信息");
+    tabAnalog = lv_tabview_add_tab(contBody, "模拟输出信息");
+    tabCal = lv_tabview_add_tab(contBody, "校准数据信息");
+    tabVer = lv_tabview_add_tab(contBody, "软硬件版本");
+    tabError = lv_tabview_add_tab(contBody, "错误信息");
 }
 
 /*
@@ -143,6 +281,9 @@ static void Setup(void)
 
     /*创建任务*/
     Task_Create();
+
+    tab_index = TAB_SENSOR;
+    tab_name_refresh();
 }
 
 /*

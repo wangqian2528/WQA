@@ -1238,6 +1238,21 @@ static const uint8_t glyph_bitmap[] = {
 
 
 
+/* 件 */
+0x00,0x0c,0x10,0x00,0x0e,0x10,0x00,  //..+@+....@+...
+0x00,0x6c,0x00,0xc2,0x0e,0x10,0x00,  //..*@.+@+.@+...
+0x00,0xc6,0x04,0xd0,0x0e,0x10,0x00,  //.+@*.*@+.@+...
+0x05,0xf3,0x0a,0xee,0xef,0xee,0xe5,  //.*@+.%@@@@@@@*
+0x1d,0xe3,0x4e,0x10,0x0e,0x10,0x00,  //+@@+*@+..@+...
+0x98,0xc3,0x57,0x00,0x0e,0x10,0x00,  //%%@+**...@+...
+0x60,0xc3,0x00,0x00,0x0e,0x10,0x00,  //*+@+.....@+...
+0x00,0xc3,0xae,0xee,0xef,0xee,0xeb,  //..@+%@@@@@@@@@
+0x00,0xc3,0x00,0x00,0x0e,0x10,0x00,  //..@+.....@+...
+0x00,0xc3,0x00,0x00,0x0e,0x10,0x00,  //..@+.....@+...
+0x00,0xc3,0x00,0x00,0x0e,0x10,0x00,  //..@+.....@+...
+0x00,0xc3,0x00,0x00,0x0e,0x10,0x00,  //..@+.....@+...
+
+
 /* 传 */
 0x00,0x0c,0x20,0x07,0x90,0x00,0x00,  //..+@+..%%.....
 0x00,0x6c,0x3e,0xef,0xee,0xee,0xe3,  //..*@+@@@@@@@@+
@@ -1654,6 +1669,22 @@ static const uint8_t glyph_bitmap[] = {
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,  //++............
 
 
+/* 据 */
+0x00,0xd1,0x0f,0xdd,0xdd,0xdd,0xe1,  //..@+.@@@@@@@@+
+0x00,0xd1,0x0e,0x00,0x00,0x00,0xd1,  //..@+.@......@+
+0x9e,0xfe,0x9f,0xdd,0xdd,0xdd,0xe1,  //%@@@%@@@@@@@@+
+0x00,0xd1,0x0e,0x00,0x00,0x00,0xd1,  //..@+.@......@+
+0x00,0xd1,0x0e,0x00,0x0c,0x20,0x00,  //..@+.@...@+...
+0x26,0xed,0x6f,0xee,0xee,0xee,0xea,  //+*@@*@@@@@@@@%
+0xac,0xe5,0x1d,0x00,0x0c,0x20,0x00,  //%@@*+@...@+...
+0x00,0xd1,0x2c,0x9e,0xdd,0xdd,0xe0,  //..@++@%@@@@@@.
+0x00,0xd1,0x59,0x94,0x00,0x00,0xe0,  //..@+*%%*....@.
+0x00,0xd1,0xa5,0x94,0x00,0x00,0xe0,  //..@+%*%*....@.
+0x00,0xe4,0xd0,0x9d,0xdd,0xdd,0xe0,  //++@*@+%@@@@@@.
+0x8f,0xb6,0x50,0x94,0x00,0x00,0xe0,  //%@@**.%*....@.
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,  //++............
+
+
 /* 数 */
 0x0b,0x25,0x90,0xb2,0x0d,0x10,0x00,  //+@+*%+%++@+...
 0x05,0x85,0x96,0x70,0x3b,0x00,0x00,  //.*%*%*%.+%....
@@ -1683,6 +1714,21 @@ static const uint8_t glyph_bitmap[] = {
 0x3c,0x00,0x97,0x00,0x00,0x6c,0x00,  //*@++%*...+*@..
 0x00,0x00,0x00,0x04,0xff,0xe7,0x00,  //.......*@@@*..
 0x00,0x00,0x00,0x00,0x11,0x00,0x00,  //.......++++...
+
+
+/* 本 */
+0x00,0x00,0x00,0x88,0x00,0x00,0x00,  //......%%......
+0x00,0x00,0x00,0x88,0x00,0x00,0x00,  //......%%......
+0x7f,0xff,0xff,0xff,0xff,0xff,0xf7,  //*@@@@@@@@@@@@*
+0x00,0x00,0x05,0xee,0x40,0x00,0x00,  //+++++*@@*+++++
+0x00,0x00,0x3b,0x88,0xb1,0x00,0x00,  //....+@%%@+....
+0x00,0x03,0xc2,0x88,0x2c,0x10,0x00,  //...*@+%%+@+...
+0x00,0x6d,0x20,0x88,0x04,0xc2,0x00,  //..*@+.%%.*@+..
+0x1a,0xd2,0x00,0x88,0x00,0x3d,0x60,  //+%@+..%%..+@*+
+0x5a,0x1a,0xee,0xee,0xee,0x91,0xb5,  //*%+%@@@@@@%+@*
+0x00,0x00,0x00,0x88,0x00,0x00,0x00,  //......%%......
+0x00,0x00,0x00,0x88,0x00,0x00,0x00,  //......%%......
+0x00,0x00,0x00,0x88,0x00,0x00,0x00,  //......%%......
 
 
 /* 校 */
@@ -1806,6 +1852,21 @@ static const uint8_t glyph_bitmap[] = {
 0x3b,0x67,0x00,0x03,0xde,0xd5,0x00,  //*@**...+@@@*..
 
 
+/* 版 */
+0x0c,0x26,0x70,0x01,0x23,0x68,0xc4,  //.@+*%.+++**%@*
+0x0c,0x26,0x70,0xad,0xca,0x86,0x30,  //.@+*%.%@@%%*++
+0x0c,0x26,0x70,0xa3,0x00,0x00,0x00,  //.@+*%.%*......
+0x0c,0x26,0x70,0xa3,0x00,0x00,0x00,  //.@+*%.%*......
+0x0c,0xdc,0xc8,0xae,0xed,0xdd,0xf0,  //.@@@@%%@@@@@@+
+0x0c,0x20,0x00,0xa4,0xe0,0x03,0xc0,  //.@+...%*@+.+@.
+0x0c,0x20,0x00,0xa3,0xb4,0x07,0x80,  //.@+...%+@*.%%.
+0x0d,0xcd,0x80,0xb2,0x6a,0x0d,0x20,  //.@@@%.@+*%+@+.
+0x0e,0x15,0x80,0xd1,0x0d,0xb8,0x00,  //+@+*%.@++@@%..
+0x2e,0x05,0x83,0xc0,0x09,0xe3,0x00,  //+@.*%+@.+%@+..
+0x7a,0x05,0x8a,0x63,0xba,0x5d,0x70,  //*%.*%%*+@%*@*+
+0x73,0x05,0x9a,0x3c,0x40,0x02,0xa7,  //**.*%%+@*..+%*
+
+
 /* 率 */
 0x00,0x00,0x00,0x96,0x00,0x00,0x00,  //......%*......
 0x7e,0xee,0xee,0xee,0xee,0xee,0xe7,  //*@@@@@@@@@@@@*
@@ -1866,6 +1927,21 @@ static const uint8_t glyph_bitmap[] = {
 0x07,0xed,0xe2,0x00,0x00,0x04,0xe0,  //.*@@@+.....*@+
 0x07,0x70,0xb2,0x00,0x0e,0xfe,0x60,  //.*%.@+..+@@@*.
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,  //.........+++..
+
+
+/* 硬 */
+0x7e,0xee,0xea,0xee,0xef,0xee,0xe9,  //*@@@@%@@@@@@@%
+0x00,0xc2,0x00,0x00,0x1e,0x00,0x00,  //..@+....+@....
+0x01,0xd0,0x02,0xed,0xde,0xdd,0xe1,  //.+@+.+@@@@@@@+
+0x05,0x90,0x02,0xc0,0x1e,0x00,0xd1,  //.*%..+@.+@..@+
+0x09,0xed,0xc2,0xec,0xde,0xcc,0xe1,  //.%@@@+@@@@@@@+
+0x1e,0x61,0xc2,0xc0,0x1e,0x00,0xd1,  //+@*+@+@.+@..@+
+0x7e,0x61,0xc2,0xc0,0x1d,0x00,0xd1,  //%@*+@+@.+@..@+
+0x98,0x61,0xc2,0xdd,0xde,0xdd,0xe1,  //%%*+@+@@@@@@@+
+0x07,0x61,0xc0,0x85,0x5a,0x00,0x00,  //.**+@.%**%....
+0x07,0xed,0xb0,0x1c,0xd5,0x00,0x00,  //.*@@%.+@@*....
+0x07,0x60,0x01,0x6d,0xbc,0x73,0x00,  //.**..+*@@@*++.
+0x00,0x00,0x8b,0x72,0x01,0x6a,0xd7,  //....%@%+.+*%@*
 
 
 /* 管 */
@@ -2004,6 +2080,21 @@ static const uint8_t glyph_bitmap[] = {
 0x00,0x04,0xd8,0x40,0x00,0x27,0xc6,  //...*@%*+..+%@*
 
 
+/* 误 */
+0x09,0x80,0x0d,0xed,0xdd,0xde,0x80,  //.%%+.@@@@@@@%.
+0x01,0xb5,0x0d,0x10,0x00,0x06,0x80,  //.+@*.@+....*%.
+0x00,0x00,0x0d,0xed,0xdd,0xde,0x80,  //.....@@@@@@@%.
+0x00,0x00,0x0d,0x10,0x00,0x06,0x80,  //.....@+....*%.
+0xbe,0xd0,0x00,0x00,0x00,0x00,0x00,  //@@@...........
+0x02,0xd0,0x7e,0xee,0xee,0xee,0xe4,  //.+@.%@@@@@@@@*
+0x02,0xd0,0x00,0x00,0xc3,0x00,0x00,  //.+@.....@+....
+0x02,0xd0,0xee,0xee,0xfe,0xee,0xea,  //.+@+@@@@@@@@@%
+0x02,0xd0,0x00,0x07,0x9c,0x00,0x00,  //.+@....*%@+...
+0x02,0xd3,0x60,0x5c,0x17,0xb0,0x00,  //.+@**.*@+*%+..
+0x03,0xec,0x6a,0xc2,0x00,0x8d,0x72,  //.+@@*%@+.+%@*+
+0x05,0x92,0xc6,0x00,0x00,0x04,0xb7,  //.*%+@*+....*@*
+
+
 /* 读 */
 0x0a,0x40,0x00,0x00,0xc3,0x00,0x00,  //+%*.....@*....
 0x05,0xe3,0x6e,0xee,0xee,0xee,0xe2,  //.*@+*@@@@@@@@+
@@ -2017,6 +2108,21 @@ static const uint8_t glyph_bitmap[] = {
 0x02,0xc0,0x00,0x01,0xcc,0x20,0x00,  //.+@....+@@+...
 0x03,0xd8,0x62,0x8d,0x86,0xca,0x30,  //.+@%*+%@%*@%+.
 0x05,0xc8,0xdb,0x61,0x00,0x05,0xc3,  //.*@%@%*+..+*@+
+
+
+/* 软 */
+0x00,0x5a,0x00,0x03,0xc0,0x00,0x00,  //..*%...+@+....
+0x00,0x96,0x00,0x0a,0x70,0x00,0x00,  //..%*...%%.....
+0x7d,0xed,0xdd,0x4e,0xee,0xee,0xea,  //*@@@@@*@@@@@@%
+0x04,0xa0,0x00,0xc7,0x00,0x00,0xd4,  //.*%..+@*...+@*
+0x0a,0x4a,0x43,0xa0,0x1e,0x07,0x80,  //.%*%*+%++@.*%.
+0x2c,0x0a,0x40,0x00,0x1e,0x00,0x00,  //+@+%*...+@....
+0x5d,0xde,0xed,0x20,0x2e,0x10,0x00,  //*@@@@@+.+@+...
+0x00,0x0a,0x40,0x00,0x6e,0x60,0x00,  //...%*...*@*...
+0x03,0x5c,0xbc,0x60,0xd6,0xd1,0x00,  //++*@@@*+@*@+..
+0x9b,0x9c,0x61,0x0a,0xa0,0x9a,0x00,  //%@%@*++%%.%%+.
+0x00,0x0a,0x43,0xcb,0x00,0x0c,0xb2,  //...%*+@@+.+@@+
+0x00,0x0a,0x4a,0x70,0x00,0x00,0x98,  //...%*%*+...+%%
 
 
 /* 输 */
@@ -2081,6 +2187,22 @@ static const uint8_t glyph_bitmap[] = {
 0x0a,0xaa,0xaa,0xcc,0xaa,0xaa,0xa0,  //.%%%%%@@%%%%%.
 0x00,0x00,0x00,0x77,0x00,0x00,0x00,  //......**......
 0x8b,0xbb,0xbb,0xbb,0xbb,0xbb,0xb8,  //%%%%%%%%%%%%%%
+
+
+/* 错 */
+0x03,0xb0,0x00,0x2d,0x00,0x96,0x00,  //.+%...+@..%*..
+0x08,0x80,0x0a,0xee,0xee,0xee,0xe4,  //.%%..%@@@@@@@*
+0x0d,0xee,0xa0,0x2d,0x00,0x96,0x00,  //+@@@%.+@..%*..
+0x6a,0x00,0x00,0x2d,0x00,0x96,0x00,  //*%....+@..%*..
+0x8a,0xfe,0x7e,0xee,0xee,0xee,0xea,  //%%@@*@@@@@@@@%
+0x00,0xf0,0x00,0x00,0x00,0x00,0x00,  //..@...........
+0x00,0xf0,0x03,0xed,0xdd,0xde,0xa0,  //..@..*@@@@@@%.
+0xae,0xfe,0xa3,0xb0,0x00,0x05,0xa0,  //%@@@%*@....*%.
+0x00,0xf0,0x03,0xed,0xdd,0xdd,0xa0,  //..@..*@@@@@@%.
+0x00,0xf2,0x73,0xb0,0x00,0x05,0xa0,  //..@+%*@....*%.
+0x00,0xfd,0x43,0xed,0xdd,0xde,0xa0,  //.+@@**@@@@@@%.
+0x02,0xd2,0x03,0xb0,0x00,0x05,0xa0,  //.+@+.*@....*%.
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,  //..+...........
 
 
 /* 间 */
@@ -2216,63 +2338,71 @@ static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
     {.bitmap_index = 3580,	.adv_w = 4, .box_h = 13, .box_w = 4, .ofs_x = 0, .ofs_y = 2},/*(})*/
     {.bitmap_index = 3606,	.adv_w = 9, .box_h = 3, .box_w = 8, .ofs_x = 1, .ofs_y = 7},/*(~)*/
     {.bitmap_index = 3618,	.adv_w = 4, .box_h = 0, .box_w = 4, .ofs_x = 0, .ofs_y = 4},/*()*/
-    {.bitmap_index = 3618,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(传)*/
-    {.bitmap_index = 3702,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(位)*/
-    {.bitmap_index = 3793,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(作)*/
-    {.bitmap_index = 3877,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(信)*/
-    {.bitmap_index = 3961,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(值)*/
-    {.bitmap_index = 4045,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(偿)*/
-    {.bitmap_index = 4129,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(入)*/
-    {.bitmap_index = 4220,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(写)*/
-    {.bitmap_index = 4311,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(准)*/
-    {.bitmap_index = 4395,	.adv_w = 13, .box_h = 12, .box_w = 12, .ofs_x = 1, .ofs_y = 3},/*(出)*/
-    {.bitmap_index = 4467,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(参)*/
-    {.bitmap_index = 4551,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(取)*/
-    {.bitmap_index = 4642,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(器)*/
-    {.bitmap_index = 4726,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(字)*/
-    {.bitmap_index = 4817,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(定)*/
-    {.bitmap_index = 4908,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(密)*/
-    {.bitmap_index = 4992,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(导)*/
-    {.bitmap_index = 5083,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(工)*/
-    {.bitmap_index = 5174,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(市)*/
-    {.bitmap_index = 5258,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(度)*/
-    {.bitmap_index = 5342,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(式)*/
-    {.bitmap_index = 5426,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(性)*/
-    {.bitmap_index = 5510,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(息)*/
-    {.bitmap_index = 5594,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(感)*/
-    {.bitmap_index = 5678,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(护)*/
-    {.bitmap_index = 5769,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(拟)*/
-    {.bitmap_index = 5860,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(择)*/
-    {.bitmap_index = 5951,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(数)*/
-    {.bitmap_index = 6035,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(时)*/
-    {.bitmap_index = 6126,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(校)*/
-    {.bitmap_index = 6210,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(档)*/
-    {.bitmap_index = 6294,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(模)*/
-    {.bitmap_index = 6378,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(波)*/
-    {.bitmap_index = 6462,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(测)*/
-    {.bitmap_index = 6553,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(温)*/
-    {.bitmap_index = 6637,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(源)*/
-    {.bitmap_index = 6721,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(滤)*/
-    {.bitmap_index = 6805,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(率)*/
-    {.bitmap_index = 6889,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(理)*/
-    {.bitmap_index = 6973,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(电)*/
-    {.bitmap_index = 7064,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(码)*/
-    {.bitmap_index = 7155,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(管)*/
-    {.bitmap_index = 7239,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(系)*/
-    {.bitmap_index = 7330,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(线)*/
-    {.bitmap_index = 7414,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(统)*/
-    {.bitmap_index = 7498,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(继)*/
-    {.bitmap_index = 7582,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(维)*/
-    {.bitmap_index = 7666,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(置)*/
-    {.bitmap_index = 7750,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(补)*/
-    {.bitmap_index = 7834,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(设)*/
-    {.bitmap_index = 7918,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(读)*/
-    {.bitmap_index = 8002,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(输)*/
-    {.bitmap_index = 8093,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(选)*/
-    {.bitmap_index = 8177,	.adv_w = 14, .box_h = 14, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(重)*/
-    {.bitmap_index = 8275,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(量)*/
-    {.bitmap_index = 8366,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(间)*/
-    {.bitmap_index = 8457,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(频)*/
+    {.bitmap_index = 3618,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(件)*/
+    {.bitmap_index = 3702,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(传)*/
+    {.bitmap_index = 3786,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(位)*/
+    {.bitmap_index = 3877,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(作)*/
+    {.bitmap_index = 3961,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(信)*/
+    {.bitmap_index = 4045,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(值)*/
+    {.bitmap_index = 4129,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(偿)*/
+    {.bitmap_index = 4213,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(入)*/
+    {.bitmap_index = 4304,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(写)*/
+    {.bitmap_index = 4395,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(准)*/
+    {.bitmap_index = 4479,	.adv_w = 13, .box_h = 12, .box_w = 12, .ofs_x = 1, .ofs_y = 3},/*(出)*/
+    {.bitmap_index = 4551,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(参)*/
+    {.bitmap_index = 4635,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(取)*/
+    {.bitmap_index = 4726,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(器)*/
+    {.bitmap_index = 4810,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(字)*/
+    {.bitmap_index = 4901,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(定)*/
+    {.bitmap_index = 4992,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(密)*/
+    {.bitmap_index = 5076,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(导)*/
+    {.bitmap_index = 5167,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(工)*/
+    {.bitmap_index = 5258,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(市)*/
+    {.bitmap_index = 5342,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(度)*/
+    {.bitmap_index = 5426,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(式)*/
+    {.bitmap_index = 5510,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(性)*/
+    {.bitmap_index = 5594,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(息)*/
+    {.bitmap_index = 5678,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(感)*/
+    {.bitmap_index = 5762,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(护)*/
+    {.bitmap_index = 5853,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(拟)*/
+    {.bitmap_index = 5944,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(择)*/
+    {.bitmap_index = 6035,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(据)*/
+    {.bitmap_index = 6126,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(数)*/
+    {.bitmap_index = 6210,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(时)*/
+    {.bitmap_index = 6301,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(本)*/
+    {.bitmap_index = 6385,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(校)*/
+    {.bitmap_index = 6469,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(档)*/
+    {.bitmap_index = 6553,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(模)*/
+    {.bitmap_index = 6637,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(波)*/
+    {.bitmap_index = 6721,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(测)*/
+    {.bitmap_index = 6812,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(温)*/
+    {.bitmap_index = 6896,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(源)*/
+    {.bitmap_index = 6980,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(滤)*/
+    {.bitmap_index = 7064,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(版)*/
+    {.bitmap_index = 7148,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(率)*/
+    {.bitmap_index = 7232,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(理)*/
+    {.bitmap_index = 7316,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(电)*/
+    {.bitmap_index = 7407,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(码)*/
+    {.bitmap_index = 7498,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(硬)*/
+    {.bitmap_index = 7582,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(管)*/
+    {.bitmap_index = 7666,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(系)*/
+    {.bitmap_index = 7757,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(线)*/
+    {.bitmap_index = 7841,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(统)*/
+    {.bitmap_index = 7925,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(继)*/
+    {.bitmap_index = 8009,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(维)*/
+    {.bitmap_index = 8093,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(置)*/
+    {.bitmap_index = 8177,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(补)*/
+    {.bitmap_index = 8261,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(设)*/
+    {.bitmap_index = 8345,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(误)*/
+    {.bitmap_index = 8429,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(读)*/
+    {.bitmap_index = 8513,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(软)*/
+    {.bitmap_index = 8597,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(输)*/
+    {.bitmap_index = 8688,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(选)*/
+    {.bitmap_index = 8772,	.adv_w = 14, .box_h = 14, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(重)*/
+    {.bitmap_index = 8870,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(量)*/
+    {.bitmap_index = 8961,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(错)*/
+    {.bitmap_index = 9052,	.adv_w = 14, .box_h = 13, .box_w = 14, .ofs_x = 0, .ofs_y = 2},/*(间)*/
+    {.bitmap_index = 9143,	.adv_w = 14, .box_h = 12, .box_w = 14, .ofs_x = 0, .ofs_y = 3},/*(频)*/
 };
 
 
@@ -2375,6 +2505,7 @@ static const uint16_t unicode_list_1[] = {
     0x007d,	/*(})*/
     0x007e,	/*(~)*/
     0x007f,	/*()*/
+    0x4ef6,	/*(件)*/
     0x4f20,	/*(传)*/
     0x4f4d,	/*(位)*/
     0x4f5c,	/*(作)*/
@@ -2402,8 +2533,10 @@ static const uint16_t unicode_list_1[] = {
     0x62a4,	/*(护)*/
     0x62df,	/*(拟)*/
     0x62e9,	/*(择)*/
+    0x636e,	/*(据)*/
     0x6570,	/*(数)*/
     0x65f6,	/*(时)*/
+    0x672c,	/*(本)*/
     0x6821,	/*(校)*/
     0x6863,	/*(档)*/
     0x6a21,	/*(模)*/
@@ -2412,10 +2545,12 @@ static const uint16_t unicode_list_1[] = {
     0x6e29,	/*(温)*/
     0x6e90,	/*(源)*/
     0x6ee4,	/*(滤)*/
+    0x7248,	/*(版)*/
     0x7387,	/*(率)*/
     0x7406,	/*(理)*/
     0x7535,	/*(电)*/
     0x7801,	/*(码)*/
+    0x786c,	/*(硬)*/
     0x7ba1,	/*(管)*/
     0x7cfb,	/*(系)*/
     0x7ebf,	/*(线)*/
@@ -2425,11 +2560,14 @@ static const uint16_t unicode_list_1[] = {
     0x7f6e,	/*(置)*/
     0x8865,	/*(补)*/
     0x8bbe,	/*(设)*/
+    0x8bef,	/*(误)*/
     0x8bfb,	/*(读)*/
+    0x8f6f,	/*(软)*/
     0x8f93,	/*(输)*/
     0x9009,	/*(选)*/
     0x91cd,	/*(重)*/
     0x91cf,	/*(量)*/
+    0x9519,	/*(错)*/
     0x95f4,	/*(间)*/
     0x9891,	/*(频)*/
     0x0000,    /*End indicator*/
@@ -2444,13 +2582,13 @@ static const lv_font_fmt_txt_cmap_t cmaps[] = {
         .glyph_id_start = 0,
         .unicode_list = unicode_list_1,
         .glyph_id_ofs_list = NULL,
-        .list_length = 154,
+        .list_length = 162,
     }
 };
 
 static lv_font_fmt_txt_glyph_cache_t glyph_cache = {
     .last_letter = 0x9891,
-    .last_glyph_id = 153,
+    .last_glyph_id = 161,
 };
 
 static lv_font_fmt_txt_dsc_t font_dsc = {
