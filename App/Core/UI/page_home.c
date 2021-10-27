@@ -78,7 +78,7 @@ static void btn_event_cb(lv_event_t *event)
     }
     else if (obj == imgbtnLChart)
     {
-        App_Printf("曲线\r\n");
+        // Page_ChangeTo(PAGE_CHART);
     }
 }
 
@@ -248,6 +248,16 @@ static void Body_Creat(void)
     lv_img_set_src(imgTempUnit, &IconCels);
     lv_obj_set_style_img_opa(imgTempUnit, LV_OPA_60, 0);
     lv_obj_align_to(imgTempUnit, labelTempera, LV_ALIGN_OUT_RIGHT_MID, 5, 0);
+
+    //图表按键
+    LV_IMG_DECLARE(IconChartR);
+    LV_IMG_DECLARE(IconChartP);
+    imgbtnLChart = lv_imgbtn_create(contBody);
+    lv_obj_set_size(imgbtnLChart, 32, 32);
+    lv_imgbtn_set_src(imgbtnLChart, LV_IMGBTN_STATE_RELEASED, NULL, &IconChartR, NULL);
+    lv_imgbtn_set_src(imgbtnLChart, LV_IMGBTN_STATE_PRESSED, NULL, &IconChartP, NULL);
+    lv_obj_align(imgbtnLChart, LV_ALIGN_TOP_LEFT, 5, 5);
+    lv_obj_add_event_cb(imgbtnLChart, btn_event_cb, LV_EVENT_CLICKED, NULL);
 }
 
 /*

@@ -1281,6 +1281,12 @@
                         <name>$PROJ_DIR$\..\Core\UI\IMG\IconCels.c</name>
                     </file>
                     <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconChartP.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\IMG\IconChartR.c</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\Core\UI\IMG\IconTemp.c</name>
                     </file>
                 </group>
@@ -1288,6 +1294,9 @@
                     <name>Page</name>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_cal.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\page_chart.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_home.c</name>

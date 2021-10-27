@@ -48,6 +48,27 @@ static lv_obj_t *tabSensor;
 static lv_obj_t *tabAnalog;
 static lv_obj_t *tabInstr;
 
+//sensor
+static lv_obj_t *dropdown_sensor_para;
+static lv_obj_t *dropdown_sensor_method;
+static lv_obj_t *dropdown_sensor_temp;
+static lv_obj_t *text_sensor_comp;
+static lv_obj_t *text_sensor_res;
+static lv_obj_t *text_sensor_cond;
+static lv_obj_t *text_sensor_sal;
+static lv_obj_t *text_sensor_tds;
+static lv_obj_t *text_sensor_liq;
+static lv_obj_t *dropdown_sensor_liq;
+static lv_obj_t *text_sensor_elec;
+
+//cal
+static lv_obj_t *dropdown_analog_num;
+static lv_obj_t *dropdown_analog_value;
+static lv_obj_t *text_analog_value;
+
+//Instr
+static lv_obj_t *text_instr_item;
+static lv_obj_t *dropdown_instr_item;
 /*
  ********************************************************************************************************
  *@func       tab_name_refresh
@@ -225,7 +246,7 @@ static void ContTitle_Creat(void)
 
 /*
  ********************************************************************************************************
- *@func       TabAnalog_Creat
+ *@func       TabSensor_Creat
  *@brief      创建子窗口
  *@param[in]  node
  *@retval     none
@@ -300,6 +321,131 @@ static void TabSensor_Creat(lv_obj_t *parent)
     lv_obj_set_grid_cell(label8, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 7, 1);
     lv_obj_set_grid_cell(label9, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 8, 1);
     lv_obj_set_grid_cell(label10, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 9, 1);
+
+    dropdown_sensor_para = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_sensor_para, LV_GRID_ALIGN_END, 2, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    dropdown_sensor_method = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_sensor_method, LV_GRID_ALIGN_END, 2, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+
+    dropdown_sensor_temp = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_sensor_temp, LV_GRID_ALIGN_END, 2, 1, LV_GRID_ALIGN_CENTER, 2, 1);
+
+    text_sensor_comp = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_comp, true);
+    lv_textarea_set_align(text_sensor_comp, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_comp, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 3, 1);
+
+    text_sensor_res = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_res, true);
+    lv_textarea_set_align(text_sensor_res, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_res, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 4, 1);
+
+    text_sensor_cond = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_cond, true);
+    lv_textarea_set_align(text_sensor_cond, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_cond, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 5, 1);
+
+    text_sensor_sal = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_sal, true);
+    lv_textarea_set_align(text_sensor_sal, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_sal, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 6, 1);
+
+    text_sensor_tds = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_tds, true);
+    lv_textarea_set_align(text_sensor_tds, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_tds, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 7, 1);
+
+    text_sensor_liq = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_liq, true);
+    lv_textarea_set_align(text_sensor_liq, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_liq, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_CENTER, 8, 1);
+
+    dropdown_sensor_liq = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_sensor_liq, LV_GRID_ALIGN_STRETCH, 2, 1, LV_GRID_ALIGN_CENTER, 8, 1);
+
+    text_sensor_elec = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_sensor_elec, true);
+    lv_textarea_set_align(text_sensor_elec, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_sensor_elec, LV_GRID_ALIGN_STRETCH, 1, 2, LV_GRID_ALIGN_CENTER, 9, 1);
+}
+
+/*
+ ********************************************************************************************************
+ *@func       TabSensor_Creat
+ *@brief      创建子窗口
+ *@param[in]  node
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void TabAnalog_Creat(lv_obj_t *parent)
+{
+    static lv_coord_t grid_col_dsc[] = {LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
+    static lv_coord_t grid_row_dsc[] = {
+        LV_GRID_CONTENT,
+        LV_GRID_CONTENT,
+        LV_GRID_CONTENT,
+        LV_GRID_TEMPLATE_LAST};
+    lv_obj_set_grid_dsc_array(parent, grid_col_dsc, grid_row_dsc);
+    lv_obj_set_style_pad_row(parent, 5, 0);
+
+    lv_obj_t *label1 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label1, &my_font_14, 0);
+    lv_label_set_text(label1, "模拟输出组");
+
+    lv_obj_t *label2 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label2, &my_font_14, 0);
+    lv_label_set_text(label2, "校准值");
+
+    lv_obj_t *label3 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label3, &my_font_14, 0);
+    lv_label_set_text(label3, "调整");
+
+    lv_obj_set_grid_cell(label1, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+    lv_obj_set_grid_cell(label2, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+    lv_obj_set_grid_cell(label3, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 2, 1);
+
+    dropdown_analog_num = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_analog_num, LV_GRID_ALIGN_END, 1, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    dropdown_analog_value = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_analog_value, LV_GRID_ALIGN_END, 1, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+
+    text_analog_value = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_analog_value, true);
+    lv_textarea_set_align(text_analog_value, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_analog_value, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_CENTER, 2, 1);
+}
+
+/*
+ ********************************************************************************************************
+ *@func       TabInstr_Creat
+ *@brief      创建子窗口
+ *@param[in]  node
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void TabInstr_Creat(lv_obj_t *parent)
+{
+    static lv_coord_t grid_col_dsc[] = {LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
+    static lv_coord_t grid_row_dsc[] = {
+        LV_GRID_CONTENT,
+        LV_GRID_TEMPLATE_LAST};
+    lv_obj_set_grid_dsc_array(parent, grid_col_dsc, grid_row_dsc);
+    lv_obj_set_style_pad_row(parent, 5, 0);
+
+    lv_obj_t *label1 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label1, &my_font_14, 0);
+    lv_label_set_text(label1, "校准项目");
+    lv_obj_set_grid_cell(label1, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    text_instr_item = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_instr_item, true);
+    lv_textarea_set_align(text_instr_item, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_instr_item, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    dropdown_instr_item = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_instr_item, LV_GRID_ALIGN_STRETCH, 2, 1, LV_GRID_ALIGN_CENTER, 0, 1);
 }
 
 /*
@@ -317,6 +463,8 @@ static void Body_Creat(void)
     tabInstr = lv_tabview_add_tab(contBody, "仪表校准");
 
     TabSensor_Creat(tabSensor);
+    TabAnalog_Creat(tabAnalog);
+    TabInstr_Creat(tabInstr);
 }
 
 /*

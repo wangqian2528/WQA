@@ -57,8 +57,9 @@ void Page_Init(void)
     PageRegister_Cal(PAGE_CAL);
     PageRegister_Mro(PAGE_MRO);
     PageRegister_Set(PAGE_SET);
+    // PageRegister_Chart(PAGE_CHART);
 
-    Page_ChangeTo(PAGE_HOME);
+    Page_ChangeTo(PAGE_START);
 }
 
 /*

@@ -25,10 +25,12 @@ typedef enum
     /*用户页面*/
     PAGE_START, //开机画面
     PAGE_HOME,  //主页
+    // PAGE_CHART, //图表
     PAGE_SET,   //设置
     PAGE_CAL,   //校准
     PAGE_MRO,   //维护
     PAGE_INFO,  //信息
+    // PAGE_TEST,  //
     /*保留*/
     PAGE_MAX
 } Page_Type;
@@ -63,6 +65,7 @@ void PageRegister_Info(Page_Type pageID);
 void PageRegister_Cal(Page_Type pageID);
 void PageRegister_Mro(Page_Type pageID);
 void PageRegister_Set(Page_Type pageID);
+void PageRegister_Chart(Page_Type pageID);
 
 #include "lvgl/lvgl.h"
 

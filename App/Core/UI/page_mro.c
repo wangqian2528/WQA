@@ -45,6 +45,10 @@ static MRO_NAME_E tab_index;
 static lv_obj_t *tabSet;
 static lv_obj_t *tabOutput;
 
+//Set
+static lv_obj_t *dropdown_set_mod;
+static lv_obj_t *text_set_time;
+static lv_obj_t *dropdown_set_time;
 /*
  ********************************************************************************************************
  *@func       tab_name_refresh
@@ -217,6 +221,46 @@ static void ContTitle_Creat(void)
 
 /*
  ********************************************************************************************************
+ *@func       TabInstr_Creat
+ *@brief      创建子窗口
+ *@param[in]  node
+ *@retval     none
+ ********************************************************************************************************
+ */
+static void TabSet_Creat(lv_obj_t *parent)
+{
+    static lv_coord_t grid_col_dsc[] = {LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_FR(1), LV_GRID_TEMPLATE_LAST};
+    static lv_coord_t grid_row_dsc[] = {
+        LV_GRID_CONTENT,
+        LV_GRID_CONTENT,
+        LV_GRID_TEMPLATE_LAST};
+    lv_obj_set_grid_dsc_array(parent, grid_col_dsc, grid_row_dsc);
+    lv_obj_set_style_pad_row(parent, 5, 0);
+
+    lv_obj_t *label1 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label1, &my_font_14, 0);
+    lv_label_set_text(label1, "清洗模式");
+    lv_obj_set_grid_cell(label1, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    lv_obj_t *label2 = lv_label_create(parent);
+    lv_obj_set_style_text_font(label2, &my_font_14, 0);
+    lv_label_set_text(label2, "定时清洗时间");
+    lv_obj_set_grid_cell(label2, LV_GRID_ALIGN_CENTER, 0, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+
+    dropdown_set_mod = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_set_mod, LV_GRID_ALIGN_END, 2, 1, LV_GRID_ALIGN_CENTER, 0, 1);
+
+    text_set_time = lv_textarea_create(parent);
+    lv_textarea_set_one_line(text_set_time, true);
+    lv_textarea_set_align(text_set_time, LV_TEXT_ALIGN_RIGHT);
+    lv_obj_set_grid_cell(text_set_time, LV_GRID_ALIGN_STRETCH, 1, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+
+    dropdown_set_time = lv_dropdown_create(parent);
+    lv_obj_set_grid_cell(dropdown_set_time, LV_GRID_ALIGN_STRETCH, 2, 1, LV_GRID_ALIGN_CENTER, 1, 1);
+}
+
+/*
+ ********************************************************************************************************
  *@func       Body_Creat
  *@brief      创建主显示区控件
  *@param[in]  node
@@ -227,6 +271,8 @@ static void Body_Creat(void)
 {
     tabSet = lv_tabview_add_tab(contBody, "维护设置");
     tabOutput = lv_tabview_add_tab(contBody, "测试输出");
+
+    TabSet_Creat(tabSet);
 }
 
 /*
