@@ -54,8 +54,9 @@ void Page_Init(void)
     PageRegister_Start(PAGE_START);
     PageRegister_Home(PAGE_HOME);
     PageRegister_Info(PAGE_INFO);
-    
-    // PageRegister_Set(PAGE_SET);
+    PageRegister_Cal(PAGE_CAL);
+    PageRegister_Mro(PAGE_MRO);
+    PageRegister_Set(PAGE_SET);
 
     Page_ChangeTo(PAGE_HOME);
 }

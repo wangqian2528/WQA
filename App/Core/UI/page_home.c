@@ -66,15 +66,15 @@ static void btn_event_cb(lv_event_t *event)
     }
     else if (obj == btnCal)
     {
-        App_Printf("校准\r\n");
+        Page_ChangeTo(PAGE_CAL);
     }
     else if (obj == btnMro)
     {
-        App_Printf("维护\r\n");
+        Page_ChangeTo(PAGE_MRO);
     }
     else if (obj == btnSet)
     {
-        App_Printf("设置\r\n");
+        Page_ChangeTo(PAGE_SET);
     }
     else if (obj == imgbtnLChart)
     {
@@ -149,16 +149,17 @@ static void ContTitle_Creat(void)
 
     //LED
     ledState = lv_led_create(contTitle);
+    lv_obj_set_style_shadow_opa(ledState, LV_OPA_50, 0);
     lv_obj_set_size(ledState, 14, 14);
     lv_led_set_brightness(ledState, 60);
-    lv_led_set_color(ledState, lv_palette_main(LV_PALETTE_RED));
+    lv_led_set_color(ledState, lv_palette_main(LV_PALETTE_BLUE));
     lv_obj_align(ledState, LV_ALIGN_LEFT_MID, -5, 0);
 
     //告警
     labelWarning = lv_label_create(contTitle);
     lv_obj_set_style_text_opa(labelWarning, LV_OPA_60, 0);
     lv_label_set_text(labelWarning, LV_SYMBOL_WARNING);
-    lv_obj_align(labelWarning, LV_ALIGN_LEFT_MID, 23, 0);
+    lv_obj_align(labelWarning, LV_ALIGN_LEFT_MID, 20, 0);
 }
 
 /*

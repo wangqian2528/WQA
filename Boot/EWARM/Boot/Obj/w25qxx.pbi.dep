@@ -1,0 +1,5 @@
+w25qxx.pbi: F:\WQA\Boot\Core\Src\w25qxx.c \
+  F:\WQA\Boot\EWARM/../Core/Inc\w25qxx.h \
+  F:\WQA\Boot\EWARM/../Drivers/CMSIS/Device/ST/STM32H7xx/Include\stm32h750xx.h \
+  F:\WQA\Boot\EWARM/../Drivers/CMSIS/Include\core_cm7.h \
+  F:\WQA\Boot\EWARM/../Core/Inc\stdint.h

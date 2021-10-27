@@ -1177,10 +1177,16 @@
                 <group>
                     <name>Page</name>
                     <file>
+                        <name>$PROJ_DIR$\..\Core\UI\page_cal.c</name>
+                    </file>
+                    <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_home.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_info.c</name>
+                    </file>
+                    <file>
+                        <name>$PROJ_DIR$\..\Core\UI\page_mro.c</name>
                     </file>
                     <file>
                         <name>$PROJ_DIR$\..\Core\UI\page_set.c</name>

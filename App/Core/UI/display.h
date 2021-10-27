@@ -27,7 +27,7 @@ typedef enum
     PAGE_HOME,  //主页
     PAGE_SET,   //设置
     PAGE_CAL,   //校准
-    PAGE_MOR,   //维护
+    PAGE_MRO,   //维护
     PAGE_INFO,  //信息
     /*保留*/
     PAGE_MAX
@@ -60,7 +60,8 @@ void Page_Running(void);
 void PageRegister_Start(Page_Type pageID);
 void PageRegister_Home(Page_Type pageID);
 void PageRegister_Info(Page_Type pageID);
-
+void PageRegister_Cal(Page_Type pageID);
+void PageRegister_Mro(Page_Type pageID);
 void PageRegister_Set(Page_Type pageID);
 
 #include "lvgl/lvgl.h"

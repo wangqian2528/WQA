@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\App\EWARM\settings\App.App.general.xcl" --backend -f "F:\WQA\App\EWARM\settings\App.App.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\App\EWARM\settings\App.App.general.xcl" --backend -f "F:\WQA\App\EWARM\settings\App.App.driver.xcl" 
 }
 else
 {
-& "D:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\App\EWARM\settings\App.App.general.xcl" --debug_file=$debugfile --backend -f "F:\WQA\App\EWARM\settings\App.App.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems ARM\Embedded Workbench 8.3\common\bin\cspybat" -f "F:\WQA\App\EWARM\settings\App.App.general.xcl" --debug_file=$debugfile --backend -f "F:\WQA\App\EWARM\settings\App.App.driver.xcl" 
 }
